@@ -95,7 +95,7 @@ body {
     color: #334155;
 }
 
-/* Highlight */
+/* Alert */
 .alert {
     border-radius: 12px;
 }
@@ -113,11 +113,6 @@ body {
     border: none;
 }
 
-.btn-audio {
-    background: #0ea5e9;
-    color: white;
-}
-
 .btn-done {
     background: #16a34a;
     color: white;
@@ -128,6 +123,34 @@ body {
     margin-top: 10px;
     font-weight: bold;
     color: #16a34a;
+}
+
+/* IMAGE ZOOM */
+.zoom-img {
+    cursor: zoom-in;
+    transition: 0.3s;
+}
+
+.zoom-img:hover {
+    transform: scale(1.02);
+}
+
+/* LIGHTBOX */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    text-align: center;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    margin-top: 5%;
+    border-radius: 10px;
 }
 </style>
 
@@ -163,7 +186,6 @@ TUÂN THỦ CÁC BƯỚC DƯỚI ĐÂY GIÚP VẾT MỔ NHANH LÀNH VÀ TRÁNH N
 
 <div class="alert alert-danger">
 <h4><strong>3. THEO DÕI DẤU HIỆU BẤT THƯỜNG</strong></h4>
-<p>Liên hệ y tế ngay nếu có:</p>
 
 <div class="row">
 <div class="col-sm-7">
@@ -176,7 +198,9 @@ TUÂN THỦ CÁC BƯỚC DƯỚI ĐÂY GIÚP VẾT MỔ NHANH LÀNH VÀ TRÁNH N
 </div>
 
 <div class="col-sm-5">
-<img class="img-responsive img-polaroid" src="img/vetmo.jpg">
+<img class="img-responsive zoom-img"
+     src="img/vetmo.jpg"
+     onclick="openLightbox(this.src)">
 </div>
 </div>
 </div>
@@ -209,37 +233,44 @@ TUÂN THỦ CÁC BƯỚC DƯỚI ĐÂY GIÚP VẾT MỔ NHANH LÀNH VÀ TRÁNH N
 </ul>
 </div>
 
-<div style="border-top: 3px solid #D81265; padding-top: 15px;">
-<h4 style="color:#D81265;"><strong>HÃY LIÊN HỆ Y TẾ KHI CÓ CÁC DẤU HIỆU:</strong></h4>
-<ul>
-<li>Đau dữ dội không giảm khi nghỉ ngơi.</li>
-<li>Giảm cảm giác, tê bì hoặc yếu cơ mới xuất hiện ở tay/chân.</li>
-<li>Khó khăn đột ngột trong việc di chuyển.</li>
-</ul>
+<!-- STATUS -->
+<div id="readStatus" style="margin-top:10px; font-weight:bold; color:#2563eb;">
+📊 Chưa đọc nội dung
 </div>
 
-<!-- DONE -->
+<!-- DONE BUTTON -->
 <button class="btn-main btn-done" onclick="markDone()">
 ✔ Đã đọc nội dung
 </button>
-
-<div id="doneStatus" class="done-text"></div>
 
 </div>
 </div>
 </section>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img">
+</div>
 
-
+<script>
 function markDone() {
     localStorage.setItem("woundcare_done", "true");
-    document.getElementById("doneStatus").innerHTML = "📊 Bạn đã hoàn thành nội dung này";
+    document.getElementById("readStatus").innerHTML = "📊 Đã đọc nội dung";
 }
 
 window.onload = function() {
     if(localStorage.getItem("woundcare_done") === "true") {
-        document.getElementById("doneStatus").innerHTML = "📊 Bạn đã hoàn thành nội dung này";
+        document.getElementById("readStatus").innerHTML = "📊 Đã đọc nội dung";
     }
+}
+
+function openLightbox(src) {
+    document.getElementById("lightbox").style.display = "block";
+    document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
 }
 </script>
 
