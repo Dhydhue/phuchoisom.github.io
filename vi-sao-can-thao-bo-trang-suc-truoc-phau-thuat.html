@@ -57,7 +57,200 @@
 	</section>
 	<section id="content">
 	<div class="container">
-					
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    margin: 0;
+}
+
+/* Container */
+.container-mobile {
+    padding: 15px;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Title */
+.card h3 {
+    font-size: 22px;
+    color: #0f172a;
+    border-left: 6px solid #ef4444;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* Text */
+.card p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 6px 0;
+}
+
+/* Strong */
+.card strong {
+    display: block;
+    margin-top: 12px;
+    font-size: 18px;
+    color: #1d4ed8;
+}
+
+/* Highlight */
+.highlight {
+    background: #fef2f2;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* VIDEO FULL */
+.video-full {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 70%;
+    margin-top: 20px;
+}
+
+.video-full iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Buttons */
+.btn-audio {
+    width: 100%;
+    background: #2563eb;
+    color: #fff;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    margin-top: 15px;
+}
+
+.progress-box {
+    background: #f0fdf4;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn-done {
+    width: 100%;
+    background: #16a34a;
+    color: #fff;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+}
+
+.done-text {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #16a34a;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .container-mobile {
+        max-width: 700px;
+        margin: auto;
+    }
+}
+</style>
+
+<div class="container-mobile">
+
+<div class="card">
+
+<h3>VÌ SAO CẦN THÁO TRANG SỨC TRƯỚC PHẪU THUẬT?</h3>
+<p>• Trang sức kim loại có thể gây bỏng da khi dùng dao điện</p>
+<p>• Là nơi tích tụ vi khuẩn → tăng nguy cơ nhiễm trùng</p>
+<p>• Cản trở theo dõi, đo huyết áp, đặt đường truyền</p>
+<p>• Có thể gây tổn thương da khi sưng sau mổ</p>
+<p>• Tránh thất lạc tài sản</p>
+
+<strong>NGƯỜI BỆNH CẦN THÁO GÌ?</strong>
+<div class="highlight">
+<p>• Nhẫn, vòng tay, lắc chân</p>
+<p>• Dây chuyền</p>
+<p>• Bông tai, khuyên mũi, khuyên rốn</p>
+<p>• Đồng hồ</p>
+<p>• Kẹp tóc kim loại</p>
+<p>• Kính áp tròng</p>
+</div>
+
+<strong>LƯU Ý</strong>
+<p>• Giao lại trang sức cho người nhà</p>
+<p>• Nếu không có người nhà → ký gửi theo quy định</p>
+<p>• Nếu không tháo được → báo nhân viên y tế</p>
+
+<!-- VIDEO FULL -->
+<div class="video-full">
+    <iframe src="https://www.youtube.com/embed/vBTYAiMi9Y4" allowfullscreen></iframe>
+</div>
+
+<!-- AUDIO -->
+<button class="btn-audio" onclick="readJewelry()">🔊 Nghe nội dung</button>
+
+<!-- PROGRESS -->
+<div class="progress-box">
+<button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
+<div id="doneStatus" class="done-text"></div>
+</div>
+
+</div>
+</div>
+
+<script>
+// AUDIO
+function readJewelry() {
+    const text = `
+    Trước phẫu thuật, người bệnh cần tháo bỏ trang sức để tránh bỏng, nhiễm trùng và cản trở điều trị.
+    Hãy tháo tất cả nhẫn, vòng, dây chuyền và các vật kim loại.
+    Nếu không tháo được, hãy báo nhân viên y tế.
+    `;
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "vi-VN";
+    speech.rate = 0.85;
+    window.speechSynthesis.speak(speech);
+}
+
+// PROGRESS
+function markDone() {
+    localStorage.setItem("jewelry_done", "true");
+    document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+}
+
+// LOAD
+window.onload = function() {
+    if(localStorage.getItem("jewelry_done") === "true") {
+        document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+    }
+}
+</script>
+
+
+
+
+
+
+		
 					<div class="about">
 					
 						<div class="row"> 
@@ -85,11 +278,7 @@
 									<a href="https://youtube.com/shorts/vBTYAiMi9Y4" target="_blank">
     								Xem video
 
-									
 								</div>
-								</div>
-						</div>	
-					</div>
 									
 				</div>
 	</section>
