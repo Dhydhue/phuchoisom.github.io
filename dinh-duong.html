@@ -112,14 +112,15 @@ body {
     margin-top: 10px;
 }
 
-/* VIDEO */
+/* VIDEO to hơn + đẹp hơn */
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
+    padding-bottom: 65%; /* cao hơn để video lớn hơn */
     margin-top: 15px;
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
 .video-container iframe {
@@ -129,27 +130,7 @@ body {
     border: none;
 }
 
-/* BUTTON AUDIO */
-.btn-audio {
-    width: 100%;
-    background: #2563eb;
-    color: #fff;
-    font-size: 18px;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    margin-top: 15px;
-}
-
-/* PROGRESS */
-.progress-box {
-    background: #f0fdf4;
-    padding: 12px;
-    border-radius: 12px;
-    text-align: center;
-    margin-top: 15px;
-}
-
+/* BUTTON DONE */
 .btn-done {
     width: 100%;
     background: #16a34a;
@@ -158,6 +139,17 @@ body {
     padding: 14px;
     border-radius: 12px;
     border: none;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+/* PROGRESS TEXT */
+.progress-box {
+    background: #f0fdf4;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 15px;
 }
 
 .done-text {
@@ -174,13 +166,25 @@ body {
         margin: auto;
     }
 }
+
+/* Zoom ảnh/video khi click */
+.zoomable {
+    cursor: zoom-in;
+    transition: 0.3s;
+}
+
+.zoomable.active {
+    transform: scale(1.8);
+    position: relative;
+    z-index: 999;
+}
 </style>
 
 <div class="container-mobile">
 
     <!-- CARD 1 -->
     <div class="card">
-        <img src="img/dd1.jpg" alt="Dinh dưỡng trước mổ">
+        <img class="zoomable" src="img/dd1.jpg" alt="Dinh dưỡng trước mổ">
 
         <h4>VÌ SAO CẦN ĂN UỐNG ĐÚNG?</h4>
         <p>• Giúp liền xương, phục hồi cơ</p>
@@ -191,7 +195,7 @@ body {
 
     <!-- CARD 2 -->
     <div class="card">
-        <img src="img/dd2.jpg" alt="Nguyên tắc ăn uống">
+        <img class="zoomable" src="img/dd2.jpg" alt="Nguyên tắc ăn uống">
 
         <h4>NGUYÊN TẮC ĂN UỐNG</h4>
         <p>• Ăn đủ bữa – không bỏ bữa</p>
@@ -206,7 +210,6 @@ body {
             <p>• Ăn dễ tiêu: cơm, cháo, mì</p>
             <p>• Đạm: thịt nạc, cá, trứng</p>
             <p>• Rau mềm, trái cây dễ tiêu</p>
-            <p>• Tránh đồ chiên, khó tiêu</p>
         </div>
 
         <div class="highlight">
@@ -227,24 +230,31 @@ body {
         </div>
 
     </div>
-
 </div>
 
-// PROGRESS
+<script>
+// Đánh dấu đã đọc
 function markDone() {
     localStorage.setItem("nutrition_done", "true");
-    document.getElementById("doneStatus").innerHTML = "✅ Bạn đã hoàn thành nội dung";
+    document.getElementById("doneStatus").innerHTML =
+        "📊 Đã đọc nội dung";
 }
 
-window.onload = function() {
-    if(localStorage.getItem("nutrition_done") === "true") {
-        document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+// Load trạng thái
+window.onload = function () {
+    if (localStorage.getItem("nutrition_done") === "true") {
+        document.getElementById("doneStatus").innerHTML =
+            "📊 Đã đọc nội dung";
     }
-}
+
+    // Zoom ảnh/video khi click
+    document.querySelectorAll(".zoomable").forEach(el => {
+        el.addEventListener("click", function () {
+            this.classList.toggle("active");
+        });
+    });
+};
 </script>
-</div>
-<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-<!-- javascript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery.js"></script>
