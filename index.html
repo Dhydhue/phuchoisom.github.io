@@ -346,7 +346,181 @@ body {
 
 </div>
 
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    margin: 0;
+}
 
+/* Container */
+.container-mobile {
+    padding: 15px;
+}
+
+/* Section title */
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.section-sub {
+    text-align: center;
+    font-size: 18px;
+    color: #475569;
+    margin-bottom: 20px;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Image */
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+/* Title nhỏ */
+.card h5 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #1d4ed8;
+}
+
+/* List */
+.card p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 6px 0;
+}
+
+/* Highlight list */
+.highlight {
+    background: #ecfdf5;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+/* Events grid */
+.events {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.event-item {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.event-item img {
+    width: 100%;
+}
+
+.event-item p {
+    font-size: 18px;
+    padding: 12px;
+    font-weight: 600;
+}
+
+/* Footer */
+.footer {
+    background: #0f172a;
+    color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.footer h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .container-mobile {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .events {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+</style>
+
+<div class="container-mobile">
+
+    <!-- ERAS -->
+    <div class="section-title">PHỤC HỒI SỚM SAU PHẪU THUẬT (ERAS)</div>
+    <div class="section-sub">
+        Vì sự an toàn và chất lượng cuộc sống của người bệnh
+    </div>
+
+    <div class="card">
+        <img src="img/img1.png" alt="ERAS">
+
+        <h5>LỢI ÍCH CỦA CHƯƠNG TRÌNH ERAS</h5>
+
+        <div class="highlight">
+            <p>✔ Giảm đau sau phẫu thuật hiệu quả</p>
+            <p>✔ Rút ngắn thời gian nằm viện</p>
+            <p>✔ Giảm nguy cơ biến chứng</p>
+            <p>✔ Sớm trở lại sinh hoạt bình thường</p>
+            <p>✔ Nâng cao chất lượng cuộc sống</p>
+        </div>
+    </div>
+
+    <!-- EVENTS -->
+    <div class="section-title">SỰ KIỆN</div>
+
+    <div class="events">
+
+        <div class="event-item">
+            <img src="img/e1.png" alt="">
+            <p>CHUYÊN MÔN SÂU</p>
+        </div>
+
+        <div class="event-item">
+            <img src="img/e2.png" alt="">
+            <p>PHỐI HỢP ĐA CHUYÊN KHOA</p>
+        </div>
+
+        <div class="event-item">
+            <img src="img/e3.png" alt="">
+            <p>NÂNG CAO CHẤT LƯỢNG CHĂM SÓC</p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <h5>LIÊN HỆ</h5>
+        <p><strong>Khoa Ngoại Chấn thương Chỉnh hình – Thần kinh Sọ não</strong></p>
+        <p>Tầng 3 Khu D - BV Trung ương Huế cơ sở 2</p>
+        <p>📞 0543761761 (máy lẻ: 3902)</p>
+        <p>📧 Ngoaictch-tksntw2@gmail.com</p>
+    </div>
+
+</div>
 
 
 
