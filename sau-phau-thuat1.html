@@ -55,6 +55,246 @@
 		</div>
 	</div>
 	</section>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    margin: 0;
+}
+
+/* Container */
+.container-mobile {
+    padding: 15px;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+/* Quote */
+.quote {
+    background: #fff5f8;
+    border-left: 6px solid #D81265;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Title */
+.card h4 {
+    font-size: 20px;
+    color: #1e40af;
+    margin-top: 15px;
+}
+
+/* Text */
+.card p, .card li {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Highlight alert */
+.alert-box {
+    background: #fee2e2;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .container-mobile {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* VIDEO FULL */
+.video-full {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 70%;
+    margin-top: 20px;
+}
+
+.video-full iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Buttons */
+.btn-audio {
+    width: 100%;
+    background: #2563eb;
+    color: #fff;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    margin-top: 15px;
+}
+
+.progress-box {
+    background: #f0fdf4;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn-done {
+    width: 100%;
+    background: #16a34a;
+    color: #fff;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+}
+
+.done-text {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #16a34a;
+    font-weight: bold;
+}
+</style>
+
+<div class="container-mobile">
+
+<div class="card">
+
+<!-- QUOTE -->
+<div class="quote">
+“Đau sau mổ là bình thường, nhưng có thể kiểm soát được.  
+Hãy báo nhân viên y tế khi đau.”
+</div>
+
+<h4>1. VÌ SAO CẦN KIỂM SOÁT ĐAU?</h4>
+<ul>
+<li>Giúp người bệnh dễ chịu, an tâm</li>
+<li>Hỗ trợ vận động sớm, phục hồi nhanh</li>
+</ul>
+
+<h4>2. THEO DÕI MỨC ĐỘ ĐAU</h4>
+<p>Thang điểm từ 0–10:</p>
+
+<ul>
+<li><strong>0:</strong> Không đau</li>
+<li><strong>1–3:</strong> Đau nhẹ</li>
+<li><strong>4–6:</strong> Đau vừa</li>
+<li><strong>7–10:</strong> Đau nhiều</li>
+</ul>
+
+<img src="img/VAS.png" style="width:100%; max-height:180px; object-fit:contain;">
+
+<!-- VIDEO FULL -->
+<div class="video-full">
+    <iframe src="https://www.youtube.com/embed/ZxnMu2bPn94" allowfullscreen></iframe>
+</div>
+
+<div class="alert-box">
+<strong>BÁO NGAY KHI:</strong>
+<ul>
+<li>Đau tăng đột ngột</li>
+<li>Đau không giảm sau thuốc</li>
+<li>Tê yếu chân</li>
+</ul>
+</div>
+
+<h4>3. KIỂM SOÁT ĐAU</h4>
+
+<div class="grid">
+<div>
+<strong>a. Dùng thuốc</strong>
+<p>• Dùng đúng chỉ định</p>
+<p>• Không tự ý đổi liều</p>
+</div>
+
+<div>
+<strong>b. Vận động</strong>
+<p>• Nằm đúng tư thế</p>
+<p>• Vận động nhẹ</p>
+</div>
+
+<div>
+<strong>c. Hỗ trợ</strong>
+<p>• Hít thở sâu</p>
+<p>• Đeo đai lưng khi vận động</p>
+</div>
+</div>
+
+<h4>4. LƯU Ý</h4>
+<p>✔ Không cố chịu đau</p>
+<p>✔ Tuân thủ hướng dẫn</p>
+
+<!-- AUDIO -->
+<button class="btn-audio" onclick="readPain()">🔊 Nghe nội dung</button>
+
+<!-- PROGRESS -->
+<div class="progress-box">
+<button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
+<div id="doneStatus" class="done-text"></div>
+</div>
+
+</div>
+</div>
+
+<script>
+// AUDIO
+function readPain() {
+    const text = `
+    Đau sau mổ là bình thường nhưng cần được kiểm soát.
+    Người bệnh nên báo nhân viên y tế khi đau.
+    Việc kiểm soát đau giúp phục hồi nhanh hơn.
+    `;
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "vi-VN";
+    speech.rate = 0.85;
+    window.speechSynthesis.speak(speech);
+}
+
+// PROGRESS
+function markDone() {
+    localStorage.setItem("pain_done", "true");
+    document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+}
+
+// LOAD
+window.onload = function() {
+    if(localStorage.getItem("pain_done") === "true") {
+        document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+    }
+}
+</script>
+
+
+
+
+	
+	
 	<section id="content">
     <div class="container">
         <div class="about">
