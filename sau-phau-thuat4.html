@@ -67,6 +67,14 @@
 body {
     font-family: Arial, sans-serif;
     background: #f1f5f9;
+    margin: 0;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 15px;
 }
 
 /* Card */
@@ -75,7 +83,6 @@ body {
     padding: 25px;
     border-radius: 16px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    margin-bottom: 25px;
 }
 
 /* Tiêu đề */
@@ -94,10 +101,32 @@ body {
 }
 
 /* Nội dung */
-.section-box p, .section-box li {
+.section-box p,
+.section-box li {
     font-size: 17px;
     line-height: 1.6;
     color: #334155;
+}
+
+/* Box */
+.well, .alert {
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.well {
+    background: #f8fafc;
+}
+
+.alert-danger {
+    background: #fee2e2;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    border-radius: 10px;
 }
 
 /* Video */
@@ -106,43 +135,43 @@ body {
     width: 100%;
     padding-bottom: 56.25%;
     margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .video-container iframe {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 12px;
-}
-
-/* Button */
-.btn-main {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 14px;
-    border-radius: 10px;
-    margin-top: 12px;
-    font-size: 17px;
-    cursor: pointer;
     border: none;
 }
 
+/* Buttons */
+.btn-main {
+    width: 100%;
+    padding: 14px;
+    font-size: 17px;
+    border-radius: 10px;
+    margin-top: 12px;
+    border: none;
+    cursor: pointer;
+}
+
 .btn-audio {
-    background: #0ea5e9;
-    color: white;
+    display: none; /* ❌ xóa chức năng nghe nội dung */
 }
 
 .btn-done {
     background: #16a34a;
-    color: white;
+    color: #fff;
 }
 
-/* Progress */
+/* Progress text */
 .done-text {
     margin-top: 10px;
     font-weight: bold;
     color: #16a34a;
+    text-align: center;
 }
 </style>
 
@@ -170,88 +199,82 @@ body {
 
 <hr>
 
-<h4><strong>1. TẬP ĐI TIỂU THEO GIỜ</strong></h4>
-<p><strong>Nguyên tắc:</strong> Không đợi buồn tiểu mới đi. Nên đi mỗi <strong>2–3 giờ/lần</strong>.</p>
+<h4>1. TẬP ĐI TIỂU THEO GIỜ</h4>
+<p><strong>Nguyên tắc:</strong> Không đợi buồn tiểu mới đi. Nên đi mỗi 2–3 giờ/lần.</p>
 
 <div class="well">
 <p><strong>Tư thế đúng:</strong></p>
 <ul>
-<li><strong>Nam:</strong> Ngồi hoặc đứng.</li>
-<li><strong>Nữ:</strong> Ngồi bô hoặc bồn cầu.</li>
-<li><em>Lưu ý: Nằm nếu chưa thể ngồi dậy được. Đi nhẹ nhàng, <strong>không rặn mạnh</strong>.</em></li>
+<li><strong>Nam:</strong> Ngồi hoặc đứng</li>
+<li><strong>Nữ:</strong> Ngồi bô hoặc bồn cầu</li>
+<li><em>Nếu chưa thể ngồi: nằm nhẹ nhàng, không rặn mạnh</em></li>
 </ul>
-<p>📌 <em>Nếu chưa tiểu được, hãy nghỉ ngơi và thử lại sau 15–20 phút.</em></p>
+<p>📌 Nếu chưa tiểu được, nghỉ 15–20 phút rồi thử lại.</p>
 </div>
 
-<h4><strong>2. CÁCH KÍCH THÍCH ĐI TIỂU AN TOÀN</strong></h4>
+<h4>2. CÁCH KÍCH THÍCH ĐI TIỂU AN TOÀN</h4>
 
 <div class="row text-center">
 <div class="col-sm-4">
-<img class="img-responsive img-polaroid" src="img/nuoc.jpg">
+<img src="img/nuoc.jpg">
 <p>Nghe tiếng nước chảy</p>
 </div>
 
 <div class="col-sm-4">
-<img class="img-responsive img-polaroid" src="img/chuom.jpg">
-<p>Chườm ấm bụng dưới (10–15p)</p>
+<img src="img/chuom.jpg">
+<p>Chườm ấm bụng dưới</p>
 </div>
 
 <div class="col-sm-4">
-<img class="img-responsive img-polaroid" src="img/xoa.png">
-<p>Xoa nhẹ vùng trên xương mu theo vòng tròn</p>
+<img src="img/xoa.png">
+<p>Xoa vùng trên xương mu</p>
 </div>
 </div>
 
-<!-- VIDEO PHÓNG TO -->
+<!-- VIDEO -->
 <div class="video-container">
 <iframe src="https://www.youtube.com/embed/ENZeGU_qshY" allowfullscreen></iframe>
 </div>
 
-<h4><strong>3. BÀI TẬP CƠ SÀN CHẬU (KEGEL)</strong></h4>
+<h4>3. BÀI TẬP CƠ SÀN CHẬU (KEGEL)</h4>
 
 <div class="row">
 <div class="col-sm-7">
-<p>Giúp kiểm soát tiểu tiện tốt hơn bằng cách làm khỏe cơ sàn chậu.</p>
 <ul>
-<li>Thắt chặt cơ vùng chậu (như đang nhịn tiểu).</li>
-<li>Giữ trong 3-5 giây.</li>
-<li>Thả lỏng 3-5 giây.</li>
-<li>Lặp lại 10 lần mỗi đợt.</li>
+<li>Thắt cơ như đang nhịn tiểu</li>
+<li>Giữ 3–5 giây</li>
+<li>Thả lỏng 3–5 giây</li>
+<li>Lặp lại 10 lần</li>
 </ul>
 </div>
 
 <div class="col-sm-5">
-<img class="img-responsive img-thumbnail" src="img/kegel.png">
+<img src="img/kegel.png">
 </div>
 </div>
 
-<h4><strong>4. VẬN ĐỘNG NHẸ SAU PHẪU THUẬT</strong></h4>
-<p>Vận động giúp bàng quang hoạt động tốt hơn. Hãy ngồi dậy sớm và đi lại nhẹ nhàng theo hướng dẫn của nhân viên y tế. Tránh nằm bất động quá lâu.</p>
+<h4>4. VẬN ĐỘNG NHẸ SAU PHẪU THUẬT</h4>
+<p>Vận động giúp bàng quang hoạt động tốt hơn. Nên ngồi dậy sớm và đi lại theo hướng dẫn y tế.</p>
 
 <div class="well">
-<h4><strong>NHỮNG ĐIỀU KHÔNG NÊN LÀM</strong></h4>
-<p>❌ Không rặn mạnh khi đi tiểu.<br>
-❌ Không tự ý kẹp hoặc tháo sonde tiểu.<br>
-❌ Không uống quá nhiều nước cùng lúc để “ép tiểu”.</p>
+<h4>KHÔNG NÊN LÀM</h4>
+<p>❌ Không rặn mạnh khi đi tiểu<br>
+❌ Không tự ý tháo sonde<br>
+❌ Không uống quá nhiều nước cùng lúc</p>
 </div>
 
 <div class="alert alert-danger">
-<h4><strong>KHI NÀO CẦN BÁO Y TẾ NGAY?</strong></h4>
+<h4>KHI NÀO CẦN BÁO Y TẾ?</h4>
 <ul>
-<li>Không đi tiểu được sau 6 giờ.</li>
-<li>Căng tức bụng dưới, đau nhiều không giảm.</li>
-<li>Tiểu buốt, tiểu máu hoặc có sốt cao.</li>
+<li>Không đi tiểu sau 6 giờ</li>
+<li>Đau tức bụng dưới</li>
+<li>Tiểu máu, tiểu buốt hoặc sốt</li>
 </ul>
 </div>
 
 <div class="well text-center">
-<p><strong>Ghi nhớ:</strong> Tập tiểu đúng cách giúp hồi phục nhanh hơn và tránh biến chứng.</p>
+<p><strong>Ghi nhớ:</strong> Tập đúng giúp phục hồi nhanh hơn.</p>
 </div>
-
-<!-- AUDIO -->
-<button class="btn-main btn-audio" onclick="readContent()">
-🔊 Nghe nội dung
-</button>
 
 <!-- PROGRESS -->
 <button class="btn-main btn-done" onclick="markDone()">
@@ -265,25 +288,19 @@ body {
 </section>
 
 <script>
-function readContent() {
-    const text = document.querySelector('.section-box').innerText;
-    const speech = new SpeechSynthesisUtterance(text);
-    speech.lang = 'vi-VN';
-    window.speechSynthesis.speak(speech);
-}
-
 function markDone() {
     localStorage.setItem("urination_done", "true");
-    document.getElementById("doneStatus").innerHTML = "📊 Bạn đã hoàn thành nội dung này";
+    document.getElementById("doneStatus").innerHTML =
+        "📊 Bạn đã hoàn thành nội dung này";
 }
 
-window.onload = function() {
-    if(localStorage.getItem("urination_done") === "true") {
-        document.getElementById("doneStatus").innerHTML = "📊 Bạn đã hoàn thành nội dung này";
+window.onload = function () {
+    if (localStorage.getItem("urination_done") === "true") {
+        document.getElementById("doneStatus").innerHTML =
+            "📊 Bạn đã hoàn thành nội dung này";
     }
-}
+};
 </script>
-
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery.js"></script>
