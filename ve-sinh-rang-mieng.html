@@ -219,8 +219,6 @@ body {
 <iframe src="https://www.youtube.com/embed/kvS7guhIByQ" allowfullscreen></iframe>
 </div>
 
-<!-- AUDIO -->
-<button class="btn-audio" onclick="readOral()">🔊 Nghe nội dung</button>
 
 <!-- PROGRESS -->
 <div class="progress-box">
@@ -231,19 +229,6 @@ body {
 </div>
 </div>
 
-<script>
-// AUDIO
-function readOral() {
-    const text = `
-    Vệ sinh răng miệng trước phẫu thuật giúp giảm vi khuẩn và nguy cơ nhiễm trùng.
-    Người bệnh cần đánh răng đúng cách và làm sạch lưỡi nhẹ nhàng.
-    Nếu có bất thường cần báo nhân viên y tế.
-    `;
-    const speech = new SpeechSynthesisUtterance(text);
-    speech.lang = "vi-VN";
-    speech.rate = 0.85;
-    window.speechSynthesis.speak(speech);
-}
 
 // PROGRESS
 function markDone() {
