@@ -230,21 +230,6 @@ body {
 
 </div>
 
-<script>
-// AUDIO
-function readNutrition() {
-    const text = `
-    Dinh dưỡng trước phẫu thuật giúp phục hồi nhanh và giảm biến chứng.
-    Người bệnh cần ăn đủ bữa, tăng đạm và uống đủ nước.
-    Trước mổ nên ăn thức ăn dễ tiêu.
-    Ngừng ăn uống đúng theo hướng dẫn nhân viên y tế.
-    `;
-    const speech = new SpeechSynthesisUtterance(text);
-    speech.lang = "vi-VN";
-    speech.rate = 0.85;
-    window.speechSynthesis.speak(speech);
-}
-
 // PROGRESS
 function markDone() {
     localStorage.setItem("nutrition_done", "true");
