@@ -68,6 +68,8 @@ body {
 /* Container */
 .container-mobile {
     padding: 15px;
+    max-width: 700px;
+    margin: auto;
 }
 
 /* Card */
@@ -128,18 +130,7 @@ body {
     border: none;
 }
 
-/* Buttons */
-.btn-audio {
-    width: 100%;
-    background: #2563eb;
-    color: #fff;
-    font-size: 18px;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    margin-top: 15px;
-}
-
+/* Progress */
 .progress-box {
     background: #f0fdf4;
     padding: 12px;
@@ -156,6 +147,11 @@ body {
     padding: 14px;
     border-radius: 12px;
     border: none;
+    cursor: pointer;
+}
+
+.btn-done:hover {
+    background: #15803d;
 }
 
 .done-text {
@@ -163,14 +159,6 @@ body {
     font-size: 18px;
     color: #16a34a;
     font-weight: bold;
-}
-
-/* Responsive */
-@media (min-width: 768px) {
-    .container-mobile {
-        max-width: 700px;
-        margin: auto;
-    }
 }
 </style>
 
@@ -202,14 +190,11 @@ body {
 <p>• Gập cổ chân lên – xuống liên tục</p>
 <p>• Thực hiện 20 lần mỗi giờ khi nằm</p>
 
-
 <strong>4. Tập lăn trở</strong>
 <p>• Co nhẹ gối bên đối diện hướng lăn</p>
 <p>• Tay gần mép giường đặt trước ngực</p>
 <p>• Siết cơ bụng, giữ lưng thẳng</p>
 <p>• Lăn người đồng thời vai – hông – chân sang một bên</p>
-
-
 
 <strong>5. Ngồi dậy đúng cách</strong>
 <p>• Bắt đầu từ tư thế nằm → lăn nghiêng</p>
@@ -217,52 +202,34 @@ body {
 <p>• Đồng thời hạ chân xuống mép giường</p>
 <p>• Từ từ chuyển sang tư thế ngồi</p>
 
-
 <!-- VIDEO FULL -->
 <div class="video-full">
     <iframe src="https://www.youtube.com/embed/Y6DvVXCwIxs" allowfullscreen></iframe>
 </div>
 
-<!-- AUDIO -->
-<button class="btn-audio" onclick="readExercise()">🔊 Nghe nội dung</button>
-
 <!-- PROGRESS -->
 <div class="progress-box">
-<button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
-<div id="doneStatus" class="done-text"></div>
+    <button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
+    <div id="doneStatus" class="done-text"></div>
 </div>
 
 </div>
 </div>
 
 <script>
-// AUDIO
-function readExercise() {
-    const text = `
-    Tập luyện trước phẫu thuật giúp giảm đau và phòng biến chứng.
-    Người bệnh cần tập thở sâu, nâng chân, gập cổ chân và vận động đúng cách.
-    Việc tập luyện giúp phục hồi nhanh hơn sau mổ.
-    `;
-    const speech = new SpeechSynthesisUtterance(text);
-    speech.lang = "vi-VN";
-    speech.rate = 0.85;
-    window.speechSynthesis.speak(speech);
-}
+// PROGRESS ONLY (đã xóa hoàn toàn chức năng nghe nội dung)
 
-// PROGRESS
 function markDone() {
     localStorage.setItem("exercise_done", "true");
-    document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+    document.getElementById("doneStatus").innerText = "📊 Đã đọc nội dung";
 }
 
-// LOAD
 window.onload = function() {
     if(localStorage.getItem("exercise_done") === "true") {
-        document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+        document.getElementById("doneStatus").innerText = "📊 Đã đọc nội dung";
     }
 }
 </script>
-		
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery.js"></script>
