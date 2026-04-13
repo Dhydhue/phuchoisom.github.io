@@ -216,6 +216,38 @@ Full Screen
 <button onclick="openFullScreen()">Full Screen</button>
 
 <hr>
+<!-- PROGRESS -->
+<div class="progress-box">
+    <button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
+    <div id="doneStatus" class="done-text"></div>
+</div>
+
+</div>
+</div>
+
+<script>
+// Đánh dấu hoàn thành
+function markDone() {
+    localStorage.setItem("fasting_done", "true");
+    document.getElementById("doneStatus").innerHTML =
+        "📊 Đã đọc nội dung";
+}
+
+// Load trạng thái
+window.onload = function () {
+    if (localStorage.getItem("fasting_done") === "true") {
+        document.getElementById("doneStatus").innerHTML =
+            "📊 Đã đọc nội dung";
+    }
+
+    // Zoom ảnh khi click
+    document.querySelectorAll(".zoomable").forEach(img => {
+        img.addEventListener("click", function () {
+            this.classList.toggle("active");
+        });
+    });
+};
+</script>
 
 
     
