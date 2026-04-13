@@ -56,21 +56,18 @@
 		</div>
 	</div>
 	</section>
-
 <style>
 body {
     font-family: Arial, sans-serif;
     background: #f1f5f9;
 }
 
-/* Container */
 .container-mobile {
     max-width: 900px;
     margin: auto;
     padding: 15px;
 }
 
-/* Card */
 .card {
     background: #fff;
     border-radius: 16px;
@@ -90,7 +87,7 @@ body {
     text-align: center;
 }
 
-/* Title */
+/* Titles */
 .card h3 {
     font-size: 22px;
     margin-top: 20px;
@@ -127,7 +124,7 @@ body {
 .alert-info { background: #e0f2fe; }
 .alert-warning { background: #fef3c7; }
 
-/* Video lớn */
+/* Video */
 .video-container {
     position: relative;
     width: 100%;
@@ -144,7 +141,7 @@ body {
 }
 
 /* Button */
-.btn {
+.btn-done {
     width: 100%;
     padding: 14px;
     font-size: 18px;
@@ -152,11 +149,11 @@ body {
     margin-top: 10px;
     border: none;
     cursor: pointer;
+    background: #16a34a;
+    color: white;
 }
 
-.btn-audio { background: #2563eb; color: white; }
-.btn-done { background: #16a34a; color: white; }
-
+/* Done */
 .done-text {
     margin-top: 10px;
     font-weight: bold;
@@ -184,7 +181,7 @@ body {
     <h3>2. NGUYÊN TẮC ĂN UỐNG</h3>
     <ul>
         <li>Ăn đầy đủ và cân đối các nhóm chất</li>
-        <li>Chia nhỏ bữa ăn nếu mệt hoặc chán ăn</li>
+        <li>Chia nhỏ bữa ăn nếu mệt</li>
         <li>Uống đủ nước (1,5–2 lít/ngày nếu không chống chỉ định)</li>
     </ul>
 
@@ -193,20 +190,20 @@ body {
     <!-- Giai đoạn -->
     <div class="box">
         <h4>GIAI ĐOẠN 1: NGÀY 1–2 SAU MỔ</h4>
-        <p><strong>Nguyên tắc:</strong> Ăn dễ tiêu – mềm – ít dầu mỡ</p>
-        <p><strong>Khuyến nghị:</strong> Cháo, cơm mềm, thịt nạc, cá, rau mềm</p>
+        <p>Ăn dễ tiêu – mềm – ít dầu mỡ</p>
+        <p>Cháo, cơm mềm, thịt nạc, cá, rau mềm</p>
     </div>
 
     <div class="box">
         <h4>GIAI ĐOẠN 2: NGÀY 3–4 SAU MỔ</h4>
-        <p><strong>Nguyên tắc:</strong> Tăng dần năng lượng và protein</p>
-        <p><strong>Khuyến nghị:</strong> Cơm, thịt/cá, rau, trái cây mềm</p>
+        <p>Tăng dần năng lượng và protein</p>
+        <p>Cơm, thịt/cá, rau, trái cây mềm</p>
     </div>
 
     <div class="box">
         <h4>GIAI ĐOẠN 3: NGÀY 5–7 SAU MỔ</h4>
-        <p><strong>Nguyên tắc:</strong> Trở về chế độ ăn bình thường</p>
-        <p><strong>Khuyến nghị:</strong> Bún/phở, cơm, sữa, sữa chua</p>
+        <p>Trở về chế độ ăn bình thường</p>
+        <p>Bún/phở, cơm, sữa, sữa chua</p>
     </div>
 
     <!-- Thể trạng -->
@@ -237,18 +234,13 @@ body {
         <p><strong>Báo ngay nếu:</strong> Buồn nôn, ăn kém kéo dài</p>
     </div>
 
-    <!-- VIDEO TO -->
+    <!-- VIDEO -->
     <div class="video-container">
         <iframe src="https://www.youtube.com/embed/P9t3zJRbosE" allowfullscreen></iframe>
     </div>
 
-    <!-- AUDIO -->
-    <button class="btn btn-audio" onclick="readNutrition()">
-        🔊 Nghe nội dung
-    </button>
-
     <!-- DONE -->
-    <button class="btn btn-done" onclick="markDoneNutrition()">
+    <button class="btn-done" onclick="markDoneNutrition()">
         ✔ Tôi đã đọc nội dung
     </button>
 
@@ -258,26 +250,16 @@ body {
 </div>
 
 <script>
-function readNutrition(){
-    const text = `
-    Ăn uống đầy đủ giúp phục hồi nhanh.
-    Dinh dưỡng giúp lành vết mổ và tăng đề kháng.
-    Chia nhỏ bữa ăn và uống đủ nước.
-    Báo nhân viên y tế nếu có triệu chứng bất thường.
-    `;
-    const speech = new SpeechSynthesisUtterance(text);
-    speech.lang = 'vi-VN';
-    window.speechSynthesis.speak(speech);
-}
-
 function markDoneNutrition(){
     localStorage.setItem("nutrition_done", "true");
     document.getElementById("doneNutrition").innerText = "📊 Bạn đã đọc nội dung này";
 }
 
-if(localStorage.getItem("nutrition_done")==="true"){
-    document.getElementById("doneNutrition").innerText = "📊 Bạn đã đọc nội dung này";
-}
+window.onload = function(){
+    if(localStorage.getItem("nutrition_done")==="true"){
+        document.getElementById("doneNutrition").innerText = "📊 Bạn đã đọc nội dung này";
+    }
+};
 </script>
 
 
@@ -286,99 +268,6 @@ if(localStorage.getItem("nutrition_done")==="true"){
 
 
 	
-	<section id="content">
-    <div class="container">
-        <div class="about">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="about-logo">
-                        
-                        <div class="well text-center" style="background: #f9f9f9; border-left: 5px solid #0ACCCE;">
-                            <p style="font-style: italic; font-weight: 600; margin-bottom: 0;">
-                                “ĂN UỐNG ĐẦY ĐỦ VÀ HỢP LÝ SẼ GIÚP MAU LÀNH VẾT MỔ VÀ PHỤC HỒI NHANH”
-                            </p>
-                        </div>
-
-                        <h3 class="margintop30">1. VAI TRÒ CỦA DINH DƯỠNG</h3>
-                        <ul class="list2">
-                            <li>Giúp vết mổ nhanh lành</li>
-                            <li>Tăng sức đề kháng, phòng nhiễm trùng</li>
-                            <li>Hỗ trợ phục hồi sức khỏe và vận động sớm</li>
-                        </ul>
-
-                        <h3 class="margintop30">2. NGUYÊN TẮC ĂN UỐNG</h3>
-                        <ul class="list2">
-                            <li>Ăn đầy đủ và cân đối các nhóm chất</li>
-                            <li>Chia nhỏ bữa ăn nếu mệt hoặc chán ăn</li>
-                            <li>Uống đủ nước (1,5–2 lít/ngày nếu không chống chỉ định)</li>
-                        </ul>
-
-                        <hr>
-
-                        <div class="marginbot30">
-                            <h4 class="text-primary"><strong>GIAI ĐOẠN 1: NGÀY 1–2 SAU MỔ</strong></h4>
-                            <p><strong>Nguyên tắc:</strong> Ăn dễ tiêu – mềm – ít dầu mỡ. Chia nhỏ bữa (3 chính + 1–2 phụ).</p>
-                            <p><strong>Khuyến nghị:</strong> Cháo đặc, cơm mềm, bún/phở nước trong; thịt nạc băm, cá hấp, trứng luộc; rau xanh nấu mềm.</p>
-                        </div>
-
-                        <div class="marginbot30">
-                            <h4 class="text-primary"><strong>GIAI ĐOẠN 2: NGÀY 3–4 SAU MỔ</strong></h4>
-                            <p><strong>Nguyên tắc:</strong> Tăng dần năng lượng và protein. Tập ăn gần chế độ bình thường.</p>
-                            <p><strong>Khuyến nghị:</strong> Cơm (1–2 chén/bữa); Đạm (thịt nạc, cá, đậu hũ); Rau (≥ 1 chén/bữa); Trái cây mềm (chuối, đu đủ).</p>
-                        </div>
-
-                        <div class="marginbot40">
-                            <h4 class="text-primary"><strong>GIAI ĐOẠN 3: NGÀY 5–7 SAU MỔ</strong></h4>
-                            <p><strong>Nguyên tắc:</strong> Trở về chế độ ăn bình thường. Đảm bảo đủ 25–30 kcal/kg/ngày.</p>
-                            <p><strong>Khuyến nghị:</strong> Sáng (bún/phở/bánh mì); Trưa - Tối (Cơm + thịt/cá + rau); Bữa phụ (sữa, sữa chua).</p>
-                        </div>
-
-                        <div class="box-gray marginbot40">
-                            <h3 class="text-center">GỢI Ý CHẾ ĐỘ ĂN THEO THỂ TRẠNG</h3>
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <h5 class="text-warning"><strong>Người gầy</strong></h5>
-                                    <p>3 bữa chính + 2–3 bữa phụ. Nên có 1-2 ly sữa mỗi ngày và ăn thêm trước khi ngủ.</p>
-                                </div>
-                                <div class="col-sm-4">
-                                    <h5 class="text-success"><strong>Bình thường</strong></h5>
-                                    <p>3 bữa chính + 1–2 bữa phụ. Đảm bảo đủ Cơm, Đạm (thịt/cá/trứng) và Rau xanh.</p>
-                                </div>
-                                <div class="col-sm-4">
-                                    <h5 class="text-danger"><strong>Thừa cân</strong></h5>
-                                    <p>Giảm cơm, bánh ngọt. Ưu tiên thịt nạc, cá và nhiều rau xanh. Tránh ăn khuya.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="alert alert-info">
-                            <strong>ĐỊNH LƯỢNG THỨC ĂN (ƯỚC LƯỢNG NHANH):</strong>
-                            <ul style="margin-top: 10px;">
-                                <li>1 chén cơm ≈ 1 nắm tay</li>
-                                <li>1 miếng thịt ≈ lòng bàn tay</li>
-                                <li>1 chén rau ≈ 1 bát ăn cơm</li>
-                            </ul>
-                        </div>
-
-                        <h4 class="text-danger"><strong>NHỮNG ĐIỀU CẦN TRÁNH</strong></h4>
-                        <p>❌ Rượu bia, thuốc lá | ❌ Đồ mặn, quá ngọt | ❌ Thức ăn sống, ôi thiu | ❌ Kiêng khem quá mức</p>
-
-                        <div class="alert alert-warning margintop20">
-                            <p><strong>LƯU Ý QUAN TRỌNG:</strong> Tuân thủ y lệnh bác sĩ. Người có bệnh nền (Tiểu đường, suy thận...) cần tư vấn riêng.</p>
-                            <hr style="margin: 10px 0;">
-                            <p><strong>Báo ngay y tế nếu:</strong> Buồn nôn, nôn ói, đầy bụng, hoặc ăn uống kém kéo dài.</p>
-                        </div>
-
-                        <div class="text-center margintop30">
-                            <a href="https://youtube.com/shorts/P9t3zJRbosE" target="_blank" class="btn btn-theme btn-lg">
-                                <i class="fa fa-play-circle"></i> Xem video hướng dẫn dinh dưỡng
-                            </a>
-                        </div>
-
-                    </div> </div> </div> </div> </div> </section>
-	
-</div>
-<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 <!-- javascript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
