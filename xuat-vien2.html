@@ -58,62 +58,159 @@
 	<section id="content">
     <div class="container">
         <div class="about">
-            <div class="row marginbot30">
-                <div class="col-md-12 text-center">
-                    <h3 style="font-size: 24px; color: #D81265; text-transform: uppercase;">Hướng dẫn vận động sau xuất viện</h3>
-                    <p style="font-size: 20px; font-style: italic;">Việc duy trì vận động đúng cách giúp cột sống ổn định và phục hồi chức năng bền vững.</p>
-                </div>
+
+<style>
+.section-box {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.title-main {
+    font-size: 26px;
+    font-weight: bold;
+    color: #0f172a;
+    border-left: 6px solid #D81265;
+    padding-left: 12px;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e40af;
+    margin-bottom: 10px;
+}
+
+p, li {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #334155;
+}
+
+.well-custom {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 12px;
+    border-top: 5px solid;
+    height: 100%;
+}
+
+.img-box img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.alert-info {
+    background: #e0f2fe;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.btn-audio {
+    background: #16a34a;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.progress-read {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #16a34a;
+}
+</style>
+
+<section id="content">
+<div class="container">
+<div class="section-box" id="contentToRead">
+
+    <!-- AUDIO -->
+    <button class="btn-audio" onclick="speakContent()">🔊 Nghe nội dung</button>
+    <div id="readingStatus" class="progress-read">📊 Chưa phát</div>
+
+    <!-- TITLE -->
+    <div class="title-main">DUY TRÌ VẬN ĐỘNG SAU PHẪU THUẬT</div>
+
+    <p style="font-style: italic;">
+        VIỆC DUY TRÌ VẬN ĐỘNG ĐÚNG CÁCH GIÚP CỘT SỐNG ỔN ĐỊNH VÀ PHỤC HỒI CHỨC NĂNG BỀN VỮNG.
+    </p>
+
+    <!-- GRID -->
+    <div class="row">
+
+        <!-- GIAI ĐOẠN 1 -->
+        <div class="col-md-6">
+            <div class="well-custom" style="border-color:#0ACCCE;">
+                <div class="subtitle">GIAI ĐOẠN 1: TUẦN 1 – 4</div>
+                <ul>
+                    <li><strong>Đi bộ:</strong> Tập đi bộ hàng ngày, tăng dần quãng đường tùy mức độ đau. Xen kẽ với thời gian ngồi nghỉ hợp lý.</li>
+                    <li><strong>Dáng đi:</strong> Kết hợp chỉnh sửa dáng đi thẳng, cân đối.</li>
+                    <li><strong>Tư thế ngồi:</strong> <span style="color:red;">Không nên ngồi lâu quá 30 phút</span> liên tục.</li>
+                    <li><strong>Bài tập tại chỗ:</strong> Thực hiện các động tác kéo giãn và làm khỏe nhóm cơ lưng, cơ mặt sau đùi theo hướng dẫn.</li>
+                </ul>
             </div>
+        </div>
 
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="well" style="min-height: 450px; border-top: 5px solid #0ACCCE;">
-                        <h4 style="font-size: 20px; color: #333;"><strong>GIAI ĐOẠN 1: TUẦN 1 – 4</strong></h4>
-                        <hr>
-                        <ul style="font-size: 20px; line-height: 1.6em; padding-left: 20px;">
-                            <li style="margin-bottom: 10px;"><strong>Đi bộ:</strong> Tập đi bộ hàng ngày, tăng dần quãng đường tùy mức độ đau. Xen kẽ với thời gian ngồi nghỉ hợp lý.</li>
-                            <li style="margin-bottom: 10px;"><strong>Dáng đi:</strong> Kết hợp chỉnh sửa dáng đi thẳng, cân đối.</li>
-                            <li style="margin-bottom: 10px;"><strong>Tư thế ngồi:</strong> <span class="text-danger">Không nên ngồi lâu quá 30 phút</span> liên tục.</li>
-                            <li style="margin-bottom: 10px;"><strong>Bài tập tại chỗ:</strong> Thực hiện các động tác kéo giãn và làm khỏe nhóm cơ lưng, cơ mặt sau đùi theo hướng dẫn.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="well" style="min-height: 450px; border-top: 5px solid #D81265;">
-                        <h4 style="font-size: 20px; color: #333;"><strong>GIAI ĐOẠN 2: THÁNG 1 – 3</strong></h4>
-                        <hr>
-                        <ul style="font-size: 20px; line-height: 1.6em; padding-left: 20px;">
-                            <li style="margin-bottom: 10px;"><strong>Cúi & Xoay:</strong> Bắt đầu tập các động tác cúi, xoay thân nhẹ nhàng và tăng dần biên độ.</li>
-                            <li style="margin-bottom: 10px;"><strong>Bài tập Squats:</strong> Giúp tăng cường sức mạnh cơ chân và mông để hỗ trợ cột sống.</li>
-                            <li style="margin-bottom: 10px;"><strong>Gập bụng:</strong> Hỗ trợ cơ lõi (Lưu ý: <span class="text-danger">Không ngồi thẳng dậy</span> đột ngột từ tư thế nằm).</li>
-                            <li style="margin-bottom: 10px;"><strong>Giới hạn trọng lượng:</strong> Tuyệt đối không nâng vật nặng <strong>quá 5 kg</strong>.</li>
-                        </ul>
-                    </div>
-                </div>
+        <!-- GIAI ĐOẠN 2 -->
+        <div class="col-md-6">
+            <div class="well-custom" style="border-color:#D81265;">
+                <div class="subtitle">GIAI ĐOẠN 2: THÁNG 1 – 3</div>
+                <ul>
+                    <li><strong>Cúi & Xoay:</strong> Bắt đầu tập các động tác cúi, xoay thân nhẹ nhàng và tăng dần biên độ.</li>
+                    <li><strong>Bài tập Squats:</strong> Giúp tăng cường sức mạnh cơ chân và mông để hỗ trợ cột sống.</li>
+                    <li><strong>Gập bụng:</strong> Hỗ trợ cơ lõi (Lưu ý: <span style="color:red;">Không ngồi thẳng dậy</span> đột ngột từ tư thế nằm).</li>
+                    <li><strong>Giới hạn trọng lượng:</strong> Tuyệt đối không nâng vật nặng <strong>quá 5 kg</strong>.</li>
+                </ul>
             </div>
+        </div>
 
-            <div class="row margintop20">
-                <div class="col-md-6 col-sm-6 margin-bottom-20">
-                    <div class="img-wrapper" style="border: 1px solid #ddd; padding: 5px; border-radius: 4px;">
-                        <img class="img-responsive" src="img/re1.png" alt="Hướng dẫn vận động" style="width:100%; height:350px; object-fit:cover;">
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6 margin-bottom-20">
-                    <div class="img-wrapper" style="border: 1px solid #ddd; padding: 5px; border-radius: 4px;">
-                        <img class="img-responsive" src="img/service1.jpg" alt="Hướng dẫn tập luyện 2" style="width:100%; height:350px; object-fit:cover;">
-                    </div>
-                </div>
-            </div>
+    </div>
 
-            <div class="alert alert-info margintop30" style="font-size: 20px; text-align: center;">
-                <i class="fa fa-info-circle"></i> Luôn lắng nghe cơ thể. Nếu bài tập gây đau tăng, hãy giảm cường độ và tham khảo ý kiến chuyên gia vật lý trị liệu.
+    <!-- IMAGE -->
+    <div class="row margintop20">
+        <div class="col-md-6">
+            <div class="img-box">
+                <img src="img/re1.png" alt="Hướng dẫn vận động">
             </div>
         </div>
     </div>
+
+    <!-- ALERT -->
+    <div class="alert-info margintop30">
+        ℹ️ Luôn lắng nghe cơ thể. Nếu bài tập gây đau tăng, hãy giảm cường độ và tham khảo ý kiến chuyên gia vật lý trị liệu.
+    </div>
+
+</div>
+</div>
 </section>
-<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-<!-- javascript
+
+<!-- SCRIPT -->
+<script>
+function speakContent() {
+    const text = document.getElementById("contentToRead").innerText;
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "vi-VN";
+
+    document.getElementById("readingStatus").innerText = "🔊 Đang đọc...";
+
+    speech.onend = function() {
+        document.getElementById("readingStatus").innerText = "📊 Đã đọc nội dung";
+    };
+
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(speech);
+}
+</script>
+
 
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
