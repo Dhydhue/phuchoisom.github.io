@@ -57,7 +57,6 @@
 	</section>
 	<section id="content">
 	<div class="container">
-
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -68,6 +67,8 @@ body {
 /* Container */
 .container-mobile {
     padding: 15px;
+    max-width: 700px;
+    margin: auto;
 }
 
 /* Card */
@@ -128,18 +129,7 @@ body {
     border: none;
 }
 
-/* Buttons */
-.btn-audio {
-    width: 100%;
-    background: #2563eb;
-    color: #fff;
-    font-size: 18px;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    margin-top: 15px;
-}
-
+/* Progress */
 .progress-box {
     background: #f0fdf4;
     padding: 12px;
@@ -156,6 +146,11 @@ body {
     padding: 14px;
     border-radius: 12px;
     border: none;
+    cursor: pointer;
+}
+
+.btn-done:hover {
+    background: #15803d;
 }
 
 .done-text {
@@ -163,14 +158,6 @@ body {
     font-size: 18px;
     color: #16a34a;
     font-weight: bold;
-}
-
-/* Responsive */
-@media (min-width: 768px) {
-    .container-mobile {
-        max-width: 700px;
-        margin: auto;
-    }
 }
 </style>
 
@@ -205,49 +192,29 @@ body {
     <iframe src="https://www.youtube.com/embed/vBTYAiMi9Y4" allowfullscreen></iframe>
 </div>
 
-<!-- AUDIO -->
-<button class="btn-audio" onclick="readJewelry()">🔊 Nghe nội dung</button>
-
 <!-- PROGRESS -->
 <div class="progress-box">
-<button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
-<div id="doneStatus" class="done-text"></div>
+    <button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
+    <div id="doneStatus" class="done-text"></div>
 </div>
 
 </div>
 </div>
 
 <script>
-// AUDIO
-function readJewelry() {
-    const text = `
-    Trước phẫu thuật, người bệnh cần tháo bỏ trang sức để tránh bỏng, nhiễm trùng và cản trở điều trị.
-    Hãy tháo tất cả nhẫn, vòng, dây chuyền và các vật kim loại.
-    Nếu không tháo được, hãy báo nhân viên y tế.
-    `;
-    const speech = new SpeechSynthesisUtterance(text);
-    speech.lang = "vi-VN";
-    speech.rate = 0.85;
-    window.speechSynthesis.speak(speech);
-}
+// PROGRESS ONLY (đã xóa hoàn toàn chức năng nghe nội dung)
 
-// PROGRESS
 function markDone() {
     localStorage.setItem("jewelry_done", "true");
-    document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+    document.getElementById("doneStatus").innerText = "📊 Đã đọc nội dung";
 }
 
-// LOAD
 window.onload = function() {
     if(localStorage.getItem("jewelry_done") === "true") {
-        document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+        document.getElementById("doneStatus").innerText = "📊 Đã đọc nội dung";
     }
 }
 </script>
-
-</div>
-<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-<!-- javascript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery.js"></script>
