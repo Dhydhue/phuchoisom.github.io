@@ -60,6 +60,423 @@
 					
 					<div class="about">
 					
+					<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    margin: 0;
+}
+
+/* Container */
+.container-mobile {
+    padding: 15px;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Title */
+.card h3 {
+    font-size: 22px;
+    color: #0f172a;
+    border-left: 6px solid #dc2626;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* Text */
+.card p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 6px 0;
+}
+
+/* Highlight */
+.highlight {
+    background: #fff7ed;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Image */
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    margin: 10px 0;
+}
+
+/* VIDEO */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* BUTTON */
+.btn-audio {
+    width: 100%;
+    background: #2563eb;
+    color: #fff;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    margin-top: 15px;
+}
+
+.progress-box {
+    background: #f0fdf4;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn-done {
+    width: 100%;
+    background: #16a34a;
+    color: #fff;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+}
+
+.done-text {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #16a34a;
+    font-weight: bold;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .container-mobile {
+        max-width: 700px;
+        margin: auto;
+    }
+}
+</style>
+
+<div class="container-mobile">
+
+    <div class="card">
+
+        <!-- SECTION 1 -->
+        <h3>VÌ SAO PHẢI NHỊN ĂN TRƯỚC PHẪU THUẬT?</h3>
+        <p>• Giúp làm rỗng dạ dày</p>
+        <p>• Giảm nguy cơ trào ngược và hít sặc</p>
+        <p>• Giảm buồn nôn sau phẫu thuật</p>
+        <p>• Giảm nguy cơ biến chứng</p>
+
+        <!-- SECTION 2 -->
+        <h3>THỜI GIAN NHỊN ĂN UỐNG</h3>
+        <img src="img/tg.png" alt="Thời gian nhịn ăn">
+
+        <!-- SECTION 3 -->
+        <h3>SỬ DỤNG ĐƯỜNG CARBOHYDRATE</h3>
+
+        <div class="highlight">
+            <p><strong>Vì sao cần dùng?</strong></p>
+            <p>• Giảm đói, khát</p>
+            <p>• Ổn định chuyển hóa</p>
+            <p>• Giảm stress trước mổ</p>
+        </div>
+
+        <div class="highlight">
+            <p><strong>Cách sử dụng:</strong></p>
+            <p>• Tối trước mổ: uống 2 khẩu phần</p>
+            <p>• Ngày mổ: uống 1 khẩu phần</p>
+
+            <p><strong>Theo lịch mổ:</strong></p>
+            <p>👉 Trước 6h: mổ trước 12h</p>
+            <p>👉 Trước 10h30: mổ sau 12h</p>
+            <p>👉 Trước 16h: mổ sau 18h</p>
+
+            <p>⏰ Kết thúc trước mổ ít nhất 2 giờ</p>
+        </div>
+
+        <!-- LƯU Ý -->
+        <div class="highlight">
+            <p><strong>LƯU Ý:</strong></p>
+            <p>• Có thể thay bằng nước trong suốt nếu không dung nạp</p>
+            <p>• Trẻ em uống theo nhu cầu</p>
+            <p>• Người đái tháo đường điều chỉnh liều</p>
+            <p>• Người béo phì: dùng như bình thường</p>
+        </div>
+
+        <!-- VIDEO -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/s7w1YfQj93E" allowfullscreen></iframe>
+        </div>
+
+        <!-- AUDIO -->
+        <button class="btn-audio" onclick="readFasting()">🔊 Nghe nội dung</button>
+
+        <!-- PROGRESS -->
+        <div class="progress-box">
+            <button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
+            <div id="doneStatus" class="done-text"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+// AUDIO
+function readFasting() {
+    const text = `
+    Nhịn ăn trước phẫu thuật giúp giảm nguy cơ hít sặc và biến chứng.
+    Người bệnh cần tuân thủ thời gian nhịn ăn theo hướng dẫn.
+    Có thể uống nước chứa carbohydrate để giảm đói và ổn định chuyển hóa.
+    `;
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "vi-VN";
+    speech.rate = 0.85;
+    window.speechSynthesis.speak(speech);
+}
+
+// PROGRESS
+function markDone() {
+    localStorage.setItem("fasting_done", "true");
+    document.getElementById("doneStatus").innerHTML = "✅ Bạn đã hoàn thành nội dung";
+}
+
+window.onload = function() {
+    if(localStorage.getItem("fasting_done") === "true") {
+        document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+    }
+}
+</script><style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    margin: 0;
+}
+
+/* Container */
+.container-mobile {
+    padding: 15px;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Title */
+.card h3 {
+    font-size: 22px;
+    color: #0f172a;
+    border-left: 6px solid #dc2626;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* Text */
+.card p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 6px 0;
+}
+
+/* Highlight */
+.highlight {
+    background: #fff7ed;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Image */
+.card img {
+    width: 100%;
+    border-radius: 12px;
+    margin: 10px 0;
+}
+
+/* VIDEO */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* BUTTON */
+.btn-audio {
+    width: 100%;
+    background: #2563eb;
+    color: #fff;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    margin-top: 15px;
+}
+
+.progress-box {
+    background: #f0fdf4;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn-done {
+    width: 100%;
+    background: #16a34a;
+    color: #fff;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+}
+
+.done-text {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #16a34a;
+    font-weight: bold;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .container-mobile {
+        max-width: 700px;
+        margin: auto;
+    }
+}
+</style>
+
+<div class="container-mobile">
+
+    <div class="card">
+
+        <!-- SECTION 1 -->
+        <h3>VÌ SAO PHẢI NHỊN ĂN TRƯỚC PHẪU THUẬT?</h3>
+        <p>• Giúp làm rỗng dạ dày</p>
+        <p>• Giảm nguy cơ trào ngược và hít sặc</p>
+        <p>• Giảm buồn nôn sau phẫu thuật</p>
+        <p>• Giảm nguy cơ biến chứng</p>
+
+        <!-- SECTION 2 -->
+        <h3>THỜI GIAN NHỊN ĂN UỐNG</h3>
+        <img src="img/tg.png" alt="Thời gian nhịn ăn">
+
+        <!-- SECTION 3 -->
+        <h3>SỬ DỤNG ĐƯỜNG CARBOHYDRATE</h3>
+
+        <div class="highlight">
+            <p><strong>Vì sao cần dùng?</strong></p>
+            <p>• Giảm đói, khát</p>
+            <p>• Ổn định chuyển hóa</p>
+            <p>• Giảm stress trước mổ</p>
+        </div>
+
+        <div class="highlight">
+            <p><strong>Cách sử dụng:</strong></p>
+            <p>• Tối trước mổ: uống 2 khẩu phần</p>
+            <p>• Ngày mổ: uống 1 khẩu phần</p>
+
+            <p><strong>Theo lịch mổ:</strong></p>
+            <p>👉 Trước 6h: mổ trước 12h</p>
+            <p>👉 Trước 10h30: mổ sau 12h</p>
+            <p>👉 Trước 16h: mổ sau 18h</p>
+
+            <p>⏰ Kết thúc trước mổ ít nhất 2 giờ</p>
+        </div>
+
+        <!-- LƯU Ý -->
+        <div class="highlight">
+            <p><strong>LƯU Ý:</strong></p>
+            <p>• Có thể thay bằng nước trong suốt nếu không dung nạp</p>
+            <p>• Trẻ em uống theo nhu cầu</p>
+            <p>• Người đái tháo đường điều chỉnh liều</p>
+            <p>• Người béo phì: dùng như bình thường</p>
+        </div>
+
+        <!-- VIDEO -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/s7w1YfQj93E" allowfullscreen></iframe>
+        </div>
+
+        <!-- AUDIO -->
+        <button class="btn-audio" onclick="readFasting()">🔊 Nghe nội dung</button>
+
+        <!-- PROGRESS -->
+        <div class="progress-box">
+            <button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
+            <div id="doneStatus" class="done-text"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+// AUDIO
+function readFasting() {
+    const text = `
+    Nhịn ăn trước phẫu thuật giúp giảm nguy cơ hít sặc và biến chứng.
+    Người bệnh cần tuân thủ thời gian nhịn ăn theo hướng dẫn.
+    Có thể uống nước chứa carbohydrate để giảm đói và ổn định chuyển hóa.
+    `;
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "vi-VN";
+    speech.rate = 0.85;
+    window.speechSynthesis.speak(speech);
+}
+
+// PROGRESS
+function markDone() {
+    localStorage.setItem("fasting_done", "true");
+    document.getElementById("doneStatus").innerHTML = "✅ Bạn đã hoàn thành nội dung";
+}
+
+window.onload = function() {
+    if(localStorage.getItem("fasting_done") === "true") {
+        document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+    }
+}
+</script>
+						
+						
+						
+						
+						
+						
 						<div class="row"> 
 							<div class="col-md-12">
 								<div class="about-logo">
