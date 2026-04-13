@@ -58,7 +58,202 @@
 	</section>
 	<section id="content">
 	<div class="container">
-					
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    margin: 0;
+}
+
+/* Container */
+.container-mobile {
+    padding: 15px;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Title */
+.card h3 {
+    font-size: 22px;
+    color: #0f172a;
+    border-left: 6px solid #0ea5e9;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+/* Text */
+.card p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 6px 0;
+}
+
+/* Strong */
+.card strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #1d4ed8;
+}
+
+/* Highlight */
+.highlight {
+    background: #f0f9ff;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Video */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Buttons */
+.btn-audio {
+    width: 100%;
+    background: #2563eb;
+    color: #fff;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    margin-top: 15px;
+}
+
+.progress-box {
+    background: #f0fdf4;
+    padding: 12px;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.btn-done {
+    width: 100%;
+    background: #16a34a;
+    color: #fff;
+    font-size: 18px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+}
+
+.done-text {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #16a34a;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .container-mobile {
+        max-width: 700px;
+        margin: auto;
+    }
+}
+</style>
+
+<div class="container-mobile">
+
+<div class="card">
+
+<h3>VÌ SAO CẦN TẮM TRƯỚC PHẪU THUẬT?</h3>
+<p>• Tắm và vệ sinh giúp phòng ngừa nhiễm khuẩn vết mổ</p>
+<p>• Làm sạch cơ thể, giảm vi khuẩn trên da</p>
+<p>• Giảm nguy cơ nhiễm trùng, đặc biệt tại vùng phẫu thuật</p>
+
+<h3>THỜI GIAN TẮM</h3>
+<div class="highlight">
+<p>• Tắm 1–2 lần trong vòng 24 giờ trước phẫu thuật</p>
+<p>• Thực hiện vào tối trước mổ và/hoặc sáng ngày mổ</p>
+</div>
+
+<h3>CÁC BƯỚC TẮM</h3>
+<p>• Tắm toàn thân bằng xà phòng sát khuẩn</p>
+<p>• Rửa kỹ vùng lưng (đặc biệt vùng thắt lưng)</p>
+<p>• Tắm nhẹ nhàng, không chà xát mạnh</p>
+<p>• Lau khô bằng khăn sạch</p>
+<p>• Mặc quần áo sạch của bệnh viện</p>
+
+<h3>LƯU Ý</h3>
+<div class="highlight">
+<p>• Không bôi kem, dầu, mỹ phẩm lên vùng lưng</p>
+<p>• Không tự ý cạo lông vùng mổ</p>
+<p>• Báo nhân viên y tế nếu có trầy xước, dị ứng</p>
+</div>
+
+<!-- VIDEO -->
+<div class="video-container">
+<iframe src="https://www.youtube.com/embed/cKkxsrGOA6k" allowfullscreen></iframe>
+</div>
+
+<!-- AUDIO -->
+<button class="btn-audio" onclick="readBath()">🔊 Nghe nội dung</button>
+
+<!-- PROGRESS -->
+<div class="progress-box">
+<button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
+<div id="doneStatus" class="done-text"></div>
+</div>
+
+</div>
+</div>
+
+<script>
+// AUDIO
+function readBath() {
+    const text = `
+    Tắm trước phẫu thuật giúp giảm vi khuẩn và phòng ngừa nhiễm trùng.
+    Người bệnh nên tắm 1 đến 2 lần trong 24 giờ trước mổ.
+    Cần tắm nhẹ nhàng và tuân thủ hướng dẫn của nhân viên y tế.
+    `;
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "vi-VN";
+    speech.rate = 0.85;
+    window.speechSynthesis.speak(speech);
+}
+
+// PROGRESS
+function markDone() {
+    localStorage.setItem("bath_done", "true");
+    document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+}
+
+window.onload = function() {
+    if(localStorage.getItem("bath_done") === "true") {
+        document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+    }
+}
+</script>
+
+
+
+
+
+
+
+		
 					<div class="about">
 					
 						<div class="row"> 
