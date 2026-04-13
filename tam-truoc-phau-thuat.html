@@ -68,6 +68,8 @@ body {
 /* Container */
 .container-mobile {
     padding: 15px;
+    max-width: 700px;
+    margin: auto;
 }
 
 /* Card */
@@ -95,14 +97,6 @@ body {
     margin: 6px 0;
 }
 
-/* Strong */
-.card strong {
-    display: block;
-    margin-top: 10px;
-    font-size: 18px;
-    color: #1d4ed8;
-}
-
 /* Highlight */
 .highlight {
     background: #f0f9ff;
@@ -128,20 +122,9 @@ body {
     border: none;
 }
 
-/* Buttons */
-.btn-audio {
-    width: 100%;
-    background: #2563eb;
-    color: #fff;
-    font-size: 18px;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    margin-top: 15px;
-}
-
+/* Progress */
 .progress-box {
-    background: #f0fdf4;
+    background: #ecfdf5;
     padding: 12px;
     border-radius: 12px;
     text-align: center;
@@ -156,6 +139,11 @@ body {
     padding: 14px;
     border-radius: 12px;
     border: none;
+    cursor: pointer;
+}
+
+.btn-done:hover {
+    background: #15803d;
 }
 
 .done-text {
@@ -163,14 +151,6 @@ body {
     font-size: 18px;
     color: #16a34a;
     font-weight: bold;
-}
-
-/* Responsive */
-@media (min-width: 768px) {
-    .container-mobile {
-        max-width: 700px;
-        margin: auto;
-    }
 }
 </style>
 
@@ -203,54 +183,36 @@ body {
 <p>• Báo nhân viên y tế nếu có trầy xước, dị ứng</p>
 </div>
 
-	
 <!-- VIDEO -->
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/cKkxsrGOA6k" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/cKkxsrGOA6k" allowfullscreen></iframe>
 </div>
-
-<!-- AUDIO -->
-<button class="btn-audio" onclick="readBath()">🔊 Nghe nội dung</button>
 
 <!-- PROGRESS -->
 <div class="progress-box">
-<button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
-<div id="doneStatus" class="done-text"></div>
+    <button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
+    <div id="doneStatus" class="done-text"></div>
 </div>
 
 </div>
 </div>
 
 <script>
-// AUDIO
-function readBath() {
-    const text = `
-    Tắm trước phẫu thuật giúp giảm vi khuẩn và phòng ngừa nhiễm trùng.
-    Người bệnh nên tắm 1 đến 2 lần trong 24 giờ trước mổ.
-    Cần tắm nhẹ nhàng và tuân thủ hướng dẫn của nhân viên y tế.
-    `;
-    const speech = new SpeechSynthesisUtterance(text);
-    speech.lang = "vi-VN";
-    speech.rate = 0.85;
-    window.speechSynthesis.speak(speech);
-}
+// PROGRESS ONLY (đã xóa hoàn toàn chức năng nghe nội dung)
 
-// PROGRESS
 function markDone() {
     localStorage.setItem("bath_done", "true");
-    document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+    document.getElementById("doneStatus").innerText = "📊 Đã đọc nội dung";
 }
 
 window.onload = function() {
     if(localStorage.getItem("bath_done") === "true") {
-        document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+        document.getElementById("doneStatus").innerText = "📊 Đã đọc nội dung";
     }
 }
 </script>
 		
-</div>
-<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-<!-- javascript
+		
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery.js"></script>
