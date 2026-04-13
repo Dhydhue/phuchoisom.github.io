@@ -58,8 +58,7 @@
 	<section id="content">
 	<div class="container">
 					
-					<div class="about">
-					<style>
+				<style>
 body {
     font-family: Arial, sans-serif;
     background: #f1f5f9;
@@ -69,11 +68,13 @@ body {
 /* Container */
 .container-mobile {
     padding: 15px;
+    max-width: 720px;
+    margin: auto;
 }
 
 /* Card */
 .card {
-    background: #fff;
+    background: #ffffff;
     border-radius: 16px;
     padding: 18px;
     margin-bottom: 20px;
@@ -94,6 +95,7 @@ body {
     font-size: 18px;
     line-height: 1.6;
     margin: 6px 0;
+    color: #1e293b;
 }
 
 /* Strong */
@@ -119,14 +121,15 @@ body {
     margin: 10px 0;
 }
 
-/* Video */
+/* VIDEO (to + đẹp hơn) */
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%;
+    padding-bottom: 65%;
     margin-top: 15px;
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
 .video-container iframe {
@@ -136,18 +139,7 @@ body {
     border: none;
 }
 
-/* Buttons */
-.btn-audio {
-    width: 100%;
-    background: #2563eb;
-    color: #fff;
-    font-size: 18px;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    margin-top: 15px;
-}
-
+/* BUTTON DONE */
 .progress-box {
     background: #f0fdf4;
     padding: 12px;
@@ -164,6 +156,7 @@ body {
     padding: 14px;
     border-radius: 12px;
     border: none;
+    cursor: pointer;
 }
 
 .done-text {
@@ -173,12 +166,16 @@ body {
     font-weight: bold;
 }
 
-/* Responsive */
-@media (min-width: 768px) {
-    .container-mobile {
-        max-width: 700px;
-        margin: auto;
-    }
+/* Mobile zoom image */
+.zoomable {
+    cursor: zoom-in;
+    transition: 0.3s;
+}
+
+.zoomable.active {
+    transform: scale(1.7);
+    position: relative;
+    z-index: 999;
 }
 </style>
 
@@ -187,13 +184,15 @@ body {
 <div class="card">
 
 <h3>VÌ SAO PHẢI NHỊN ĂN TRƯỚC PHẪU THUẬT?</h3>
+
 <p>• Giúp làm rỗng ruột</p>
 <p>• Giảm nguy cơ trào ngược và hít sặc vào phổi</p>
 <p>• Giảm nguy cơ nôn và buồn nôn</p>
 <p>• Giảm nguy cơ nhiễm trùng và biến chứng phẫu thuật</p>
 
 <h3>THỜI GIAN NHỊN ĂN UỐNG THEO TỪNG LOẠI THỨC ĂN</h3>
-<img src="img/tg.png" alt="Thời gian nhịn ăn">
+
+<img class="zoomable" src="img/tg.png" alt="Thời gian nhịn ăn">
 
 <strong>SỬ DỤNG ĐƯỜNG CARBOHYDRAT</strong>
 
@@ -211,12 +210,12 @@ body {
 
 <p><b>* Ngày phẫu thuật:</b></p>
 <p>• Không cần truyền dịch bổ sung</p>
-<p>• Uống 1 khẩu phần theo 1 trong 2 cách:</p>
+<p>• Uống 1 khẩu phần theo 1 trong 2 cách</p>
 
-<p>⏰ Theo lịch phẫu thuật:</p>
-<p>👉 Trước 6h nếu mổ trước 12h</p>
-<p>👉 Trước 10h30 nếu mổ sau 12h</p>
-<p>👉 Trước 16h nếu mổ sau 18h</p>
+<p>⏰ Theo lịch mổ:
+<br>👉 Trước 6h nếu mổ trước 12h
+<br>👉 Trước 10h30 nếu mổ sau 12h
+<br>👉 Trước 16h nếu mổ sau 18h</p>
 
 <p>⏰ Kết thúc uống trước mổ ít nhất 2 giờ</p>
 </div>
@@ -231,39 +230,41 @@ body {
 
 <!-- VIDEO -->
 <div class="video-container">
-<iframe src="https://www.youtube.com/embed/s7w1YfQj93E" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/s7w1YfQj93E" allowfullscreen></iframe>
 </div>
 
 <!-- PROGRESS -->
 <div class="progress-box">
-<button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
-<div id="doneStatus" class="done-text"></div>
+    <button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
+    <div id="doneStatus" class="done-text"></div>
 </div>
 
 </div>
 </div>
 
 <script>
-
-// PROGRESS
+// Đánh dấu hoàn thành
 function markDone() {
     localStorage.setItem("fasting_done", "true");
-    document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+    document.getElementById("doneStatus").innerHTML =
+        "📊 Đã đọc nội dung";
 }
 
-window.onload = function() {
-    if(localStorage.getItem("fasting_done") === "true") {
-        document.getElementById("doneStatus").innerHTML = "✅ Bạn đã đọc nội dung này";
+// Load trạng thái
+window.onload = function () {
+    if (localStorage.getItem("fasting_done") === "true") {
+        document.getElementById("doneStatus").innerHTML =
+            "📊 Đã đọc nội dung";
     }
-}
+
+    // Zoom ảnh khi click
+    document.querySelectorAll(".zoomable").forEach(img => {
+        img.addEventListener("click", function () {
+            this.classList.toggle("active");
+        });
+    });
+};
 </script>
-
-
-
-	
-</div>
-<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
-<!-- javascript
     ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery.js"></script>
