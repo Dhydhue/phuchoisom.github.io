@@ -218,11 +218,6 @@ TUÂN THỦ CÁC BƯỚC DƯỚI ĐÂY GIÚP VẾT MỔ NHANH LÀNH VÀ TRÁNH N
 </ul>
 </div>
 
-<!-- AUDIO -->
-<button class="btn-main btn-audio" onclick="readContent()">
-🔊 Nghe nội dung
-</button>
-
 <!-- DONE -->
 <button class="btn-main btn-done" onclick="markDone()">
 ✔ Đã đọc nội dung
@@ -234,13 +229,7 @@ TUÂN THỦ CÁC BƯỚC DƯỚI ĐÂY GIÚP VẾT MỔ NHANH LÀNH VÀ TRÁNH N
 </div>
 </section>
 
-<script>
-function readContent() {
-    const text = document.querySelector('.section-box').innerText;
-    const speech = new SpeechSynthesisUtterance(text);
-    speech.lang = 'vi-VN';
-    window.speechSynthesis.speak(speech);
-}
+
 
 function markDone() {
     localStorage.setItem("woundcare_done", "true");
