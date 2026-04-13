@@ -30,65 +30,101 @@ body {
     margin: 0;
 }
 
-/* Container */
+/* HEADER */
+.header {
+    background: #ffffff;
+    padding: 10px 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav img {
+    height: 40px;
+}
+
+.nav a {
+    font-size: 14px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: #1e293b;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+    color: white;
+    padding: 30px 15px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 16px;
+}
+
+/* CONTAINER */
 .container-mobile {
     padding: 15px;
 }
 
-/* Header */
-.page-title {
-    text-align: center;
-    font-size: 26px;
-    font-weight: bold;
-    color: #0f172a;
-    margin-bottom: 10px;
-}
-
-.sub-title {
-    text-align: center;
-    font-size: 18px;
-    color: #475569;
-    margin-bottom: 20px;
-}
-
-/* Card */
+/* CARD */
 .card {
     background: #fff;
     border-radius: 16px;
     padding: 18px;
     margin-bottom: 20px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
 }
 
-/* Nội dung */
+/* TITLE */
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1d4ed8;
+    margin-bottom: 10px;
+}
+
+/* TEXT */
 .card p {
     font-size: 18px;
-    line-height: 1.7;
-    color: #1e293b;
+    line-height: 1.6;
 }
 
-/* Tiêu đề */
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: #1d4ed8;
-}
-
-/* Highlight */
+/* HIGHLIGHT */
 .highlight {
     background: #eff6ff;
-    border-left: 5px solid #2563eb;
+    border-left: 5px solid #3b82f6;
     padding: 12px;
     border-radius: 10px;
+    margin-top: 10px;
 }
 
-/* List */
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+/* LIST */
 .list p {
     margin: 6px 0;
     font-size: 18px;
 }
 
-/* Team */
+/* TEAM */
 .team {
     display: grid;
     grid-template-columns: 1fr;
@@ -111,8 +147,8 @@ body {
 }
 
 .member h4 {
-    margin: 10px 0 5px;
-    font-size: 18px;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
 .member p {
@@ -120,114 +156,129 @@ body {
     font-weight: bold;
 }
 
-/* Tablet */
+/* TABLET */
 @media (min-width: 768px) {
     .container-mobile {
-        max-width: 700px;
+        max-width: 800px;
         margin: auto;
     }
 
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
     .team {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 </style>
 
-<div class="container-mobile">
+<!-- HEADER -->
+<div class="header">
+    <div class="nav">
+        <img src="img/logo.png">
+        <div>
+            <a href="#">Trang chủ</a>
+            <a href="#">Giới thiệu</a>
+            <a href="#">Trước mổ</a>
+            <a href="#">Sau mổ</a>
+        </div>
+    </div>
+</div>
 
-    <!-- TITLE -->
-    <div class="page-title">
-        Khoa Ngoại Chấn Thương Chỉnh Hình - Thần Kinh Sọ Não
-    </div>
-    <div class="sub-title">
-        Bệnh viện Trung ương Huế – Cơ sở 2
-    </div>
+<!-- HERO -->
+<div class="hero">
+    <h1>KHOA NGOẠI CHẤN THƯƠNG CHỈNH HÌNH - THẦN KINH SỌ NÃO</h1>
+    <p>Chăm sóc toàn diện – An toàn – Phục hồi tối ưu</p>
+</div>
+
+<div class="container-mobile">
 
     <!-- GIỚI THIỆU -->
     <div class="card">
-        <h3>Quá trình phát triển</h3>
+        <div class="title">Quá trình phát triển</div>
         <p>
-            Thành lập theo Quyết định số 1744/QĐ-BVH (01/11/2016). 
-            Từ 15 cán bộ ban đầu, hiện nay khoa có 28 nhân sự 
-            (11 bác sĩ, 16 điều dưỡng, 01 hộ lý).
+            Thành lập năm 2016, từ 15 cán bộ ban đầu → phát triển lên 28 nhân sự,
+            đáp ứng nhu cầu khám chữa bệnh ngày càng cao.
         </p>
     </div>
 
-    <!-- CHỨC NĂNG -->
     <div class="card">
-        <h3>Chức năng – nhiệm vụ</h3>
+        <div class="title">Chức năng nhiệm vụ</div>
         <p>
-            Khám, cấp cứu, phẫu thuật và chăm sóc toàn diện cho người bệnh 
-            thuộc chuyên ngành Chấn thương chỉnh hình và Thần kinh sọ não.
+            Khám, cấp cứu, phẫu thuật và chăm sóc toàn diện cho bệnh nhân
+            chấn thương chỉnh hình và thần kinh sọ não.
         </p>
-        <p>
-            Áp dụng kỹ thuật hiện đại, hướng đến điều trị an toàn và phục hồi tối ưu.
-        </p>
-    </div>
 
-    <!-- KỸ THUẬT -->
-    <div class="card">
-        <h3>Kỹ thuật chuyên sâu</h3>
-        <div class="highlight list">
-            <p>✔ Kết hợp xương</p>
-            <p>✔ Nội soi khớp – thay khớp gối</p>
-            <p>✔ Thay khớp háng</p>
-            <p>✔ Tạo hình thẩm mỹ – bàn tay</p>
-            <p>✔ Điều trị bệnh lý cột sống</p>
-            <p>✔ Thần kinh sọ não</p>
-        </div>
-    </div>
-
-    <!-- THÀNH TÍCH -->
-    <div class="card">
-        <h3>Thành tích</h3>
         <div class="highlight">
-            <p>🏆 2020: Lao động xuất sắc</p>
-            <p>🏆 2021: Lao động xuất sắc</p>
-            <p>🏆 2023: Lao động xuất sắc</p>
-            <p>🏆 2023: Lao động tiên tiến</p>
+            Trang thiết bị hiện đại + đội ngũ giàu kinh nghiệm
         </div>
     </div>
 
-    <!-- KHEN THƯỞNG -->
-    <div class="card">
-        <h3>Khen thưởng</h3>
-        <div class="highlight">
-            <p>🎖️ Bằng khen Bộ Y tế (2019)</p>
-            <p>🎖️ Giấy khen BV (2021)</p>
-            <p>🎖️ Giấy khen BV (2023)</p>
+    <!-- GRID -->
+    <div class="grid">
+
+        <div class="card">
+            <div class="title">Kỹ thuật chuyên sâu</div>
+            <div class="list">
+                <p>✔ Kết hợp xương</p>
+                <p>✔ Nội soi khớp</p>
+                <p>✔ Thay khớp</p>
+                <p>✔ Cột sống</p>
+            </div>
         </div>
+
+        <div class="card">
+            <div class="title">Thành tích</div>
+            <div class="list">
+                <p>🏆 2020: Xuất sắc</p>
+                <p>🏆 2021: Xuất sắc</p>
+                <p>🏆 2023: Xuất sắc</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="title">Khen thưởng</div>
+            <div class="list">
+                <p>🎖 Bộ Y tế 2019</p>
+                <p>🎖 BV 2021</p>
+                <p>🎖 BV 2023</p>
+            </div>
+        </div>
+
     </div>
 
     <!-- TEAM -->
-    <div class="page-title">Ban chủ nhiệm</div>
+    <div class="card">
+        <div class="title">Ban chủ nhiệm</div>
 
-    <div class="team">
+        <div class="team">
 
-        <div class="member">
-            <img src="img/khoa.jpg">
-            <h4>Trưởng khoa</h4>
-            <p>BSCKII. Nguyễn Đình Khoa</p>
+            <div class="member">
+                <img src="img/khoa.jpg">
+                <h4>Trưởng khoa</h4>
+                <p>BSCKII. Nguyễn Đình Khoa</p>
+            </div>
+
+            <div class="member">
+                <img src="img/hanh.jpg">
+                <h4>Phó khoa</h4>
+                <p>BSCKII. Nguyễn Đức Hạnh</p>
+            </div>
+
+            <div class="member">
+                <img src="img/tuong.jpeg">
+                <h4>Phó khoa</h4>
+                <p>ThS.BS. Võ Bá Tường</p>
+            </div>
+
+            <div class="member">
+                <img src="img/huyen.jpg">
+                <h4>Điều dưỡng trưởng</h4>
+                <p>Phạm Thanh Huyền</p>
+            </div>
+
         </div>
-
-        <div class="member">
-            <img src="img/hanh.jpg">
-            <h4>Phó trưởng khoa</h4>
-            <p>BSCKII. Nguyễn Đức Hạnh</p>
-        </div>
-
-        <div class="member">
-            <img src="img/tuong.jpeg">
-            <h4>Phó trưởng khoa</h4>
-            <p>ThS.BS. Võ Bá Tường</p>
-        </div>
-
-        <div class="member">
-            <img src="img/huyen.jpg">
-            <h4>Điều dưỡng trưởng</h4>
-            <p>Phạm Thanh Huyền</p>
-        </div>
-
     </div>
 
 </div>
