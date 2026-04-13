@@ -234,10 +234,19 @@ body {
         <p><strong>Báo ngay nếu:</strong> Buồn nôn, ăn kém kéo dài</p>
     </div>
 
-    <!-- VIDEO -->
-    <div class="video-container">
-        <iframe src="https://www.youtube.com/embed/P9t3zJRbosE" allowfullscreen></iframe>
-    </div>
+  <!-- VIDEO -->
+<div class="video-container">
+<iframe id="videoFrame"
+src="https://www.youtube.com/embed/P9t3zJRbosE"
+allowfullscreen>
+</iframe>
+</div>
+
+<button onclick="openFullScreen()">
+Full Screen
+</button>
+
+<hr>
 
     <!-- DONE -->
     <button class="btn-done" onclick="markDoneNutrition()">
