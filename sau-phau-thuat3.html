@@ -57,6 +57,215 @@
     </div>
 </section>
 
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+}
+
+/* Container */
+.container-mobile {
+    max-width: 900px;
+    margin: auto;
+    padding: 15px;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Title */
+.card h3 {
+    font-size: 22px;
+    color: #1d4ed8;
+    margin-bottom: 10px;
+}
+
+/* Nội dung */
+.card p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #334155;
+}
+
+/* Highlight */
+.block {
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+/* Note */
+.note {
+    background: #fee2e2;
+    padding: 12px;
+    border-radius: 10px;
+    color: #b91c1c;
+    font-weight: bold;
+}
+
+/* Video */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Button */
+.btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-audio { background: #2563eb; color: white; }
+.btn-done { background: #16a34a; color: white; }
+
+.done-text {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #16a34a;
+}
+</style>
+
+<div class="container-mobile">
+<div class="card">
+
+<h3>GIAI ĐOẠN NGÀY 1–2 SAU PHẪU THUẬT (TẠI GIƯỜNG)</h3>
+
+<div class="block">
+<strong>CO DUỖI HAI CHÂN</strong>
+<p>- Trượt gót chân về phía mông → co gối<br>
+- Duỗi chân ra lại → duỗi gối<br>
+- Đổi chân</p>
+<p><em>👉 Làm chậm – đều – không nhấc lưng khỏi giường, 10–15 lần / chân, 3–4 lần mỗi ngày</em></p>
+</div>
+
+<div class="block">
+<strong>GỒNG CƠ ĐÙI – MÔNG</strong>
+<p>- Siết chặt cơ đùi → ép gối xuống giường<br>
+- Đồng thời siết cơ mông<br>
+- Giữ 5 giây → Thả lỏng</p>
+<p><em>👉 Lặp lại 10–15 lần</em></p>
+</div>
+
+<div class="block">
+<strong>GẬP CỔ CHÂN</strong>
+<p>Gập cổ chân lên xuống liên tục. 20 lần mỗi giờ khi nằm.</p>
+</div>
+
+<div class="block">
+<strong>TẬP KHUNG CHẬU</strong>
+<p>- Hít vào nhẹ → Siết cơ bụng → Ép lưng sát giường<br>
+- Giữ 5 giây, thả lỏng. Lặp lại 10 lần, 3-4 đợt/ ngày</p>
+</div>
+
+<div class="block">
+<strong>TẬP THỞ SÂU</strong>
+<p>- Hít sâu bằng mũi → giữ 3 giây → thở ra bằng miệng<br>
+- Sau 5 nhịp thở, ho nhẹ để làm sạch đờm. Tập mỗi giờ 5–10 lần.</p>
+</div>
+
+<div class="block">
+<strong>TẬP LĂN TRỞ & NGỒI DẬY</strong>
+<p>- Lăn nghiêng → Chống tay nâng thân → Hạ chân xuống giường → Từ từ ngồi dậy.</p>
+</div>
+
+<div class="note">
+Lưu ý: không cúi, xoay thân mình, nâng hoặc nhặt vật.
+</div>
+
+<hr>
+
+<h3>GIAI ĐOẠN NGÀY 3–5 SAU PHẪU THUẬT</h3>
+
+<div class="block">
+<strong>TẬP ĐỨNG LÊN VÀ NGỒI XUỐNG (LƯNG THẲNG)</strong>
+<p>- Hai chân rộng bằng vai<br>
+- Nghiêng nhẹ về trước (lưng thẳng), đứng lên<br>
+- Ngồi xuống từ từ</p>
+</div>
+
+<div class="block">
+<strong>TẬP DI CHUYỂN VỚI KHUNG TRỢ GIÚP</strong>
+<p>- Khung ngang cổ tay, lưng thẳng<br>
+<strong>Cách đi:</strong> Đẩy khung → Chân yếu → Chân khỏe</p>
+<p>- Có thể mang đai lưng khi di chuyển</p>
+</div>
+
+<!-- VIDEO TO -->
+<div class="video-container">
+    <iframe src="https://www.youtube.com/embed/JyXjL3ifEik" allowfullscreen></iframe>
+</div>
+
+<div class="video-container">
+    <iframe src="https://www.youtube.com/embed/mJ0WiXTqZvc" allowfullscreen></iframe>
+</div>
+
+<!-- AUDIO -->
+<button class="btn btn-audio" onclick="readRehab()">
+🔊 Nghe nội dung
+</button>
+
+<!-- DONE -->
+<button class="btn btn-done" onclick="markDoneRehab()">
+✔ Tôi đã đọc nội dung
+</button>
+
+<div id="doneRehab" class="done-text"></div>
+
+</div>
+</div>
+
+<script>
+function readRehab(){
+    const text = `
+    Tập vận động sau mổ giúp phục hồi nhanh.
+    Giai đoạn đầu tập tại giường nhẹ nhàng.
+    Giai đoạn sau tập đứng và đi với khung.
+    Luôn giữ lưng thẳng và tránh xoay người.
+    `;
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.lang = 'vi-VN';
+    window.speechSynthesis.speak(speech);
+}
+
+function markDoneRehab(){
+    localStorage.setItem("rehab_done","true");
+    document.getElementById("doneRehab").innerText="📊 Bạn đã đọc nội dung này";
+}
+
+if(localStorage.getItem("rehab_done")==="true"){
+    document.getElementById("doneRehab").innerText="📊 Bạn đã đọc nội dung này";
+}
+</script>
+
+
+
+
+
+
+
+	
 <section id="content">
     <div class="container">
         <div class="about">
@@ -95,9 +304,7 @@
                             <p class="text-danger"><strong>Lưu ý:</strong> không cúi, xoay thân mình, nâng hoặc nhặt vật.</p>
                         </div>
 
-                        <div class="margintop20 marginbot40">
-                            <a href="https://www.youtube.com/shorts/mJ0WiXTqZvc" target="_blank" class="btn btn-primary btn-sm">Video vận động 																		</a>
-                          </div>
+                       
 
                         <hr>
 
@@ -117,8 +324,9 @@
                             <p><strong>Video hướng dẫn chi tiết:</strong></p>
                             <div class="btn-group">
                                 <a href="https://youtube.com/shorts/JyXjL3ifEik" target="_blank" class="btn btn-default btn-sm">Lăn trở người</a>
-                                <a href="https://youtube.com/shorts/B_yi1ayNu5k" target="_blank" class="btn btn-default btn-sm">Tập khớp gối</a>
-                                <a href="https://youtube.com/shorts/CJVMQ5VJ39Q" target="_blank" class="btn btn-default btn-sm">Ngồi dậy đúng cách</a>
+                                 <div class="margintop20 marginbot40">
+                            <a href="https://www.youtube.com/shorts/mJ0WiXTqZvc" target="_blank" class="btn btn-primary btn-sm">Video vận động 																		</a>
+                          </div>
                             </div>
                         </div>
 
