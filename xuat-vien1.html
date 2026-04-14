@@ -48,206 +48,284 @@
         </div>
 	</header><!-- end header -->
 	<section id="inner-headline">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h2 class="pageTitle">CHĂM SÓC VẾT THƯƠNG TẠI NHÀ</h2>
-			</div>
-		</div>
-	</div>
-	</section>
-	<section id="content">
     <div class="container">
-        <div class="about">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="about-logo">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="pageTitle">CHĂM SÓC VẾT THƯƠNG TẠI NHÀ</h2>
+            </div>
+        </div>
+    </div>
+</section>
 
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f1f5f9;
+/* HỆ THỐNG BIẾN CHUẨN Y TẾ - FONT CHỮ CỰC ĐẠI */
+:root {
+    --primary-blue: #1d4ed8;
+    --secondary-blue: #2563eb;
+    --danger-red: #dc2626;
+    --success-green: #16a34a;
+    --text-main: #1e293b;
+    --bg-light: #f8fafc;
+    /* Font size tối ưu cho người bệnh/người cao tuổi */
+    --fs-p: 22px; 
+    --fs-h3: 32px;
+    --fs-h4: 26px;
 }
 
-/* Card */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #f1f5f9;
+    color: var(--text-main);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.container-mobile {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Card thiết kế hiện đại */
 .section-box {
     background: #ffffff;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    margin-bottom: 25px;
+    padding: 40px 30px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 30px;
 }
 
-/* Title */
+/* Tiêu đề mục siêu to */
 .section-box h3 {
-    font-size: 22px;
-    font-weight: bold;
+    font-size: var(--fs-h3);
+    font-weight: 900;
     color: #0f172a;
-    border-left: 6px solid #2563eb;
-    padding-left: 10px;
-    margin-bottom: 10px;
+    border-left: 12px solid var(--primary-blue);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    line-height: 1.2;
 }
 
-/* Text */
-.section-box p, .section-box li {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #334155;
-}
-
-/* Alert */
-.alert {
-    border-radius: 12px;
-}
-
-/* Button */
-.btn-main {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 14px;
-    border-radius: 10px;
-    margin-top: 12px;
-    font-size: 17px;
-    cursor: pointer;
-    border: none;
-}
-
-.btn-done {
-    background: #16a34a;
-    color: white;
-}
-
-/* Status */
-.done-text {
+.section-box h4 {
+    font-size: var(--fs-h4);
     margin-top: 10px;
-    font-weight: bold;
-    color: #16a34a;
+    color: var(--primary-blue);
+    font-weight: 800;
 }
 
-/* IMAGE ZOOM */
+/* Văn bản nội dung */
+.section-box p, .section-box li {
+    font-size: var(--fs-p);
+    margin-bottom: 15px;
+}
+
+/* Danh sách có icon chuyên nghiệp */
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul li::before {
+    content: "🔹";
+    margin-right: 12px;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+/* Alert nguy hiểm */
+.alert-danger {
+    background: #fff1f2;
+    border: 3px dashed var(--danger-red);
+    padding: 30px;
+    border-radius: 20px;
+    margin: 30px 0;
+}
+
+.alert-danger h4 {
+    color: var(--danger-red) !important;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Well - Khối thông tin bổ trợ */
+.well {
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: 25px;
+    border: 2px solid #e2e8f0;
+    margin-top: 30px;
+}
+
+/* Hình ảnh và Zoom */
+.img-container {
+    margin-top: 15px;
+    text-align: center;
+}
+
 .zoom-img {
     cursor: zoom-in;
+    border-radius: 20px;
     transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    max-width: 100%;
 }
 
 .zoom-img:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
 }
 
-/* LIGHTBOX */
+/* Lightbox */
 .lightbox {
     display: none;
     position: fixed;
-    z-index: 999;
+    z-index: 9999;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0,0,0,0.85);
-    text-align: center;
+    background: rgba(0,0,0,0.9);
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
 }
 
 .lightbox img {
-    max-width: 90%;
+    max-width: 95%;
     max-height: 90%;
-    margin-top: 5%;
     border-radius: 10px;
+}
+
+/* Nút bấm xác nhận cực lớn */
+.btn-done {
+    width: 100%;
+    padding: 25px;
+    font-size: 28px;
+    font-weight: 900;
+    border-radius: 20px;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: white;
+    box-shadow: 0 10px 20px rgba(22, 163, 74, 0.3);
+    transition: all 0.3s;
+}
+
+.btn-done:active { transform: scale(0.98); }
+
+.done-text {
+    margin-top: 20px;
+    font-weight: 800;
+    color: var(--success-green);
+    font-size: 26px;
+    text-align: center;
+    padding: 20px;
+    background: #f0fdf4;
+    border-radius: 15px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    :root {
+        --fs-p: 20px;
+        --fs-h3: 26px;
+        --fs-h4: 22px;
+    }
+    .section-box { padding: 25px 15px; }
+    .btn-done { font-size: 22px; padding: 20px; }
 }
 </style>
 
-<section id="content">
-<div class="container">
-<div class="section-box">
+<div class="container-mobile">
+    <div class="section-box">
 
-<h3>HƯỚNG DẪN CHĂM SÓC VẾT THƯƠNG TẠI NHÀ</h3>
+        <h3>HƯỚNG DẪN CHĂM SÓC VẾT THƯƠNG TẠI NHÀ</h3>
 
-<p style="font-style: italic; color: #666;">
-TUÂN THỦ CÁC BƯỚC DƯỚI ĐÂY GIÚP VẾT MỔ NHANH LÀNH VÀ TRÁNH NHIỄM TRÙNG.
-</p>
+        <p style="font-style: italic; color: #64748b; font-weight: 600; text-align: center; background: #f1f5f9; padding: 15px; border-radius: 15px;">
+            📢 Tuân thủ các bước dưới đây giúp vết mổ nhanh lành và tránh nguy cơ nhiễm trùng.
+        </p>
 
-<div class="row">
-<div class="col-md-6">
-<strong style="color:#D81265;">1. Giữ vết mổ sạch và khô</strong>
-<ul>
-<li>Giữ vết mổ luôn khô ráo. Tránh nước, bụi bẩn hoặc hóa chất.</li>
-<li>Nếu băng bị ướt khi tắm, phải thay băng sạch ngay lập tức.</li>
-<li>Sau khi tháo băng (theo chỉ định), có thể tắm bình thường nhưng không chà sát mạnh.</li>
-</ul>
+        <div class="row">
+            <div class="col-md-6">
+                <h4 style="color:#D81265;">1. Giữ vết mổ sạch và khô</h4>
+                <ul>
+                    <li>Luôn giữ vết mổ khô ráo hoàn toàn. Tránh tiếp xúc nước, bụi bẩn.</li>
+                    <li>Nếu băng bị ẩm/ướt (do tắm hoặc dịch thấm), cần thay băng sạch ngay.</li>
+                    <li>Sau khi tháo băng theo chỉ định, có thể tắm nhưng không được chà sát mạnh vùng vết mổ.</li>
+                </ul>
+            </div>
+
+            <div class="col-md-6">
+                <h4 style="color:#D81265;">2. Thay băng đúng cách</h4>
+                <ul>
+                    <li>Rửa tay bằng xà phòng/sát khuẩn trước và sau khi chạm vào vết thương.</li>
+                    <li>Chỉ sử dụng gạc vô khuẩn để che phủ vết mổ.</li>
+                    <li><strong style="color:var(--danger-red);">TUYỆT ĐỐI KHÔNG:</strong> Tự ý bôi đắp lá, thuốc mỡ hoặc các bài thuốc dân gian chưa chỉ định.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="alert alert-danger">
+            <h4>🚨 3. THEO DÕI DẤU HIỆU BẤT THƯỜNG</h4>
+            <div class="row" style="display: flex; flex-wrap: wrap; align-items: center;">
+                <div class="col-sm-7">
+                    <p>Cần đi khám ngay nếu có dấu hiệu:</p>
+                    <ul>
+                        <li>Vùng vết mổ Sưng, Đỏ, Nóng hoặc Đau tăng dần.</li>
+                        <li>Chảy mủ hoặc dịch có mùi hôi lạ.</li>
+                        <li>Sốt cao trên 38°C.</li>
+                        <li>Vết mổ chảy máu nhiều hoặc có dấu hiệu bung chỉ.</li>
+                    </ul>
+                </div>
+                <div class="col-sm-5 img-container">
+                    <img class="zoom-img" src="img/vetmo.jpg" alt="Minh họa vết mổ" onclick="openLightbox(this.src)">
+                    <p style="font-size: 16px; margin-top: 10px; color: #b91c1c;">(Bấm vào ảnh để phóng to)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 40px;">
+            <div class="col-md-4">
+                <h4 style="color: #0d9488;">🍎 4. Dinh dưỡng</h4>
+                <p>Ăn đủ chất đạm (thịt nạc, cá, trứng), nhiều rau xanh. Uống 1.5–2 lít nước mỗi ngày. Kiên quyết tránh rượu bia, thuốc lá.</p>
+            </div>
+
+            <div class="col-md-4">
+                <h4 style="color: #0d9488;">🚶 5. Vận động</h4>
+                <p>Tuyệt đối không mang vác vật nặng. Có thể ngủ ở tư thế thoải mái nhất. Khó ngủ trong vài tuần đầu là diễn biến bình thường.</p>
+            </div>
+
+            <div class="col-md-4">
+                <h4 style="color: #0d9488;">💊 6. Dùng thuốc</h4>
+                <p>Uống thuốc đúng liều, đúng đơn của bác sĩ. Không tự ý ngưng thuốc. Nếu hết thuốc mà vẫn đau nhiều, hãy đi khám lại ngay.</p>
+            </div>
+        </div>
+
+        <hr style="margin: 40px 0; border: 1px solid #e2e8f0;">
+
+        <div class="well">
+            <h4 style="color: var(--primary-blue);">🗓️ 7. TÁI KHÁM ĐÚNG HẸN</h4>
+            <ul>
+                <li>Thực hiện tái khám sau <strong>4 tuần</strong> (hoặc theo hẹn) để bác sĩ theo dõi diễn biến.</li>
+                <li>Khi đi mang theo đơn thuốc và hồ sơ bệnh án cũ.</li>
+                <li><strong>Ghi nhớ:</strong> Nếu có bất kỳ dấu hiệu bất thường ở mục số 3, hãy đi khám ngay lập tức mà không cần đợi đến ngày hẹn.</li>
+            </ul>
+        </div>
+
+        <div id="readStatus" class="done-text" style="color: var(--secondary-blue); background: #eff6ff; border: 1px dashed var(--secondary-blue);">
+            📊 Chưa đọc nội dung
+        </div>
+
+        <div id="btnContainer">
+            <button class="btn-done" onclick="markDone()">
+                ✔ TÔI ĐÃ ĐỌC VÀ HIỂU NỘI DUNG
+            </button>
+        </div>
+
+        <div id="doneStatus" class="done-text" style="display:none;"></div>
+
+    </div>
 </div>
 
-<div class="col-md-6">
-<strong style="color:#D81265;">2. Thay băng đúng cách</strong>
-<ul>
-<li>Rửa tay sạch bằng xà phòng trước và sau khi chạm vào vết thương.</li>
-<li>Sử dụng gạc vô khuẩn.</li>
-<li><span style="color:red;">Không</span> tự ý bôi các loại lá, thuốc mỡ dân gian lên vết mổ.</li>
-</ul>
-</div>
-</div>
-
-<div class="alert alert-danger">
-<h4><strong>3. THEO DÕI DẤU HIỆU BẤT THƯỜNG</strong></h4>
-
-<div class="row">
-<div class="col-sm-7">
-<ul>
-<li>Sưng, đỏ, nóng hoặc đau tăng dần.</li>
-<li>Chảy mủ hoặc dịch có mùi hôi.</li>
-<li>Sốt trên 38°C.</li>
-<li>Vết mổ chảy máu hoặc bị bung chỉ.</li>
-</ul>
-</div>
-
-<div class="col-sm-5">
-<img class="img-responsive zoom-img"
-     src="img/vetmo.jpg"
-     onclick="openLightbox(this.src)">
-</div>
-</div>
-</div>
-
-<div class="row">
-<div class="col-md-4">
-<strong>4. Dinh dưỡng</strong>
-<p>Ăn đủ đạm (thịt, cá, trứng), rau xanh. Uống 1.5–2 lít nước/ngày. Tránh rượu bia, thuốc lá.</p>
-</div>
-
-<div class="col-md-4">
-<strong>5. Vận động</strong>
-<p>Tránh mang vác nặng. Có thể ngủ ở tư thế thoải mái nhất (kể cả ghế tựa). Khó ngủ vài tuần đầu là bình thường.</p>
-</div>
-
-<div class="col-md-4">
-<strong>6. Dùng thuốc</strong>
-<p>Uống đúng đơn bác sĩ. Không tự ý ngưng thuốc. Nếu hết thuốc mà vẫn đau, hãy đi khám lại ngay.</p>
-</div>
-</div>
-
-<hr>
-
-<div class="well">
-<h4><strong>7. TÁI KHÁM ĐÚNG HẸN</strong></h4>
-<ul>
-<li>Tái khám sau <strong>4 tuần</strong> để theo dõi diễn biến.</li>
-<li>Mang theo đơn thuốc và hồ sơ bệnh án.</li>
-<li><strong>Lưu ý:</strong> Nếu có bất thường, hãy đi khám ngay mà không cần đợi đến hẹn.</li>
-</ul>
-</div>
-
-<!-- STATUS -->
-<div id="readStatus" style="margin-top:10px; font-weight:bold; color:#2563eb;">
-📊 Chưa đọc nội dung
-</div>
-
-<!-- DONE BUTTON -->
-<button class="btn-main btn-done" onclick="markDone()">
-✔ Đã đọc nội dung
-</button>
-
-</div>
-</div>
-</section>
-
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <img id="lightbox-img">
 </div>
@@ -255,17 +333,30 @@ TUÂN THỦ CÁC BƯỚC DƯỚI ĐÂY GIÚP VẾT MỔ NHANH LÀNH VÀ TRÁNH N
 <script>
 function markDone() {
     localStorage.setItem("woundcare_done", "true");
-    document.getElementById("readStatus").innerHTML = "📊 Đã đọc nội dung";
+    showStatus();
+}
+
+function showStatus() {
+    const statusBox = document.getElementById("readStatus");
+    const doneBox = document.getElementById("doneStatus");
+    const btnBox = document.getElementById("btnContainer");
+
+    if(statusBox) statusBox.style.display = "none";
+    if(btnBox) btnBox.style.display = "none";
+    if(doneBox) {
+        doneBox.innerHTML = "📊 BẠN ĐÃ HOÀN THÀNH ĐỌC HƯỚNG DẪN";
+        doneBox.style.display = "block";
+    }
 }
 
 window.onload = function() {
     if(localStorage.getItem("woundcare_done") === "true") {
-        document.getElementById("readStatus").innerHTML = "📊 Đã đọc nội dung";
+        showStatus();
     }
 }
 
 function openLightbox(src) {
-    document.getElementById("lightbox").style.display = "block";
+    document.getElementById("lightbox").style.display = "flex";
     document.getElementById("lightbox-img").src = src;
 }
 
