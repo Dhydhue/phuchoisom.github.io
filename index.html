@@ -50,19 +50,22 @@
 	<!-- end header -->
 	<section id="banner">
 <style>
+/* 1. HỆ THỐNG BIẾN MÀU & CẤU TRÌNH CHUNG */
 :root {
-    --primary: #0f52ba; /* Màu xanh y khoa chính */
-    --accent: #2563eb;
-    --bg: #f1f5f9;
-    --text: #1e293b;
+    --primary-color: #0f52ba;
+    --accent-color: #2563eb;
+    --bg-light: #f1f5f9;
+    --text-main: #1e293b;
     --white: #ffffff;
+    --shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: var(--bg);
+    background-color: var(--bg-light);
+    color: var(--text-main);
     margin: 0;
-    color: var(--text);
+    line-height: 1.6;
 }
 
 .container-medical {
@@ -71,88 +74,61 @@ body {
     padding: 20px 15px;
 }
 
-/* ===== SLIDER HIỆU CHỈNH CĂN GIỮA ===== */
+/* 2. SLIDER HIỆU CHỈNH CĂN GIỮA */
 .slider {
     position: relative;
     width: 100%;
-    height: 350px; /* Chiều cao cố định cho Mobile */
+    height: 300px; /* Mobile height */
     overflow: hidden;
     border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    background: #000;
+    box-shadow: var(--shadow);
     margin-bottom: 30px;
+    background: #000;
 }
-
 .slide {
     position: absolute;
     width: 100%; height: 100%;
     opacity: 0;
-    visibility: hidden;
     animation: slideShow 10s infinite;
 }
-
 .slide img {
-    width: 100%; 
-    height: 100%;
-    /* CĂN GIỮA ẢNH TẠI ĐÂY */
-    object-fit: cover; 
-    object-position: center center; 
-    /* Hiệu ứng zoom nhẹ nhàng */
-    animation: imageZoom 10s infinite;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center; /* Căn giữa ảnh tuyệt đối */
 }
-
-/* Lớp phủ gradient để làm nổi chữ */
-.slide::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
-}
-
 .caption {
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    padding: 40px 20px;
-    z-index: 2;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 30px 20px;
+    color: #fff;
     text-align: center;
 }
+.caption h3 { font-size: 1.2rem; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
 
-.caption h3 {
-    color: #ffffff;
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 0;
-    text-transform: uppercase;
-    line-height: 1.4;
-    text-shadow: 0 2px 15px rgba(0,0,0,0.5);
-    /* Chữ hiện lên */
-    transform: translateY(30px);
-    animation: captionUp 10s infinite;
-}
-
-/* ===== CARD NỘI DUNG Y TẾ ===== */
+/* 3. CARD NỘI DUNG */
 .med-card {
     background: var(--white);
     border-radius: 20px;
     padding: 25px;
     margin-bottom: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: var(--shadow);
 }
-
 .title-border {
     font-size: 22px;
     font-weight: 700;
-    color: var(--primary);
-    border-left: 6px solid var(--primary);
+    color: var(--primary-color);
+    border-left: 6px solid var(--primary-color);
     padding-left: 15px;
     margin-bottom: 20px;
     text-transform: uppercase;
 }
 
+/* 4. VIDEO MÀN HÌNH TO (CINEMA) */
 .video-wrapper {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* Tỷ lệ vàng 16:9 */
+    padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
     margin: 20px 0;
     border-radius: 16px;
     overflow: hidden;
@@ -164,36 +140,61 @@ body {
     top: 0; left: 0; width: 100%; height: 100%; border: none;
 }
 
-.highlight-box {
-    background: #f0f9ff;
-    border-left: 5px solid var(--accent);
-    padding: 20px;
+/* 5. BOX NHẤN MẠNH */
+.highlight-blue {
+    background: #eff6ff;
+    border-left: 5px solid var(--accent-color);
+    padding: 15px;
     border-radius: 12px;
     margin: 15px 0;
 }
+.highlight-green {
+    background: #ecfdf5;
+    padding: 20px;
+    border-radius: 15px;
+}
 
-/* ===== ANIMATIONS ===== */
+/* 6. SỰ KIỆN - CANH GIỮA ẢNH */
+.events-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.event-item {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+.event-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    object-position: center; /* Canh giữa ảnh sự kiện */
+}
+
+/* 7. FOOTER & SCROLL UP */
+.med-footer {
+    background: #0f172a;
+    color: #f1f5f9;
+    padding: 40px 20px;
+    border-radius: 24px;
+    margin-top: 40px;
+}
+
 @keyframes slideShow {
-    0%, 5% { opacity: 0; visibility: hidden; }
-    15%, 45% { opacity: 1; visibility: visible; }
-    55%, 100% { opacity: 0; visibility: hidden; }
-}
-@keyframes imageZoom {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-@keyframes captionUp {
-    0%, 15% { opacity: 0; transform: translateY(30px); }
-    25%, 45% { opacity: 1; transform: translateY(0); }
-    55%, 100% { opacity: 0; transform: translateY(0); }
+    0%, 10% { opacity: 0; }
+    20%, 50% { opacity: 1; }
+    60%, 100% { opacity: 0; }
 }
 
-/* ===== PC & TABLET OPTIMIZATION ===== */
+/* PHÙ HỢP WEBSITE (DESKTOP) */
 @media (min-width: 768px) {
-    .slider { height: 500px; }
-    .caption { text-align: left; padding: 60px 40px; }
-    .caption h3 { font-size: 2.6rem; max-width: 75%; }
+    .slider { height: 450px; }
+    .caption h3 { font-size: 2rem; }
+    .events-grid { grid-template-columns: repeat(3, 1fr); }
+    .title-border { font-size: 26px; }
     .med-card { padding: 40px; }
 }
 </style>
@@ -202,44 +203,117 @@ body {
 
     <div class="slider">
         <div class="slide" style="animation-delay: 0s;">
-            <img src="img/slides/1.jpg" alt="Y học hiện đại">
+            <img src="img/slides/1.jpg" alt="Slide 1">
             <div class="caption">
-                <h3>Y học hiện đại<br>Nâng tầm chất lượng điều trị</h3>
+                <h3>Y học hiện đại – Nâng tầm chất lượng điều trị</h3>
             </div>
         </div>
         <div class="slide" style="animation-delay: 5s;">
-            <img src="img/slides/2.jpg" alt="Sự hài lòng">
+            <img src="img/slides/2.jpg" alt="Slide 2">
             <div class="caption">
-                <h3>Sự hài lòng của bạn<br>Là niềm kiêu hãnh của chúng tôi</h3>
+                <h3>Sự hài lòng của bạn là niềm kiêu hãnh của chúng tôi</h3>
             </div>
         </div>
     </div>
 
     <section class="med-card">
-        <h2 class="title-border">Giới thiệu Bệnh lý Cột sống</h2>
-        <p style="font-size: 18px;">Bệnh lý cột sống ảnh hưởng trực tiếp đến chất lượng cuộc sống, gây đau đớn và hạn chế vận động.</p>
-        <div class="highlight-box">
-            <strong>Các bệnh lý thường gặp:</strong> Thoát vị đĩa đệm, Thoái hóa cột sống, Hẹp ống sống, Trượt đốt sống.
+        <h2 class="title-border">Giới thiệu về bệnh lý cột sống</h2>
+        <p style="font-size: 18px;">
+            Bệnh lý cột sống là nhóm các rối loạn ảnh hưởng đến cấu trúc và chức năng của cột sống, bao gồm đốt sống, đĩa đệm, dây chằng và tủy sống.
+        </p>
+        <div class="highlight-blue">
+            <p><strong>Các bệnh thường gặp:</strong></p>
+            <ul style="list-style: none; padding-left: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;">
+                <li>• Thoát vị đĩa đệm</li>
+                <li>• Thoái hóa cột sống</li>
+                <li>• Hẹp ống sống</li>
+                <li>• Trượt đốt sống</li>
+                <li>• Chấn thương cột sống</li>
+            </ul>
         </div>
     </section>
 
     <section class="med-card">
-        <h2 class="title-border">Cấu trúc và Giải phẫu</h2>
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <img src="img/2.png" style="width: 50px;" alt="">
+            <h3 style="margin: 0; color: #0f172a; font-size: 22px;">Cấu trúc Cột sống</h3>
+        </div>
+        <p>Cột sống giúp nâng đỡ cơ thể và giữ cho chúng ta <strong>đứng, ngồi, đi lại bình thường</strong>.</p>
+        
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/wq9IKxuDMAQ" allowfullscreen></iframe>
+        </div>
+
+        <div class="highlight-blue">
+            <p>🦴 Gồm nhiều đốt xương xếp chồng</p>
+            <p>🔄 Giúp cúi – ngửa – xoay linh hoạt</p>
+            <p>🧠 Bảo vệ tủy sống quan trọng</p>
+        </div>
+    </section>
+
+    <section class="med-card">
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <img src="img/3.png" style="width: 50px;" alt="">
+            <h3 style="margin: 0; color: #0f172a; font-size: 22px;">Trượt & hẹp cột sống thắt lưng</h3>
+        </div>
+        
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/6XdzRKtF2k8" allowfullscreen></iframe>
         </div>
-        <p>Video cung cấp cái nhìn chi tiết về sự chèn ép thần kinh và các phương pháp giải phẫu hiện đại đang được áp dụng tại Khoa.</p>
+
+        <div class="highlight-blue">
+            <p>⚠️ <strong>Trượt đốt sống:</strong> đốt xương bị lệch</p>
+            <p>⚠️ <strong>Hẹp ống sống:</strong> chèn ép dây thần kinh</p>
+        </div>
     </section>
 
-    <footer style="background: #0f172a; color: white; padding: 30px; border-radius: 24px; margin-top: 30px;">
-        <h4 style="margin-top: 0; color: #3b82f6;">LIÊN HỆ CHUYÊN KHOA</h4>
-        <p>📍 Tầng 3 Khu D - BV Trung ương Huế cơ sở 2</p>
-        <p>📞 0543 761 761 (Máy lẻ: 3902)</p>
+    <section class="med-card">
+        <h2 class="title-border">Phục hồi sớm sau phẫu thuật (ERAS)</h2>
+        <p style="text-align: center; font-style: italic; color: #64748b;">"Vì sự an toàn và chất lượng cuộc sống của người bệnh"</p>
+        
+        <img src="img/h4.jpg" style="width:100%; max-width: 800px; display: block; margin: 20px auto; border-radius:15px;" alt="ERAS">
+
+        <div class="highlight-green">
+            <h4 style="margin-top: 0; color: #065f46; font-size: 20px;">LỢI ÍCH CỦA CHƯƠNG TRÌNH ERAS</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px;">
+                <p>✔ Giảm đau sau phẫu thuật hiệu quả</p>
+                <p>✔ Rút ngắn thời gian nằm viện</p>
+                <p>✔ Giảm nguy cơ biến chứng</p>
+                <p>✔ Sớm trở lại sinh hoạt bình thường</p>
+                <p>✔ Nâng cao chất lượng cuộc sống</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="margin-bottom: 40px;">
+        <h2 class="title-border">Sự kiện nổi bật</h2>
+        <div class="events-grid">
+            <div class="event-item">
+                <img src="img/m.jpg" alt="">
+                <p style="font-weight: 700; padding: 15px; margin: 0; color: var(--primary-color);">CHUYÊN MÔN SÂU</p>
+            </div>
+            <div class="event-item">
+                <img src="img/e2.png" alt="">
+                <p style="font-weight: 700; padding: 15px; margin: 0; color: var(--primary-color);">PHỐI HỢP ĐA CHUYÊN KHOA</p>
+            </div>
+            <div class="event-item">
+                <img src="img/h2.jpg" alt="">
+                <p style="font-weight: 700; padding: 15px; margin: 0; color: var(--primary-color);">NÂNG CAO CHẤT LƯỢNG CHĂM SÓC</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="med-footer">
+        <h3 style="color: #3b82f6; margin-top: 0;">THÔNG TIN LIÊN HỆ</h3>
+        <p style="font-size: 18px; font-weight: 700; margin-bottom: 5px;">Khoa Ngoại Chấn thương Chỉnh hình – Thần kinh Sọ não</p>
+        <p style="margin: 5px 0;">📍 Tầng 3 Khu D - BV Trung ương Huế cơ sở 2</p>
+        <p style="margin: 5px 0;">📞 0543 761 761 (Máy lẻ: 3902)</p>
+        <p style="margin: 5px 0;">📧 Ngoaictch-tksntw2@gmail.com</p>
     </footer>
 
-</div>	 
-	
+</div>
 
+<a href="#" class="scrollup" style="position: fixed; bottom: 20px; right: 20px; background: var(--primary-color); color: white; padding: 12px 18px; border-radius: 50%; text-decoration: none; box-shadow: var(--shadow); z-index: 100;">↑</a>
 
 	
 
