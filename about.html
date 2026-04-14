@@ -161,19 +161,15 @@
         text-align: center;
     }
 
-    .member img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px; /* Giảm độ bo góc để trông vuông vắn hơn */
-    border: 4px solid #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    margin: 0 auto 15px;
-    display: block;
-    }
-.member img {
+   .member img {
   display: block; /* Hiển thị hình ảnh dưới dạng khối */
-  margin: auto; /* Tự động căn lề trái và phải để đưa ảnh vào giữa */
+  width: 180px; /* Thiết lập chiều rộng bằng chiều cao để tạo hình vuông */
+  height: 180px; /* Thiết lập chiều cao bằng chiều rộng để tạo hình vuông */
+  object-fit: cover; /* Đảm bảo hình ảnh lấp đầy khung hình vuông mà không bị méo */
+  border-radius: 8px; /* Giảm độ bo góc để trông vuông vắn hơn */
+  border: 4px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin: 0 auto 15px; /* Tự động căn lề trái và phải để đưa ảnh vào giữa */
 }
 	
     .member h4 {
