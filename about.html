@@ -50,226 +50,232 @@
 
 <style>
 :root {
-    --primary: #0284c7; /* Blue Sky */
-    --primary-dark: #0369a1;
-    --accent: #f59e0b; /* Orange Accent */
-    --bg-body: #f1f5f9;
-    --glass: rgba(255, 255, 255, 0.95);
-    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-    --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --medical-blue: #0f52ba; /* Màu xanh y tế truyền thống */
+    --light-blue: #eef4ff;
+    --success: #059669;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --white: #ffffff;
 }
 
 body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    background-color: var(--bg-body);
-    color: #334155;
-    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7fa;
+    color: var(--text-dark);
     margin: 0;
+    padding: 0;
 }
 
-.container-mobile {
-    max-width: 900px;
+.container-medical {
+    max-width: 850px;
     margin: 0 auto;
-    padding: 20px 16px;
+    padding: 15px;
 }
 
-/* Card Chung */
-.card-premium {
-    background: var(--glass);
-    border-radius: 24px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: var(--shadow-md);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    transition: var(--transition);
-}
-
-.card-premium:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-}
-
-/* Tiêu đề */
-.title-gradient {
-    font-size: 22px;
-    font-weight: 800;
-    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+/* Card Chuyên Nghiệp */
+.med-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 20px;
     margin-bottom: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--medical-blue);
+}
+
+/* Tiêu đề chính */
+.med-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--medical-blue);
+    text-transform: uppercase;
     display: flex;
     align-items: center;
     gap: 10px;
+    margin-bottom: 15px;
 }
 
-.title-gradient::before {
-    content: "";
-    width: 5px;
-    height: 25px;
-    background: var(--accent);
-    border-radius: 10px;
-    display: inline-block;
+/* Nội dung văn bản */
+.med-text {
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: justify;
 }
 
-/* Highlight Box */
-.info-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin: 20px 0;
-}
-
-.stat-item {
-    background: #f8fafc;
+/* Khối làm nổi bật thông số */
+.med-highlight-box {
+    background: var(--light-blue);
+    border-radius: 8px;
     padding: 15px;
-    border-radius: 16px;
-    border: 1px solid #e2e8f0;
-    text-align: center;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-.stat-item span {
-    display: block;
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--primary);
-}
-
-/* Danh sách kỹ thuật */
-.grid-tech {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 12px;
-}
-
-.tech-tag {
-    background: #fff;
-    padding: 12px;
-    border-radius: 12px;
-    font-size: 14px;
+.med-highlight-box p {
+    margin: 0;
     font-weight: 500;
     display: flex;
     align-items: center;
     gap: 8px;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid transparent;
-    transition: var(--transition);
 }
 
-.tech-tag:hover {
-    border-color: var(--primary);
-    color: var(--primary);
+/* Danh sách kỹ thuật dạng Grid */
+.med-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.med-item {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: all 0.2s;
+}
+
+.med-item:hover {
+    border-color: var(--medical-blue);
+    background: var(--light-blue);
 }
 
 /* Team Section */
-.team-layout {
+.med-team-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 15px;
 }
 
-.member-card {
+.med-member {
     text-align: center;
-    background: #fff;
     padding: 15px;
-    border-radius: 20px;
-    box-shadow: var(--shadow-sm);
+    border: 1px solid #f1f5f9;
+    border-radius: 10px;
 }
 
-.member-card img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Hình tròn cho chuyên nghiệp */
+.med-member img {
+    width: 90px;
+    height: 120px;
     object-fit: cover;
-    border: 4px solid #f0f9ff;
-    margin-bottom: 12px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    background: #f1f5f9;
 }
 
-.member-role {
+.role-tag {
     font-size: 11px;
-    font-weight: 700;
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    background: var(--medical-blue);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
     margin-bottom: 5px;
 }
 
-.member-name {
+.name-label {
+    font-weight: 600;
     font-size: 14px;
-    font-weight: 700;
-    color: var(--primary-dark);
+    color: var(--text-dark);
+    display: block;
 }
 
-/* Responsive */
+/* Mobile Tối ưu */
+@media (max-width: 480px) {
+    .med-team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .med-title { font-size: 18px; }
+}
+
+/* Tablet & Desktop */
 @media (min-width: 768px) {
-    .team-layout { grid-template-columns: repeat(4, 1fr); }
-    .title-gradient { font-size: 28px; }
+    .med-team-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 </style>
-	
-	<div class="container-mobile">
 
-    <div class="card-premium">
-        <div class="title-gradient">GIỚI THIỆU KHOA</div>
-        <p>Khoa Ngoại Chấn thương Chỉnh hình – Thần kinh Sọ não được thành lập từ năm 2016, là đơn vị mũi nhọn trong công tác điều trị ngoại khoa chuyên sâu.</p>
-        
-        <div class="info-stats">
-            <div class="stat-item">
-                <span>11</span> Bác sĩ
-            </div>
-            <div class="stat-item">
-                <span>17</span> Đ/D & Hộ lý
-            </div>
+<div class="container-medical">
+
+    <div class="med-card">
+        <div class="med-title">
+            🏥 Giới thiệu Khoa
         </div>
-        <p style="font-size: 14px; color: #64748b;">📍 <i>Địa chỉ: Tòa nhà B - Bệnh viện...</i></p>
-    </div>
-
-    <div class="card-premium">
-        <div class="title-gradient">KỸ THUẬT CHUYÊN SÂU</div>
-        <div class="grid-tech">
-            <div class="tech-tag">🦴 Thay khớp háng</div>
-            <div class="tech-tag">🦵 Thay khớp gối</div>
-            <div class="tech-tag">🧠 Sọ não nạo máu tụ</div>
-            <div class="tech-tag">🧍 Thoát vị đĩa đệm</div>
-            <div class="tech-tag">🛠️ Kết hợp xương</div>
-            <div class="tech-tag">✨ Tạo hình thẩm mỹ</div>
+        <div class="med-text">
+            Khoa Ngoại Chấn thương Chỉnh hình – Thần kinh Sọ não được thành lập theo Quyết định số 1744/QĐ-BVH ngày 01/11/2016.
+        </div>
+        <div class="med-highlight-box">
+            <p>👥 <strong>Ban đầu:</strong> 15 cán bộ (04 bác sĩ, 10 điều dưỡng, 01 hộ lý)</p>
+            <p>📈 <strong>Hiện nay:</strong> 28 cán bộ (11 bác sĩ, 16 điều dưỡng, 01 hộ lý)</p>
+        </div>
+        <div class="med-text">
+            Sau hơn 8 năm phát triển, khoa không ngừng mở rộng và nâng cao chất lượng chuyên môn nhằm đáp ứng nhu cầu khám chữa bệnh ngày càng cao.
         </div>
     </div>
 
-    <div class="card-premium">
-        <div class="title-gradient">BAN CHỦ NHIỆM KHOA</div>
-        <div class="team-layout">
-            
-            <div class="member-card">
+    <div class="med-card">
+        <div class="med-title">
+            📋 Chức năng, nhiệm vụ
+        </div>
+        <div class="med-text">
+            <p>✔️ Khám bệnh, điều trị nội trú và ngoại trú</p>
+            <p>✔️ Cấp cứu, phẫu thuật</p>
+            <p>✔️ Chăm sóc toàn diện cho người bệnh</p>
+        </div>
+        <div class="med-text" style="margin-top:10px; padding: 10px; border-left: 3px solid var(--success);">
+            Khoa tiếp nhận và điều trị các bệnh lý, chấn thương thuộc chuyên ngành chấn thương chỉnh hình và thần kinh sọ não, bao gồm nhiều trường hợp nặng, đa chấn thương và bệnh lý phức tạp.
+        </div>
+    </div>
+
+    <div class="med-card">
+        <div class="med-title">
+            ⚙️ Các kỹ thuật chuyên môn
+        </div>
+        <div class="med-grid">
+            <div class="med-item">🔧 Kết hợp xương thường quy</div>
+            <div class="med-item">🦵 Nội soi & thay khớp gối</div>
+            <div class="med-item">🦴 Thay khớp háng</div>
+            <div class="med-item">✋ Tạo hình thẩm mỹ, bàn tay</div>
+            <div class="med-item">🧍 Phẫu thuật cột sống</div>
+            <div class="med-item">🧠 Phẫu thuật thần kinh</div>
+        </div>
+    </div>
+
+    <div class="med-card">
+        <div class="med-title">
+            👨‍⚕️ Ban chủ nhiệm khoa
+        </div>
+        <div class="med-team-grid">
+            <div class="med-member">
                 <img src="img/khoa.jpg" alt="Trưởng khoa">
-                <div class="member-role">Trưởng khoa</div>
-                <div class="member-name">BSCKII. Nguyễn Đình Khoa</div>
+                <span class="role-tag">TRƯỞNG KHOA</span>
+                <span class="name-label">BSCKII. NGUYỄN ĐÌNH KHOA</span>
             </div>
 
-            <div class="member-card">
+            <div class="med-member">
                 <img src="img/hanh.jpg" alt="Phó khoa">
-                <div class="member-role">Phó khoa</div>
-                <div class="member-name">BSCKII. Nguyễn Đức Hạnh</div>
+                <span class="role-tag">PHÓ KHOA</span>
+                <span class="name-label">BSCKII. NGUYỄN ĐỨC HẠNH</span>
             </div>
 
-            <div class="member-card">
+            <div class="med-member">
                 <img src="img/tuong.jpeg" alt="Phó khoa">
-                <div class="member-role">Phó khoa</div>
-                <div class="member-name">ThS.BS. Võ Bá Tường</div>
+                <span class="role-tag">PHÓ KHOA</span>
+                <span class="name-label">ThS.BS. VÕ BÁ TƯỜNG</span>
             </div>
 
-            <div class="member-card">
+            <div class="med-member">
                 <img src="img/huyen.jpg" alt="ĐD Trưởng">
-                <div class="member-role">ĐD Trưởng</div>
-                <div class="member-name">CN. Phạm Thanh Huyền</div>
+                <span class="role-tag">ĐD TRƯỞNG</span>
+                <span class="name-label">CN. PHẠM THANH HUYỀN</span>
             </div>
-
         </div>
     </div>
 
 </div>
-	
-	
 	
 
 </div>
