@@ -47,86 +47,129 @@
         </div>
 	</header><!-- end header -->
 	<section id="inner-headline">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h2 class="pageTitle">THEO DÕI VÀ XỬ LÝ BÍ TIỂU</h2>
-			</div>
-		</div>
-	</div>
-	</section>
-	<section id="content">
     <div class="container">
-        <div class="about">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="about-logo">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="pageTitle">THEO DÕI VÀ XỬ LÝ BÍ TIỂU</h2>
+            </div>
+        </div>
+    </div>
+</section>
 
 <style>
-/* ===== Tổng thể ===== */
+/* HỆ THỐNG BIẾN CHUẨN Y TẾ - FONT CHỮ CỰC ĐẠI */
+:root {
+    --primary-blue: #1d4ed8;
+    --secondary-blue: #2563eb;
+    --danger-red: #dc2626;
+    --success-green: #16a34a;
+    --text-main: #1e293b;
+    --bg-light: #f8fafc;
+    /* Font size tối ưu cho người cao tuổi */
+    --fs-p: 22px; 
+    --fs-h3: 32px;
+    --fs-h4: 26px;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background: #f1f5f9;
+    color: var(--text-main);
+    line-height: 1.8;
     margin: 0;
 }
 
-/* Container */
-.container {
-    max-width: 900px;
+.container-mobile {
+    max-width: 1000px;
     margin: auto;
-    padding: 15px;
+    padding: 20px;
 }
 
-/* Card */
+/* Card thiết kế hiện đại */
 .section-box {
     background: #ffffff;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding: 40px 30px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border: 1px solid #e2e8f0;
+    margin-bottom: 30px;
 }
 
-/* Tiêu đề */
+/* Tiêu đề mục siêu to */
 .section-box h3 {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: var(--fs-h3);
+    font-weight: 900;
     color: #0f172a;
-    border-left: 6px solid #2563eb;
-    padding-left: 10px;
-    margin-bottom: 15px;
+    border-left: 12px solid var(--primary-blue);
+    padding-left: 20px;
+    margin-bottom: 30px;
+    line-height: 1.2;
 }
 
 .section-box h4 {
-    margin-top: 20px;
-    color: #1d4ed8;
+    font-size: var(--fs-h4);
+    margin-top: 40px;
+    color: var(--primary-blue);
+    font-weight: 800;
+    border-bottom: 2px solid #eff6ff;
+    padding-bottom: 10px;
 }
 
-/* Nội dung */
-.section-box p,
-.section-box li {
-    font-size: 17px;
-    line-height: 1.6;
-    color: #334155;
+/* Nội dung văn bản */
+.section-box p, .section-box li {
+    font-size: var(--fs-p);
+    margin-bottom: 15px;
 }
 
-/* Box */
-.well, .alert {
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 15px;
+/* Danh sách có icon */
+ul {
+    list-style: none;
+    padding-left: 0;
 }
 
+ul li::before {
+    content: "✅";
+    margin-right: 12px;
+    font-size: 20px;
+}
+
+/* Các hộp thông tin (Well) */
 .well {
-    background: #f8fafc;
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 25px;
+    border: 2px solid #e2e8f0;
 }
 
+/* Cảnh báo nguy hiểm */
 .alert-danger {
-    background: #fee2e2;
+    background: #fff1f2;
+    border-left: 10px solid var(--danger-red);
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+    color: #991b1b;
 }
 
-/* Images */
+.alert-danger h4 {
+    color: var(--danger-red) !important;
+    margin-top: 0;
+    border: none;
+}
+
+/* Hình ảnh minh họa */
+.img-caption {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #475569;
+}
+
 img {
     max-width: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* Video */
@@ -134,9 +177,10 @@ img {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
-    margin-top: 15px;
-    border-radius: 12px;
+    margin: 40px 0;
+    border-radius: 25px;
     overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
 .video-container iframe {
@@ -146,158 +190,177 @@ img {
     border: none;
 }
 
-/* Buttons */
-.btn-main {
+/* Nút bấm xác nhận cực đại */
+.btn-done {
     width: 100%;
-    padding: 14px;
-    font-size: 17px;
-    border-radius: 10px;
-    margin-top: 12px;
+    padding: 25px;
+    font-size: 28px;
+    font-weight: 900;
+    border-radius: 20px;
+    margin-top: 30px;
     border: none;
     cursor: pointer;
-}
-
-.btn-audio {
-    display: none; /* ❌ xóa chức năng nghe nội dung */
-}
-
-.btn-done {
-    background: #16a34a;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
     color: #fff;
+    box-shadow: 0 10px 20px rgba(22, 163, 74, 0.3);
+    transition: all 0.3s;
 }
 
-/* Progress text */
+.btn-done:active {
+    transform: scale(0.98);
+}
+
 .done-text {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #16a34a;
+    margin-top: 20px;
+    font-weight: 800;
+    color: var(--success-green);
+    font-size: 24px;
     text-align: center;
+    padding: 20px;
+    background: #f0fdf4;
+    border-radius: 15px;
+    border: 2px solid #bcf0da;
+}
+
+/* Tối ưu cho Mobile */
+@media (max-width: 600px) {
+    :root {
+        --fs-p: 20px;
+        --fs-h3: 26px;
+        --fs-h4: 22px;
+    }
+    .section-box { padding: 25px 15px; }
+    .btn-done { font-size: 22px; padding: 20px; }
 }
 </style>
 
-<section id="content">
-<div class="container">
-<div class="section-box">
+<div class="container-mobile">
+    <div class="section-box">
 
-<h3>MỤC TIÊU CỦA BÀI TẬP</h3>
+        <h3>MỤC TIÊU CỦA BÀI TẬP</h3>
 
-<div class="row">
-<div class="col-md-6">
-<ul>
-<li>Kích thích phản xạ đi tiểu tự nhiên</li>
-<li>Phục hồi trương lực bàng quang</li>
-</ul>
+        <div class="row">
+            <div class="col-md-6">
+                <ul>
+                    <li>Kích thích phản xạ đi tiểu tự nhiên</li>
+                    <li>Phục hồi trương lực bàng quang</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>Giảm phụ thuộc vào sonde tiểu</li>
+                    <li>Phòng ngừa nhiễm trùng tái phát</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr style="margin: 40px 0; border: 1px solid #eee;">
+
+        <h4>1. TẬP ĐI TIỂU THEO GIỜ</h4>
+        <p><strong>Nguyên tắc:</strong> Không đợi đến khi thật buồn tiểu mới đi. Bạn nên chủ động đi vệ sinh mỗi <strong>2–3 giờ/lần</strong>.</p>
+
+        <div class="well">
+            <p style="font-weight: 800; color: var(--primary-blue);">Tư thế đúng khi tập:</p>
+            <ul>
+                <li><strong>Nam giới:</strong> Có thể ngồi hoặc đứng thuận tiện.</li>
+                <li><strong>Nữ giới:</strong> Ngồi trên bô hoặc bồn cầu thoải mái.</li>
+                <li><em>Nếu chưa thể ngồi dậy: nằm nhẹ nhàng, thả lỏng, không rặn mạnh.</em></li>
+            </ul>
+            <p style="margin-top: 15px; font-style: italic;">📍 Lưu ý: Nếu chưa tiểu được ngay, hãy nghỉ ngơi 15–20 phút rồi thử lại.</p>
+        </div>
+
+        <h4>2. CÁCH KÍCH THÍCH ĐI TIỂU AN TOÀN</h4>
+
+        <div class="row text-center" style="margin-top: 30px;">
+            <div class="col-xs-4">
+                <img src="img/nuoc.jpg" alt="Tiếng nước">
+                <p class="img-caption">Nghe tiếng nước chảy</p>
+            </div>
+            <div class="col-xs-4">
+                <img src="img/chuom.jpg" alt="Chườm ấm">
+                <p class="img-caption">Chườm ấm bụng dưới</p>
+            </div>
+            <div class="col-xs-4">
+                <img src="img/xoa.png" alt="Xoa vùng mu">
+                <p class="img-caption">Xoa nhẹ vùng xương mu</p>
+            </div>
+        </div>
+
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/ENZeGU_qshY" allowfullscreen></iframe>
+        </div>
+
+        <h4>3. BÀI TẬP CƠ SÀN CHẬU (KEGEL)</h4>
+
+        <div class="row" style="align-items: center; display: flex; flex-wrap: wrap;">
+            <div class="col-sm-7">
+                <ul>
+                    <li>Thắt chặt cơ vùng kín như đang nhịn tiểu.</li>
+                    <li>Giữ yên trong <strong>3–5 giây</strong>.</li>
+                    <li>Thả lỏng hoàn toàn trong <strong>3–5 giây</strong>.</li>
+                    <li>Lặp lại động tác 10 lần mỗi đợt.</li>
+                </ul>
+            </div>
+            <div class="col-sm-5">
+                <img src="img/kegel.png" style="max-height: 200px; display: block; margin: auto;">
+            </div>
+        </div>
+
+        <h4>4. VẬN ĐỘNG NHẸ SAU PHẪU THUẬT</h4>
+        <p>Vận động giúp bàng quang hoạt động hiệu quả hơn. Bạn nên tập ngồi dậy sớm và đi lại nhẹ nhàng theo hướng dẫn của nhân viên y tế.</p>
+
+        <div class="well" style="border-left: 10px solid #94a3b8;">
+            <h4 style="margin-top:0; color: #475569;">🚫 KHÔNG NÊN LÀM</h4>
+            <p>❌ Không rặn quá mạnh khi đi tiểu.<br>
+            ❌ Không tự ý tháo hoặc kéo rút ống sonde tiểu.<br>
+            ❌ Không uống quá nhiều nước trong cùng một lúc.</p>
+        </div>
+
+        <div class="alert alert-danger">
+            <h4>⚠️ KHI NÀO CẦN BÁO Y TẾ NGAY?</h4>
+            <ul>
+                <li>Không thể đi tiểu sau 6 giờ kể từ lần cuối.</li>
+                <li>Cảm thấy đau tức dữ dội vùng bụng dưới.</li>
+                <li>Tiểu ra máu, tiểu buốt, tiểu rắt hoặc bị sốt.</li>
+            </ul>
+        </div>
+
+        <div class="well text-center" style="background: #f0f9ff; border: 1px dashed var(--primary-blue);">
+            <p style="font-weight: 800; color: var(--primary-blue); margin: 0;">Ghi nhớ: Kiên trì tập luyện giúp bạn phục hồi nhanh hơn!</p>
+        </div>
+
+        <div id="btnContainer">
+            <button class="btn-done" onclick="markDone()">
+                ✔ TÔI ĐÃ ĐỌC VÀ HIỂU NỘI DUNG
+            </button>
+        </div>
+
+        <div id="doneStatus" class="done-text"></div>
+
+    </div>
 </div>
-
-<div class="col-md-6">
-<ul>
-<li>Giảm phụ thuộc vào sonde tiểu</li>
-<li>Phòng ngừa nhiễm trùng và bí tiểu tái phát</li>
-</ul>
-</div>
-</div>
-
-<hr>
-
-<h4>1. TẬP ĐI TIỂU THEO GIỜ</h4>
-<p><strong>Nguyên tắc:</strong> Không đợi buồn tiểu mới đi. Nên đi mỗi 2–3 giờ/lần.</p>
-
-<div class="well">
-<p><strong>Tư thế đúng:</strong></p>
-<ul>
-<li><strong>Nam:</strong> Ngồi hoặc đứng</li>
-<li><strong>Nữ:</strong> Ngồi bô hoặc bồn cầu</li>
-<li><em>Nếu chưa thể ngồi: nằm nhẹ nhàng, không rặn mạnh</em></li>
-</ul>
-<p>📌 Nếu chưa tiểu được, nghỉ 15–20 phút rồi thử lại.</p>
-</div>
-
-<h4>2. CÁCH KÍCH THÍCH ĐI TIỂU AN TOÀN</h4>
-
-<div class="row text-center">
-<div class="col-sm-4">
-<img src="img/nuoc.jpg">
-<p>Nghe tiếng nước chảy</p>
-</div>
-
-<div class="col-sm-4">
-<img src="img/chuom.jpg">
-<p>Chườm ấm bụng dưới</p>
-</div>
-
-<div class="col-sm-4">
-<img src="img/xoa.png">
-<p>Xoa vùng trên xương mu</p>
-</div>
-</div>
-
-<!-- VIDEO -->
-<div class="video-container">
-<iframe src="https://www.youtube.com/embed/ENZeGU_qshY" allowfullscreen></iframe>
-</div>
-
-<h4>3. BÀI TẬP CƠ SÀN CHẬU (KEGEL)</h4>
-
-<div class="row">
-<div class="col-sm-7">
-<ul>
-<li>Thắt cơ như đang nhịn tiểu</li>
-<li>Giữ 3–5 giây</li>
-<li>Thả lỏng 3–5 giây</li>
-<li>Lặp lại 10 lần</li>
-</ul>
-</div>
-
-<div class="col-sm-5">
-<img src="img/kegel.png">
-</div>
-</div>
-
-<h4>4. VẬN ĐỘNG NHẸ SAU PHẪU THUẬT</h4>
-<p>Vận động giúp bàng quang hoạt động tốt hơn. Nên ngồi dậy sớm và đi lại theo hướng dẫn y tế.</p>
-
-<div class="well">
-<h4>KHÔNG NÊN LÀM</h4>
-<p>❌ Không rặn mạnh khi đi tiểu<br>
-❌ Không tự ý tháo sonde<br>
-❌ Không uống quá nhiều nước cùng lúc</p>
-</div>
-
-<div class="alert alert-danger">
-<h4>KHI NÀO CẦN BÁO Y TẾ?</h4>
-<ul>
-<li>Không đi tiểu sau 6 giờ</li>
-<li>Đau tức bụng dưới</li>
-<li>Tiểu máu, tiểu buốt hoặc sốt</li>
-</ul>
-</div>
-
-<div class="well text-center">
-<p><strong>Ghi nhớ:</strong> Tập đúng giúp phục hồi nhanh hơn.</p>
-</div>
-
-<!-- PROGRESS -->
-<button class="btn-main btn-done" onclick="markDone()">
-✔ Đã đọc nội dung
-</button>
-
-<div id="doneStatus" class="done-text"></div>
-
-</div>
-</div>
-</section>
 
 <script>
 function markDone() {
     localStorage.setItem("urination_done", "true");
-    document.getElementById("doneStatus").innerHTML =
-        "📊 Bạn đã hoàn thành nội dung này";
+    showDoneStatus();
+}
+
+function showDoneStatus() {
+    const statusDiv = document.getElementById("doneStatus");
+    const btnContainer = document.getElementById("btnContainer");
+    
+    if (statusDiv) {
+        statusDiv.innerHTML = "📊 Bạn đã hoàn thành nội dung hướng dẫn này";
+    }
+    if (btnContainer) {
+        btnContainer.style.display = "none";
+    }
 }
 
 window.onload = function () {
     if (localStorage.getItem("urination_done") === "true") {
-        document.getElementById("doneStatus").innerHTML =
-            "📊 Bạn đã hoàn thành nội dung này";
+        showDoneStatus();
     }
 };
 </script>
