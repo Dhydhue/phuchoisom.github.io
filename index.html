@@ -48,33 +48,37 @@
         </div>
 
 <style>
-/* TỔNG THỂ HỆ THỐNG - CHUẨN Y TẾ CAO CẤP */
+/* HỆ THỐNG GIAO DIỆN Y TẾ HIỆN ĐẠI */
 :root {
-    --primary-medical: #0f52ba;
-    --accent-medical: #2563eb;
-    --bg-light: #f1f5f9;
-    --text-dark: #0f172a;
+    --primary-color: #0f52ba;
+    --accent-color: #2563eb;
+    --bg-light: #f8fafc;
+    --text-main: #1e293b;
     --text-muted: #475569;
+    --white: #ffffff;
     --shadow: 0 10px 25px rgba(0,0,0,0.1);
+    /* FONT CHỮ CỰC ĐẠI */
+    --font-size-base: 22px; 
+    --font-size-h1: 42px;
+    --font-size-h2: 32px;
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: var(--bg-light);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-light);
     margin: 0;
-    color: var(--text-dark);
-    /* NÂNG FONT CHỮ CỰC ĐẠI */
-    font-size: 22px; 
+    color: var(--text-main);
+    font-size: var(--font-size-base);
     line-height: 1.8;
 }
 
-.medical-wrapper {
-    max-width: 1200px;
+.container-custom {
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 15px 50px;
+    padding: 20px;
 }
 
-/* HEADLINE AREA ĐẸP */
+/* 1. HEADLINE ĐẸP & CHUYÊN NGHIỆP */
 .main-headline {
     text-align: center;
     padding: 60px 20px;
@@ -82,28 +86,26 @@ body {
     color: white;
     border-radius: 0 0 50px 50px;
     margin-bottom: 40px;
-    box-shadow: 0 15px 30px rgba(15, 82, 186, 0.2);
+    box-shadow: var(--shadow);
 }
 
-.main-headline h0 {
-    display: block;
-    font-size: 42px;
-    font-weight: 900;
-    text-transform: uppercase;
+.main-headline h1 {
+    font-size: var(--font-size-h1);
     margin: 0;
-    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 800;
 }
 
-/* SLIDER CHUYÊN NGHIỆP */
+/* 2. SLIDER TỐI ƯU */
 .slider {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 450px;
     overflow: hidden;
     border-radius: 30px;
     box-shadow: var(--shadow);
     margin-bottom: 40px;
-    background: #000;
 }
 
 .slide {
@@ -116,13 +118,12 @@ body {
 .slide img {
     width: 100%; height: 100%;
     object-fit: cover;
-    object-position: center;
 }
 
 .caption {
     position: absolute;
     bottom: 0; left: 0; right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
     padding: 40px 20px;
     text-align: center;
 }
@@ -131,322 +132,274 @@ body {
     font-size: 28px;
     color: #fff;
     margin: 0;
-    font-weight: 800;
-    text-transform: uppercase;
+    font-weight: 700;
 }
 
 @keyframes slideShow {
-    0%, 15% { opacity: 0; transform: scale(1.1); }
-    20%, 45% { opacity: 1; transform: scale(1); }
+    0%, 15% { opacity: 0; }
+    20%, 45% { opacity: 1; }
     50%, 100% { opacity: 0; }
 }
 
-/* CARD Y TẾ */
-.med-card {
-    background: #ffffff;
-    border-radius: 30px;
-    padding: 50px 40px;
-    margin-bottom: 35px;
-    box-shadow: var(--shadow);
-    border: 1px solid #e2e8f0;
-}
+.slide:nth-child(2) { animation-delay: 6s; }
 
-.title-border {
-    border-left: 10px solid var(--primary-medical);
-    padding-left: 20px;
+/* 3. CARD NỘI DUNG CHỮ TO */
+.card-med {
+    background: var(--white);
+    border-radius: 25px;
+    padding: 40px;
     margin-bottom: 30px;
-    font-size: 32px;
-    font-weight: 800;
-    color: var(--primary-medical);
+    box-shadow: var(--shadow);
+    border-left: 10px solid var(--primary-color);
 }
 
-.med-card p {
-    margin-bottom: 25px;
+.card-med h2, .card-med h3 {
+    color: var(--primary-color);
+    font-size: var(--font-size-h2);
+    margin-top: 0;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-/* VIDEO MÀN HÌNH TO (CINEMA MODE) */
+.card-med h2 img { width: 60px; height: auto; }
+
+/* 4. VIDEO MÀN HÌNH TO (CINEMA MODE) */
 .video-wrapper {
     position: relative;
-    width: 100%;
-    padding-bottom: 56.25%; 
-    margin: 40px 0;
-    border-radius: 25px;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    border-radius: 20px;
     background: #000;
+    margin: 30px 0;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
 }
 
 .video-wrapper iframe {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%; border: none;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border: 0;
 }
 
-/* BOX NHẤN MẠNH */
-.highlight-blue {
-    background: #f0f7ff;
-    border-left: 8px solid var(--accent-medical);
-    padding: 30px;
-    border-radius: 20px;
-    margin: 25px 0;
+/* 5. HIGHLIGHT BOX */
+.highlight-box {
+    background: #eff6ff;
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid #dbeafe;
+    margin: 20px 0;
 }
 
-.highlight-green {
-    background: #f0fdf4;
-    border-left: 8px solid #22c55e;
-    padding: 30px;
-    border-radius: 20px;
-}
+.highlight-box strong { color: var(--primary-color); }
 
-/* SỰ KIỆN GRID */
+/* 6. SỰ KIỆN GRID */
 .events-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
+    gap: 25px;
+    margin-top: 30px;
 }
 
 .event-item {
-    background: #fff;
-    border-radius: 25px;
+    background: var(--white);
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--shadow);
     text-align: center;
-    transition: all 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .event-item:hover { transform: translateY(-10px); }
 
-.event-item img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    display: block;
-}
+.event-item img { width: 100%; height: 250px; object-fit: cover; }
 
 .event-item p {
-    font-weight: 800;
     padding: 20px;
+    font-weight: bold;
+    color: var(--primary-color);
     margin: 0;
     font-size: 20px;
-    color: var(--primary-medical);
 }
 
-/* ẢNH CĂN GIỮA */
-.img-center {
-    display: block;
-    margin: 30px auto;
-    max-width: 100%;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-}
-	
-/* FOOTER */
+/* 7. FOOTER CHUYÊN NGHIỆP */
 .footer-med {
-    background: #e0f2fe; /* Màu xanh da trời rất nhạt */
-    color: #0369a1;      /* Chữ màu xanh dương đậm để nổi bật trên nền nhạt */
-    padding: 60px 40px;
-    border-radius: 40px;
-    margin-top: 60px;
-    border: 1px solid #bae6fd; /* Thêm viền nhẹ cho tinh tế */
+    background: #0f172a;
+    color: white;
+    padding: 60px 20px;
+    margin-top: 50px;
+    border-radius: 50px 50px 0 0;
 }
 
-.footer-med h3 { font-size: 28px; }
-.footer-med p { font-size: 20px; margin: 10px 0; }
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
 
+.footer-med h3 { color: #3b82f6; margin-bottom: 20px; }
+
+/* NÚT CUỘN LÊN */
 .scrollup {
     position: fixed;
-    bottom: 30px; right: 30px;
-    background: var(--primary-medical);
+    bottom: 30px;
+    right: 30px;
+    background: var(--primary-color);
     color: white;
-    width: 60px; height: 60px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     font-size: 30px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 999;
 }
 
-/* RESPONSIVE CHO MOBILE */
-@media (max-width: 767px) {
-    body { font-size: 19px; }
-    .main-headline h0 { font-size: 28px; }
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+    :root {
+        --font-size-base: 19px;
+        --font-size-h1: 28px;
+        --font-size-h2: 24px;
+    }
     .slider { height: 300px; }
-    .caption h3 { font-size: 18px; }
-    .title-border { font-size: 24px; }
-    .med-card { padding: 30px 20px; }
-    .footer-med { padding: 40px 20px; border-radius: 30px 30px 0 0; }
+    .main-headline { padding: 40px 15px; border-radius: 0 0 30px 30px; }
+    .card-med { padding: 25px; }
 }
 </style>
 
-<div class="main-headline">
-    <h0>Khoa Ngoại Chấn Thương Chỉnh Hình</h0>
-    <p style="font-size: 24px; font-weight: 500; margin-top: 10px;">Thần Kinh Sọ Não - Bệnh viện Trung Ương Huế Cơ Sở 2</p>
-</div>
+<header class="main-headline">
+    <h1>Khoa Ngoại Chấn Thương Chỉnh Hình<br>Thần Kinh Sọ Não</h1>
+</header>
 
-<div class="medical-wrapper">
-
+<div class="container-custom">
     <div class="slider">
-        <div class="slide" style="animation-delay: 0s;">
-            <img src="img/slides/1.jpg" alt="Slider 1">
+        <div class="slide">
+            <img src="img/slides/1.jpg" alt="Slide 1">
             <div class="caption">
                 <h3>Y HỌC HIỆN ĐẠI – NÂNG TẦM CHẤT LƯỢNG ĐIỀU TRỊ</h3>
             </div>
         </div>
-        <div class="slide" style="animation-delay: 6s;">
-            <img src="img/slides/2.jpg" alt="Slider 2">
+        <div class="slide">
+            <img src="img/slides/2.jpg" alt="Slide 2">
             <div class="caption">
                 <h3>SỰ HÀI LÒNG CỦA BẠN LÀ NIỀM KIÊU HÃNH CỦA CHÚNG TÔI</h3>
             </div>
         </div>
     </div>
 
-    <section class="med-card">
-        <h1 class="title-border" style="text-align: center; border-left: none;">GIỚI THIỆU VỀ BỆNH LÝ CỘT SỐNG</h1>
-        <p>
-            Bệnh lý cột sống là nhóm các rối loạn ảnh hưởng đến cấu trúc và chức năng của cột sống, bao gồm đốt sống, đĩa đệm, dây chằng và tủy sống. Những tình trạng này có thể gây đau, hạn chế vận động và ảnh hưởng nghiêm trọng đến đời sống.
-        </p>
-        <div class="highlight-blue">
-            <h4 style="margin-top: 0; color: var(--primary-medical); font-size: 24px;">CÁC BỆNH THƯỜNG GẶP:</h4>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; font-weight: 600;">
-                <span>• Thoát vị đĩa đệm</span>
-                <span>• Thoái hóa cột sống</span>
-                <span>• Hẹp ống sống</span>
-                <span>• Trượt đốt sống</span>
-                <span>• Chấn thương cột sống</span>
-            </div>
+    <section class="card-med">
+        <h3>GIỚI THIỆU VỀ BỆNH LÝ CỘT SỐNG</h3>
+        <p>Bệnh lý cột sống là nhóm các rối loạn ảnh hưởng đến cấu trúc và chức năng của cột sống, bao gồm đốt sống, đĩa đệm, dây chằng và tủy sống. Những tình trạng này có thể gây đau, hạn chế vận động và ảnh hưởng nghiêm trọng đến chất lượng cuộc sống.</p>
+        
+        <div class="highlight-box">
+            <p><strong>Các bệnh thường gặp:</strong></p>
+            <p>• Thoát vị đĩa đệm | • Thoái hóa cột sống | • Hẹp ống sống | • Trượt đốt sống | • Chấn thương cột sống</p>
         </div>
-        <div class="highlight-green" style="margin-top: 30px;">
-            <strong style="color: #166534;">Điều quan trọng:</strong> Chẩn đoán sớm và điều trị kịp thời, kết hợp nội khoa, phục hồi chức năng và phẫu thuật giúp ngăn ngừa các biến chứng liệt vĩnh viễn.
+        
+        <div class="highlight-box" style="border-left: 5px solid #10b981; background: #f0fdf4;">
+            <p><strong>Điều quan trọng:</strong> Chẩn đoán sớm và điều trị kịp thời giúp cải thiện triệu chứng và ngăn ngừa biến chứng liệt hoặc mất khả năng vận động.</p>
         </div>
     </section>
 
-	<section class="med-card-premium">
-    <div class="med-header-modern">
-        <div class="header-icon-wrap">
-            <img src="img/2.png" alt="Icon Cột sống" class="floating-icon">
-        </div>
-        <div class="header-text-wrap">
-            <h2 class="med-title-giant">Cấu Trúc Cột Sống</h2>
-            <div class="med-accent-line"></div>
-        </div>
-    </div>
-
-    <div class="med-content-box">
-        <p class="med-text-big">
-            Cột sống đóng vai trò là <strong>"trụ cột vàng"</strong> giúp nâng đỡ toàn bộ cơ thể, cho phép chúng ta thực hiện các hoạt động cơ bản như <strong>đứng, ngồi và đi lại</strong> một cách bình thường. 
-        </p>
-        <div class="med-alert-box-blue">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 15px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
-            <span>Khi cột sống bị tổn thương, người bệnh sẽ phải đối mặt với những cơn đau lưng dữ dội, gây hạn chế nghiêm trọng đến mọi sinh hoạt hàng ngày.</span>
-        </div>
-    </div>
-    
-    <div class="med-video-container">
-        <div class="video-label">📺 VIDEO MINH HỌA GIẢI PHẪU</div>
-        <div class="video-wrapper-premium">
+    <section class="card-med">
+        <h2><img src="img/2.png" alt=""> Cột Sống</h2>
+        <p>Cột sống giúp nâng đỡ cơ thể và giữ cho chúng ta <strong>đứng, ngồi, đi lại bình thường</strong>. Giúp cơ thể cúi – ngửa – xoay linh hoạt và bảo vệ tủy sống quan trọng.</p>
+        
+        <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/wq9IKxuDMAQ" allowfullscreen></iframe>
         </div>
-    </div>
+    </section>
 
-    <div class="med-stats-bar">
-        <div class="stat-item">
-            <span class="stat-emoji">🔄</span>
-            <span class="stat-text">VẬN ĐỘNG LINH HOẠT</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-            <span class="stat-emoji">🧠</span>
-            <span class="stat-text">BẢO VỆ TỦY SỐNG</span>
-        </div>
-    </div>
-</section>
-
-<style>
-      
-
-    <section class="med-card">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <img src="img/3.png" alt="Icon Trượt cột sống" style="width: 100px; margin-bottom: 15px;">
-            <h2 style="font-size: 36px; color: var(--primary-medical);">Trượt & Hẹp Cột Sống</h2>
-        </div>
-        <p>Đây là bệnh lý phổ biến ở người trung niên. Nguyên nhân chủ yếu do thoái hóa tự nhiên hoặc các chấn thương tích tụ theo thời gian.</p>
+    <section class="card-med">
+        <h2><img src="img/3.png" alt=""> Trượt & Hẹp Cột Sống Thắt Lưng</h2>
+        <p>Đây là bệnh thường gặp ở người trung niên và cao tuổi. Nguyên nhân thường do thoái hóa, thoát vị đĩa đệm hoặc chấn thương.</p>
         
+        <div class="highlight-box">
+            <p>⚠️ <strong>Trượt đốt sống:</strong> Đốt xương bị lệch khỏi vị trí trục.</p>
+            <p>⚠️ <strong>Hẹp ống sống:</strong> Không gian trong cột sống bị hẹp, chèn ép dây thần kinh.</p>
+        </div>
+
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/6XdzRKtF2k8" allowfullscreen></iframe>
         </div>
-
-        <div class="highlight-blue">
-            <p>⚠️ <strong>Trượt đốt sống:</strong> Đốt xương bị lệch khỏi vị trí trục chuẩn.</p>
-            <p style="margin: 0;">⚠️ <strong>Hẹp ống sống:</strong> Không gian tủy bị thu hẹp, chèn ép rễ thần kinh.</p>
-        </div>
     </section>
 
-    <section class="med-card">
-        <div style="text-align: center; margin-bottom: 30px;">
-            <img src="img/1.png" alt="Icon Phẫu thuật" style="width: 100px; margin-bottom: 15px;">
-            <h2 style="font-size: 36px; color: var(--primary-medical);">Phẫu Thuật Cột Sống</h2>
-        </div>
-        <p>Phẫu thuật là phương pháp tối ưu khi các biện pháp bảo tồn không còn tác dụng, giúp giải phóng chèn ép và làm vững cột sống ngay lập tức.</p>
+    <section class="card-med">
+        <h2><img src="img/1.png" alt=""> Phẫu Thuật Cột Sống Thắt Lưng</h2>
+        <p>Phẫu thuật được chỉ định khi điều trị nội khoa không hiệu quả nhằm giải phóng chèn ép thần kinh và phục hồi cấu trúc cột sống.</p>
         
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/JdefdUYh7Os" allowfullscreen></iframe>
         </div>
     </section>
 
-    <section class="med-card">
-        <h2 class="title-border" style="text-align: center; border-left: none;">PHỤC HỒI SỚM SAU PHẪU THUẬT (ERAS)</h2>
-        <p style="text-align: center; color: var(--text-muted); font-style: italic; font-size: 24px;">Tiêu chuẩn vàng trong chăm sóc ngoại khoa hiện đại</p>
+    <section class="card-med" style="border-left: 10px solid #10b981;">
+        <h2 style="color: #10b981;">PHỤC HỒI SỚM SAU PHẪU THUẬT (ERAS)</h2>
+        <p style="font-style: italic; color: var(--text-muted);">Vì sự an toàn và chất lượng cuộc sống của người bệnh</p>
         
-        <img src="img/h4.jpg" alt="ERAS Image" class="img-center">
-
-        <div class="highlight-green">
-            <h4 style="margin-top: 0; color: #166534; font-size: 26px;">LỢI ÍCH CỦA CHƯƠNG TRÌNH ERAS:</h4>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; font-weight: 600;">
-                <span>✔ Giảm đau sau phẫu thuật hiệu quả </span>
-                <span>✔ Rút ngắn thời gian nằm viện</span>
-                <span>✔ Giảm nguy cơ biến chứng</span>
-                <span>✔ Sớm trở lại sinh hoạt bình thường</span>
-                <span>✔ Nâng cao chất lượng cuộc sống</span>
-            </div>
+        <img src="img/h4.jpg" alt="ERAS" style="width:100%; border-radius: 20px; margin-bottom: 20px;">
+        
+        <div class="highlight-box" style="background: #f0fdf4;">
+            <p>✔ Giảm đau hiệu quả | ✔ Rút ngắn thời gian nằm viện | ✔ Giảm nguy cơ biến chứng | ✔ Sớm trở lại sinh hoạt bình thường</p>
         </div>
     </section>
 
-    <section style="margin-top: 60px;">
-        <h2 class="title-border" style="text-align: center; border-left: none;">HÌNH ẢNH HOẠT ĐỘNG</h2>
-        <div class="events-grid">
-            <div class="event-item">
-                <img src="img/m.jpg" alt="Event 1">
-                <p>KỸ THUẬT CHUYÊN SÂU</p>
-            </div>
-            <div class="event-item">
-                <img src="img/e2.png" alt="Event 2">
-                <p>PHỐI HỢP ĐA CHUYÊN KHOA</p>
-            </div>
-            <div class="event-item">
-                <img src="img/h2.jpg" alt="Event 3">
-                <p>TẬN TÂM CHĂM SÓC</p>
-            </div>
+    <h2 style="text-align: center; color: var(--primary-color); margin-top: 50px;">SỰ KIỆN NỔI BẬT</h2>
+    <div class="events-grid">
+        <div class="event-item">
+            <img src="img/m.jpg" alt="">
+            <p>CHUYÊN MÔN SÂU</p>
         </div>
-    </section>
-
-    <footer class="footer-med">
-        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-            <h3 style="color: #60a5fa; font-weight: 900;">THÔNG TIN LIÊN HỆ</h3>
-            <p><strong>Khoa Ngoại Chấn thương Chỉnh hình – Thần kinh Sọ não</strong></p>
-            <p>📍 Tầng 3 Khu D - BV Trung ương Huế Cơ sở 2</p>
-            <p>📞 Tổng đài: 0543 761 761 (Máy lẻ: 3902)</p>
-            <p>📧 Ngoaictch-tksntw2@gmail.com</p>
-            <hr style="border: 0; border-top: 1px solid #334155; margin: 30px 0;">
-            <p style="font-size: 16px; opacity: 0.7;">© 2024 Khoa Ngoại CTCH-TKSN - BVTW Huế CS2</p>
+        <div class="event-item">
+            <img src="img/e2.png" alt="">
+            <p>PHỐI HỢP ĐA CHUYÊN KHOA</p>
         </div>
-    </footer>
-
+        <div class="event-item">
+            <img src="img/h2.jpg" alt="">
+            <p>NÂNG CAO CHẤT LƯỢNG CHĂM SÓC</p>
+        </div>
+    </div>
 </div>
 
-<a href="#" class="scrollup">▲</a>
+<footer class="footer-med">
+    <div class="footer-content">
+        <div>
+            <h3>LIÊN HỆ</h3>
+            <p><strong>Khoa Ngoại Chấn thương Chỉnh hình – Thần kinh Sọ não</strong></p>
+            <p>📍 Tầng 3 Khu D - BV Trung ương Huế cơ sở 2</p>
+            <p>📞 0543 761 761 (Máy lẻ: 3902)</p>
+            <p>📧 Ngoaictch-tksntw2@gmail.com</p>
+        </div>
+        <div style="text-align: right;">
+            <p>© 2024 Trung tâm Chấn thương Chỉnh hình. Bảo lưu mọi quyền.</p>
+        </div>
+    </div>
+</footer>
+
+<a href="#" class="scrollup">↑</a>
+
+<script>
+    // Chức năng nút cuộn lên
+    window.onscroll = function() {
+        var btn = document.querySelector(".scrollup");
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            btn.style.display = "flex";
+        } else {
+            btn.style.display = "none";
+        }
+    };
+</script>
+		
+		
+		
+	
 
 <!-- Scroll to top -->
 <a href="#" class="scrollup" id="scrollBtn">↑</a>
