@@ -170,74 +170,48 @@
         background-color: #f8fafc;
     }
 
-   /* BAN CHỦ NHIỆM - PHIÊN BẢN NÂNG CẤP */
- .team {
-    display: grid;
-    /* Tăng minmax lên 280px để các cột rộng hơn, cho phép ảnh to hơn */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
-}
+/* BAN CHỦ NHIỆM */
+    .team {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
 
-.member {
-    text-align: center;
-    padding: 30px 20px;
-    border-radius: 30px;
-    background: #ffffff;
-    /* Thêm đổ bóng nhẹ cho khung thẻ */
-    box-shadow: 0 10px 30px rgba(15, 82, 186, 0.05);
-    border: 1px solid #f1f5f9;
-    transition: transform 0.3s ease;
-}
+    .member {
+        text-align: center;
+        padding: 20px;
+        border-radius: 20px;
+        background: #fdfdfd;
+        border: 1px solid #f1f5f9;
+    }
 
-.member:hover {
-    transform: translateY(-10px); /* Hiệu ứng bay lên khi di chuột vào */
-}
-
-.member img {
-    display: block;
-    /* TĂNG KÍCH THƯỚC Ở ĐÂY */
-    width: 250px; 
-    height: 250px;
-    /* Hết Tăng kích thước */
-    object-fit: cover;
-    border-radius: 25px; /* Bo góc mềm mại hơn */
-    border: 6px solid #f8fafc;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    margin: 0 auto 25px;
-}
-
-.member h4 {
-    color: var(--primary-medical);
-    margin: 15px 0 8px;
-    /* Font chữ tên bác sĩ to và rõ hơn */
-    font-size: 24px; 
-    text-transform: uppercase;
-    font-weight: 900;
-    letter-spacing: 0.5px;
-}
-
-.member p {
-    /* Chức vụ bác sĩ */
-    font-size: 20px;
-    font-weight: 600;
-    color: #64748b;
-    margin: 0;
-    line-height: 1.4;
-}
-
-/* Tối ưu cho điện thoại */
-@media (max-width: 600px) {
     .member img {
-        width: 100%; /* Ảnh chiếm hết chiều rộng khung hình trên mobile */
-        max-width: 280px;
-        height: 280px;
-    }
-    .member h4 {
-        font-size: 22px;
+        display: block;
+        width: 200px; /* Tăng kích thước ảnh */
+        height: 200px;
+        object-fit: cover;
+        border-radius: 15px;
+        border: 5px solid white;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        margin: 0 auto 20px;
     }
 
-	
+    .member h4 {
+        color: var(--primary);
+        margin: 10px 0 5px;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+
+    .member p {
+        font-size: 18px;
+        font-weight: bold;
+        color: #475569;
+        margin: 0;
+    }
+
     /* VIDEO MÀN HÌNH TO (Cinema Mode) */
     .video-container {
         position: relative;
