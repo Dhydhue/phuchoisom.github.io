@@ -46,288 +46,234 @@
             </div>
         </div>
 	</header><!-- end header -->
-	<section id="inner-headline">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h2 class="pageTitle">NHỊN ĂN TRƯỚC PHẪU THUẬT</h2>
-			</div>
-		</div>
-	</div>
-	</section>
-	<section id="content">
-	<div class="container">
 <style>
     :root {
-        --primary-med: #dc2626; /* Màu đỏ y tế cảnh báo/chuyên môn */
-        --secondary-med: #1d4ed8; /* Màu xanh tin cậy */
+        --primary-med: #dc2626; 
+        --secondary-med: #1d4ed8; 
         --bg-gray: #f8fafc;
         --text-main: #1e293b;
+        /* HỆ THỐNG FONT CHỮ CỰC ĐẠI */
+        --font-size-base: 22px;    /* Chữ nội dung */
+        --font-size-h3: 28px;      /* Tiêu đề mục */
+        --font-size-headline: 36px; /* Tiêu đề chính */
     }
 
     /* Headline Area */
     .med-headline {
         background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%);
-        padding: 40px 20px;
+        padding: 60px 20px;
         text-align: center;
         color: white;
-        border-radius: 0 0 30px 30px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        margin-bottom: 25px;
+        border-radius: 0 0 50px 50px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        margin-bottom: 40px;
     }
 
     .med-headline h1 {
         margin: 0;
-        font-size: 26px;
+        font-size: var(--font-size-headline);
         text-transform: uppercase;
         letter-spacing: 1px;
-        font-weight: 800;
+        font-weight: 900;
+        line-height: 1.2;
     }
 
     .med-headline p {
-        margin: 10px 0 0;
-        font-size: 16px;
-        opacity: 0.9;
+        margin: 15px 0 0;
+        font-size: 24px;
+        opacity: 0.95;
+        font-weight: 500;
     }
 
-    /* Container Mobile & Web */
+    /* Container */
     .container-mobile {
-        padding: 0 15px 30px;
-        max-width: 800px;
+        padding: 0 20px 50px;
+        max-width: 900px;
         margin: auto;
     }
 
     /* Card Layout */
     .card {
         background: #ffffff;
-        border-radius: 20px;
-        padding: 25px;
-        margin-bottom: 20px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        border: 1px solid #f1f5f9;
+        border-radius: 30px;
+        padding: 40px;
+        margin-bottom: 30px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+        border: 1px solid #e2e8f0;
     }
 
-    /* Căn giữa hình ảnh */
     .img-center-box {
         text-align: center;
-        margin: 20px 0;
+        margin: 30px 0;
     }
 
     .card img {
-        max-width: 100%;
+        width: 100%;
+        max-width: 650px;
         height: auto;
-        border-radius: 12px;
-        display: inline-block; /* Quan trọng để căn giữa */
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
     }
 
-    /* Typography */
+    /* Typography - CHỮ TO */
     .card h3 {
-        font-size: 20px;
+        font-size: var(--font-size-h3);
         color: #0f172a;
-        border-left: 6px solid var(--primary-med);
-        padding-left: 15px;
-        margin: 25px 0 15px;
+        border-left: 10px solid var(--primary-med);
+        padding-left: 20px;
+        margin: 40px 0 25px;
         line-height: 1.3;
+        font-weight: 800;
     }
 
     .card p {
-        font-size: 17px;
-        line-height: 1.7;
+        font-size: var(--font-size-base);
+        line-height: 1.8;
         color: #334155;
-        margin-bottom: 12px;
+        margin-bottom: 18px;
     }
 
-    .card strong.blue-tag {
+    .card b {
+        color: #000;
+        font-weight: 800;
+    }
+
+    .blue-tag {
         display: block;
-        margin-top: 20px;
-        font-size: 18px;
+        margin: 35px 0 20px;
+        font-size: 26px;
         color: var(--secondary-med);
-        font-weight: 700;
+        font-weight: 900;
         text-transform: uppercase;
         text-align: center;
         background: #eff6ff;
-        padding: 10px;
-        border-radius: 8px;
+        padding: 20px;
+        border-radius: 15px;
+        border: 2px solid #dbeafe;
     }
 
     /* Highlight Boxes */
     .highlight {
         background: #fff7ed;
-        padding: 18px;
-        border-radius: 15px;
-        margin-top: 15px;
-        border-right: 4px solid #fdba74;
+        padding: 30px;
+        border-radius: 20px;
+        margin-top: 25px;
+        border-right: 8px solid #fdba74;
     }
 
-    .highlight b {
+    .highlight strong {
+        font-size: 26px;
         color: #9a3412;
+        display: block;
+        margin-bottom: 15px;
     }
 
-    /* VIDEO MÀN HÌNH TO (Cinema Mode) */
+    /* VIDEO Cinema Mode */
     .video-container {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%; /* Tỷ lệ vàng 16:9 */
-        margin: 25px 0;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-        background: #000;
+        border-radius: 25px;
+        margin: 40px 0;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     }
 
-    .video-container iframe {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%; border: none;
-    }
-
-    /* Progress Box & Button */
-    .progress-box {
-        background: #f0fdf4;
-        padding: 20px;
-        border-radius: 18px;
-        text-align: center;
-        margin-top: 30px;
-        border: 2px dashed #16a34a;
-    }
-
+    /* Button XÁC NHẬN TO */
     .btn-done {
         width: 100%;
-        max-width: 400px;
         background: linear-gradient(to right, #16a34a, #15803d);
         color: #fff;
-        font-size: 18px;
-        font-weight: 700;
-        padding: 16px;
-        border-radius: 12px;
+        font-size: 26px;
+        font-weight: 800;
+        padding: 25px;
+        border-radius: 20px;
         border: none;
         cursor: pointer;
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .btn-done:active {
-        transform: scale(0.98);
+        box-shadow: 0 10px 20px rgba(22, 163, 74, 0.3);
     }
 
     .done-text {
-        margin-top: 12px;
-        font-size: 18px;
+        font-size: 24px;
         color: #16a34a;
-        font-weight: bold;
-        display: none;
+        font-weight: 900;
+        margin-top: 20px;
     }
 
-    /* Mobile Zoom */
-    .zoomable { cursor: zoom-in; transition: 0.3s ease; }
-    .zoomable.active {
-        transform: scale(1.05); /* Zoom nhẹ để giữ thẩm mỹ trên mobile */
-        z-index: 100;
-    }
-
-    @media (max-width: 600px) {
-        .med-headline h1 { font-size: 20px; }
-        .card { padding: 15px; }
-        .card h3 { font-size: 18px; }
+    /* Responsive cho Mobile */
+    @media (max-width: 768px) {
+        :root {
+            --font-size-base: 20px;
+            --font-size-h3: 24px;
+            --font-size-headline: 28px;
+        }
+        .med-headline { padding: 50px 15px; }
+        .card { padding: 25px 15px; }
+        .btn-done { font-size: 22px; padding: 20px; }
     }
 </style>
 
 <div class="med-headline">
-    <h1>HƯỚNG DẪN NHỊN ĂN AN TOÀN</h1>
+    <h1>HƯỚNG DẪN<br>NHỊN ĂN AN TOÀN</h1>
     <p>Dành cho bệnh nhân chuẩn bị phẫu thuật</p>
 </div>
 
 <div class="container-mobile">
 
     <div class="card">
-        <h3>VÌ SAO PHẢI NHỊN ĂN TRƯỚC PHẪU THUẬT?</h3>
-        <p>✅ <b>Làm rỗng dạ dày:</b> Tránh thức ăn còn tồn đọng.</p>
-        <p>✅ <b>Chống hít sặc:</b> Giảm tối đa nguy cơ thức ăn trào ngược vào phổi khi gây mê.</p>
-        <p>✅ <b>Giảm nôn:</b> Hạn chế cảm giác buồn nôn và nôn sau mổ.</p>
-        <p>✅ <b>An toàn tuyệt đối:</b> Giảm nguy cơ nhiễm trùng và các biến chứng gây mê.</p>
+        <h3>VÌ SAO PHẢI NHỊN ĂN?</h3>
+        <p>✅ <b>Làm rỗng dạ dày:</b> Đảm bảo bụng sạch, không còn thức ăn tồn đọng.</p>
+        <p>✅ <b>Chống hít sặc:</b> Ngăn chặn thức ăn trào ngược vào phổi khi gây mê (cực kỳ quan trọng).</p>
+        <p>✅ <b>Giảm nôn:</b> Hạn chế tối đa cảm giác buồn nôn khó chịu sau cuộc mổ.</p>
+        <p>✅ <b>An toàn tuyệt đối:</b> Giúp bác sĩ gây mê kiểm soát tốt các chỉ số sinh tồn.</p>
 
-        <h3>THỜI GIAN NHỊN ĂN THEO TỪNG LOẠI</h3>
+        <h3>THỜI GIAN NHỊN ĂN CHUẨN</h3>
         
         <div class="img-center-box">
-            <img class="zoomable" src="img/tg.png" alt="Thời gian nhịn ăn uống chuẩn y khoa">
+            <img class="zoomable" src="img/tg.png" alt="Thời gian nhịn ăn uống">
         </div>
 
-        <strong class="blue-tag">SỬ DỤNG ĐƯỜNG CARBOHYDRAT</strong>
+        <div class="blue-tag">SỬ DỤNG ĐƯỜNG CARBOHYDRAT</div>
 
         <div class="highlight">
-            <strong>1. Vì sao phải uống đường carbohydrat?</strong>
-            <p>• Giảm cảm giác đói, khát và lo âu trước mổ.</p>
-            <p>• Hỗ trợ ổn định chuyển hóa, giúp cơ thể không bị kiệt sức.</p>
-            <p>• Giảm stress sinh lý cho cơ thể trước cuộc phẫu thuật lớn.</p>
+            <strong>1. Lợi ích của đường uống:</strong>
+            <p>• Giảm cảm giác đói khát, mệt mỏi và lo âu.</p>
+            <p>• Cung cấp năng lượng dự trữ, giúp cơ thể mau hồi phục.</p>
+            <p>• Giảm tình trạng kháng Insulin sau phẫu thuật.</p>
         </div>
 
         <div class="highlight">
-            <strong>2. Hướng dẫn sử dụng:</strong>
+            <strong>2. Cách dùng đúng:</strong>
 
-            <p><b>📅 Tối ngày trước phẫu thuật:</b> 
-            Uống dần 2 khẩu phần (theo chỉ định) từ sau ăn tối đến khi đi ngủ.</p>
+            <p><b>📅 Tối trước ngày mổ:</b> <br>Uống dần 2 chai (theo chỉ định) từ sau bữa tối đến lúc đi ngủ.</p>
 
-            <p><b>📅 Ngày phẫu thuật:</b></p>
-            <p>• Không cần truyền dịch bổ sung nếu đã uống đủ.</p>
-            <p>• Uống 1 khẩu phần theo khung giờ mổ:</p>
+            <p><b>📅 Sáng ngày mổ:</b> <br>Uống thêm 1 chai theo khung giờ dưới đây:</p>
 
-            <p style="padding-left: 15px; border-left: 2px solid #fdba74;">
+            <p style="padding-left: 20px; border-left: 5px solid #fdba74; font-weight: 600; background: rgba(253,186,116,0.1); padding-top:10px; padding-bottom:10px;">
                 ⏰ <b>Mổ trước 12h:</b> Uống trước 6h sáng.<br>
                 ⏰ <b>Mổ sau 12h:</b> Uống trước 10h30 sáng.<br>
                 ⏰ <b>Mổ sau 18h:</b> Uống trước 16h chiều.
             </p>
 
-            <p>⚠️ <b>LƯU Ý QUAN TRỌNG:</b> Kết thúc việc uống trước khi mổ <b>ít nhất 2 giờ</b>.</p>
+            <p style="color: #dc2626; font-weight: 800; margin-top: 20px;">
+                ⚠️ LƯU Ý: Phải ngừng uống trước giờ mổ ÍT NHẤT 2 TIẾNG.
+            </p>
         </div>
 
-        <div class="highlight" style="background: #eff6ff; border-right: 4px solid #3b82f6;">
-            <strong style="color: #1e40af;">GHI CHÚ THÊM:</strong>
-            <p>• Nếu không có carbohydrate, có thể dùng nước lọc tinh khiết.</p>
-            <p>• <b>Trẻ em:</b> Uống theo nhu cầu và hướng dẫn của bác sĩ nhi.</p>
-            <p>• <b>Bệnh tiểu đường:</b> Cần điều chỉnh liều thuốc theo hướng dẫn bác sĩ.</p>
-            <p>• <b>Béo phì:</b> Sử dụng như người bình thường.</p>
+        <div class="highlight" style="background: #eff6ff; border-right: 8px solid #3b82f6;">
+            <strong style="color: #1e40af;">GHI CHÚ QUAN TRỌNG:</strong>
+            <p>• <b>Bệnh tiểu đường:</b> Tuyệt đối tuân thủ liều lượng bác sĩ chỉ định riêng.</p>
+            <p>• <b>Trẻ em:</b> Nhịn ăn theo hướng dẫn đặc biệt của bác sĩ Nhi khoa.</p>
+            <p>• Nếu không có carbohydrat, chỉ được dùng <b>nước lọc tinh khiết</b>.</p>
         </div>
 
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/s7w1YfQj93E" allowfullscreen></iframe>
         </div>
 
-        <div class="progress-box">
+        <div style="text-align: center; margin-top: 50px;">
             <button id="btnMark" class="btn-done" onclick="markDone()">✔ XÁC NHẬN ĐÃ ĐỌC & HIỂU</button>
             <div id="doneStatus" class="done-text">📊 TRẠNG THÁI: ĐÃ ĐỌC NỘI DUNG</div>
         </div>
 
     </div>
 </div>
-
-<script>
-// Chức năng đánh dấu hoàn thành
-function markDone() {
-    localStorage.setItem("fasting_done", "true");
-    showDoneStatus();
-}
-
-function showDoneStatus() {
-    const btn = document.getElementById("btnMark");
-    const status = document.getElementById("doneStatus");
-    btn.style.display = "none";
-    status.style.display = "block";
-}
-
-// Kiểm tra trạng thái khi load trang
-window.onload = function () {
-    if (localStorage.getItem("fasting_done") === "true") {
-        showDoneStatus();
-    }
-
-    // Chức năng Zoom ảnh
-    document.querySelectorAll(".zoomable").forEach(img => {
-        img.addEventListener("click", function () {
-            this.classList.toggle("active");
-        });
-    });
-};
-</script>
-		
 
 		
 <!-- Placed at the end of the document so the pages load faster -->
