@@ -249,8 +249,38 @@
 
         <div class="progress-box">
             <div id="actionWrapper">
-                <button class="btn-done" onclick="markDone()">✔ XÁC NHẬN ĐÃ ĐỌC NỘI DUNG
-		
+                <button class="btn-done" onclick="markDone()">✔ XÁC NHẬN ĐÃ ĐỌC NỘI DUNG</button>
+            </div>
+            
+            <div id="doneStatusWrapper" class="done-status-wrapper">
+                <div class="done-text">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    HOÀN THÀNH: ĐÃ ĐỌC NỘI DUNG
+                </div>
+                <p style="justify-content: center; font-size: 18px; color: #64748b; margin-top: 10px; border:none; display:flex;">Cảm ơn bạn đã chủ động phối hợp vệ sinh an toàn!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function markDone() {
+    localStorage.setItem("bath_done", "true");
+    renderStatus();
+}
+
+function renderStatus() {
+    const isDone = localStorage.getItem("bath_done") === "true";
+    if(isDone) {
+        document.getElementById("actionWrapper").style.display = "none";
+        document.getElementById("doneStatusWrapper").style.display = "block";
+    }
+}
+
+window.onload = function() {
+    renderStatus();
+}
+</script>
 
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery.js"></script>
