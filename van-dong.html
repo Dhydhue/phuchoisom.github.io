@@ -50,7 +50,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h2 class="pageTitle">VẬN ĐỘNG</h2>
+				<h2 class="pageTitle">VẬN ĐỘNG TRƯỚC PHẪU THUẬT</h2>
 			</div>
 		</div>
 	</div>
@@ -58,182 +58,270 @@
 	<section id="content">
 	<div class="container">
 					
-		<style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f8fafc;
-    margin: 0;
-}
+	<style>
+    :root {
+        --primary-blue: #2563eb;
+        --secondary-blue: #1e40af;
+        --success-green: #16a34a;
+        --bg-slate: #f8fafc;
+        --text-slate: #334155;
+    }
 
-/* Container */
-.container-mobile {
-    padding: 15px;
-    max-width: 700px;
-    margin: auto;
-}
+    /* Headline Area */
+    .med-headline {
+        background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        padding: 45px 20px;
+        text-align: center;
+        color: white;
+        border-radius: 0 0 35px 35px;
+        box-shadow: 0 10px 20px rgba(37, 99, 235, 0.15);
+        margin-bottom: 25px;
+    }
 
-/* Card */
-.card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 14px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    margin-bottom: 20px;
-}
+    .med-headline h1 {
+        margin: 0;
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 800;
+    }
 
-/* Title */
-.card h3 {
-    font-size: 22px;
-    color: #0f172a;
-    border-left: 6px solid #2563eb;
-    padding-left: 10px;
-    margin-bottom: 12px;
-}
+    .med-headline p {
+        margin: 10px 0 0;
+        font-size: 17px;
+        opacity: 0.9;
+    }
 
-/* Text */
-.card p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin: 6px 0;
-}
+    /* Container */
+    .container-mobile {
+        padding: 0 15px 40px;
+        max-width: 800px;
+        margin: auto;
+    }
 
-/* Strong */
-.card strong {
-    display: block;
-    margin-top: 15px;
-    font-size: 18px;
-    color: #1e40af;
-}
+    /* Card Layout */
+    .card {
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 25px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+        border: 1px solid #f1f5f9;
+    }
 
-/* Highlight */
-.highlight {
-    background: #eff6ff;
-    padding: 12px;
-    border-radius: 10px;
-    margin-top: 10px;
-}
+    /* Typography */
+    .card h3 {
+        font-size: 20px;
+        color: #0f172a;
+        border-left: 6px solid var(--primary-blue);
+        padding-left: 15px;
+        margin: 25px 0 15px;
+        line-height: 1.4;
+        font-weight: 700;
+    }
 
-/* VIDEO FULL */
-.video-full {
-    position: relative;
-    width: 100vw;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-bottom: 70%;
-    margin-top: 20px;
-}
+    .card p {
+        font-size: 17px;
+        line-height: 1.7;
+        color: var(--text-slate);
+        margin: 10px 0;
+        display: flex;
+        align-items: flex-start;
+    }
 
-.video-full iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
+    .card p::before {
+        content: "✓";
+        color: var(--primary-blue);
+        font-weight: bold;
+        margin-right: 10px;
+    }
 
-/* Progress */
-.progress-box {
-    background: #f0fdf4;
-    padding: 12px;
-    border-radius: 12px;
-    text-align: center;
-    margin-top: 15px;
-}
+    .card strong {
+        display: block;
+        margin-top: 25px;
+        font-size: 18px;
+        color: var(--secondary-blue);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 5px;
+    }
 
-.btn-done {
-    width: 100%;
-    background: #16a34a;
-    color: #fff;
-    font-size: 18px;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-}
+    /* Highlight Box */
+    .highlight {
+        background: #f0f7ff;
+        padding: 20px;
+        border-radius: 18px;
+        margin: 15px 0;
+        border-right: 4px solid var(--primary-blue);
+    }
 
-.btn-done:hover {
-    background: #15803d;
-}
+    .highlight p::before { content: "📍"; }
 
-.done-text {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #16a34a;
-    font-weight: bold;
-}
+    /* VIDEO CINEMA (Màn hình to & sắc nét) */
+    .video-cinema {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* Tỷ lệ 16:9 chuẩn */
+        margin: 20px 0 30px;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        background: #000;
+    }
+
+    .video-cinema iframe {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%; border: none;
+    }
+
+    /* CHỨC NĂNG HOÀN THÀNH CHUYÊN NGHIỆP */
+    .progress-box {
+        background: #f8fafc;
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+        margin-top: 30px;
+        border: 2px dashed #cbd5e1;
+    }
+
+    .btn-done {
+        width: 100%;
+        max-width: 400px;
+        background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 16px;
+        border-radius: 14px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(22, 163, 74, 0.2);
+    }
+
+    .btn-done:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(22, 163, 74, 0.3);
+    }
+
+    .btn-done:active { transform: scale(0.98); }
+
+    .done-wrapper {
+        display: none; /* Ẩn mặc định */
+        animation: fadeInUp 0.5s ease-out;
+    }
+
+    .done-text {
+        font-size: 20px;
+        color: var(--success-green);
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+        .med-headline h1 { font-size: 20px; }
+        .card { padding: 18px; }
+        .card h3 { font-size: 18px; }
+        .card p { font-size: 16px; }
+    }
 </style>
 
+<div class="med-headline">
+    <h1>HƯỚNG DẪN TẬP LUYỆN</h1>
+    <p>Phục hồi chức năng trước phẫu thuật</p>
+</div>
+
 <div class="container-mobile">
+    <div class="card">
+        <h3>MỤC TIÊU TẬP LUYỆN</h3>
+        <p>Giảm tình trạng đau và hạn chế cứng khớp hiệu quả.</p>
+        <p>Phòng ngừa các biến chứng nguy hiểm: viêm phổi hít, huyết khối tĩnh mạch, teo cơ.</p>
+        <p>Thúc đẩy quá trình phục hồi vận động sớm và an toàn sau mổ.</p>
+        <p>Giúp người bệnh nhanh chóng trở lại sinh hoạt bình thường.</p>
 
-<div class="card">
+        <h3>QUY TRÌNH HƯỚNG DẪN CHI TIẾT</h3>
 
-<h3>MỤC TIÊU TẬP LUYỆN TRƯỚC PHẪU THUẬT</h3>
-<p>• Giảm đau, giảm cứng khớp</p>
-<p>• Phòng biến chứng (viêm phổi, huyết khối, yếu cơ)</p>
-<p>• Phục hồi vận động sớm và an toàn</p>
-<p>• Giúp trở lại sinh hoạt bình thường</p>
+        <strong>1. Tập thở sâu – Ho chủ động</strong>
+        <div class="highlight">
+            <p>Hít vào thật sâu bằng mũi → giữ hơi trong 3 giây → thở ra từ từ bằng miệng.</p>
+            <p>Sau mỗi 5 nhịp thở → ho nhẹ để làm sạch đờm trong đường hô hấp.</p>
+            <p>Tần suất: Thực hiện 5–10 lần mỗi giờ khi thức.</p>
+        </div>
+        
+        <div class="video-cinema">
+            <iframe src="https://www.youtube.com/embed/EnuRUz0r210" allowfullscreen></iframe>
+        </div>
 
-<h3>HƯỚNG DẪN TẬP LUYỆN</h3>
+        <strong>2. Tập nâng chân thẳng</strong>
+        <p>Nằm ngửa thoải mái, một chân co để giữ lực – một chân duỗi thẳng.</p>
+        <p>Từ từ nâng chân duỗi lên cao khoảng 20–30 cm → giữ nguyên tư thế trong 5 giây.</p>
+        <p>Hạ chân xuống từ từ để rèn luyện sức bền cơ đùi.</p>
 
-<strong>1. Tập thở sâu – ho chủ động</strong>
-<div class="highlight">
-<p>• Hít sâu → giữ 3 giây → thở ra từ từ</p>
-<p>• Sau 5 nhịp → ho nhẹ làm sạch đờm</p>
-<p>• Lặp lại 5–10 lần mỗi giờ</p>
-</div>
-	
-<!-- VIDEO FULL -->
-<div class="video-full">
-    <iframe src="https://www.youtube.com/embed/EnuRUz0r210" allowfullscreen></iframe>
-</div>
-	
+        <strong>3. Tập gập cổ chân</strong>
+        <p>Thực hiện gập cổ chân lên và xuống liên tục (như động tác nhấn bàn đạp).</p>
+        <p>Tần suất: Thực hiện 20 lần mỗi giờ khi nằm nghỉ trên giường.</p>
 
-<strong>2. Tập nâng chân thẳng</strong>
-<p>• Nằm ngửa, 1 chân co – 1 chân duỗi</p>
-<p>• Nâng chân 20–30 cm → giữ 5 giây</p>
-<p>• Hạ xuống từ từ</p>
+        <strong>4. Kỹ thuật lăn trở an toàn</strong>
+        <p>Co nhẹ gối bên đối diện hướng muốn lăn.</p>
+        <p>Tay gần mép giường đặt chéo trước ngực để tạo đà.</p>
+        <p>Siết nhẹ cơ bụng, giữ cột sống luôn thẳng.</p>
+        <p>Lăn đồng thời vai – hông – chân sang một bên (tránh vặn xoắn cột sống).</p>
 
-<strong>3. Tập gập cổ chân</strong>
-<p>• Gập cổ chân lên – xuống liên tục</p>
-<p>• Thực hiện 20 lần mỗi giờ khi nằm</p>
+        <strong>5. Hướng dẫn ngồi dậy đúng cách</strong>
+        <p>Bắt đầu từ tư thế nằm → thực hiện lăn nghiêng người sang một bên.</p>
+        <p>Dùng lực tay chống xuống mặt giường để nâng dần thân trên lên.</p>
+        <p>Đồng thời hạ chân xuống mép giường để tạo đối trọng.</p>
+        <p>Từ từ chuyển sang tư thế ngồi vững chãi trước khi đứng dậy.</p>
 
-<strong>4. Tập lăn trở</strong>
-<p>• Co nhẹ gối bên đối diện hướng lăn</p>
-<p>• Tay gần mép giường đặt trước ngực</p>
-<p>• Siết cơ bụng, giữ lưng thẳng</p>
-<p>• Lăn người đồng thời vai – hông – chân sang một bên</p>
+        <div class="video-cinema">
+            <iframe src="https://www.youtube.com/embed/Y6DvVXCwIxs" allowfullscreen></iframe>
+        </div>
 
-<strong>5. Ngồi dậy đúng cách</strong>
-<p>• Bắt đầu từ tư thế nằm → lăn nghiêng</p>
-<p>• Dùng tay chống để nâng thân trên</p>
-<p>• Đồng thời hạ chân xuống mép giường</p>
-<p>• Từ từ chuyển sang tư thế ngồi</p>
+        <div class="progress-box">
+            <div id="btnContainer">
+                <button class="btn-done" onclick="markDone()">✔ XÁC NHẬN ĐÃ ĐỌC & TẬP LUYỆN</button>
+            </div>
+            
+            <div id="statusWrapper" class="done-wrapper">
+                <div class="done-text">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    BẠN ĐÃ HOÀN THÀNH TÌM HIỂU
+                </div>
+                <p style="justify-content: center; font-size: 15px; color: #64748b; margin-top: 8px; border:none; display:flex;">Hãy kiên trì tập luyện để phục hồi tốt nhất!</p>
+            </div>
+        </div>
 
-<!-- VIDEO FULL -->
-<div class="video-full">
-    <iframe src="https://www.youtube.com/embed/Y6DvVXCwIxs" allowfullscreen></iframe>
-</div>
-
-<!-- PROGRESS -->
-<div class="progress-box">
-    <button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
-    <div id="doneStatus" class="done-text"></div>
-</div>
-
-</div>
+    </div>
 </div>
 
 <script>
-// PROGRESS ONLY (đã xóa hoàn toàn chức năng nghe nội dung)
-
+// Chức năng quản lý tiến độ chuyên nghiệp
 function markDone() {
     localStorage.setItem("exercise_done", "true");
-    document.getElementById("doneStatus").innerText = "📊 Đã đọc nội dung";
+    updateStatusUI();
 }
 
-window.onload = function() {
-    if(localStorage.getItem("exercise_done") === "true") {
-        document.getElementById("doneStatus").innerText = "📊 Đã đọc nội dung";
+function updateStatusUI() {
+    const isDone = localStorage.getItem("exercise_done") === "true";
+    if(isDone) {
+        document.getElementById("btnContainer").style.display = "none";
+        document.getElementById("statusWrapper").style.display = "block";
     }
+}
+
+// Kiểm tra trạng thái khi tải trang
+window.onload = function() {
+    updateStatusUI();
 }
 </script>
    
