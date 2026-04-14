@@ -47,214 +47,250 @@
             </div>
         </div>
 	</header><!-- end header -->
-<section id="inner-headline">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h2 class="pageTitle">DINH DƯỠNG TRƯỚC PHẪU THUẬT</h2>
-			</div>
-		</div>
-	</div>
-	</section>
-	<section id="content">
-		<div class="container content">		
-        <!-- Service Blcoks -->
+
 <style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f1f5f9;
-    margin: 0;
-}
+    :root {
+        --primary-med: #16a34a; /* Xanh lá y tế */
+        --secondary-med: #15803d;
+        --bg-gray: #f8fafc;
+        --text-dark: #0f172a;
+        --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
 
-/* Container */
-.container-mobile {
-    padding: 15px;
-}
+    /* Headline chuyên nghiệp */
+    #inner-headline {
+        background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+        padding: 50px 0;
+        color: #fff;
+        text-align: center;
+        box-shadow: var(--shadow);
+    }
 
-/* Card */
-.card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 18px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
+    .pageTitle {
+        font-size: 2.2rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
 
-/* Ảnh */
-.card img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 12px;
-}
-
-/* Tiêu đề */
-.card h4 {
-    font-size: 22px;
-    color: #0f172a;
-    margin-bottom: 10px;
-    border-left: 6px solid #16a34a;
-    padding-left: 10px;
-}
-
-/* Nội dung */
-.card p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #1e293b;
-    margin: 6px 0;
-}
-
-/* Highlight */
-.highlight {
-    background: #ecfdf5;
-    padding: 12px;
-    border-radius: 10px;
-    margin-top: 10px;
-}
-
-/* VIDEO to hơn + đẹp hơn */
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 65%; /* cao hơn để video lớn hơn */
-    margin-top: 15px;
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-}
-
-.video-container iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-/* BUTTON DONE */
-.btn-done {
-    width: 100%;
-    background: #16a34a;
-    color: #fff;
-    font-size: 18px;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    margin-top: 15px;
-    cursor: pointer;
-}
-
-/* PROGRESS TEXT */
-.progress-box {
-    background: #f0fdf4;
-    padding: 12px;
-    border-radius: 12px;
-    text-align: center;
-    margin-top: 15px;
-}
-
-.done-text {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #16a34a;
-    font-weight: bold;
-}
-
-/* Tablet */
-@media (min-width: 768px) {
+    /* Container tối ưu */
     .container-mobile {
-        max-width: 700px;
+        padding: 20px 15px;
+        max-width: 800px;
         margin: auto;
     }
-}
 
-/* Zoom ảnh/video khi click */
-.zoomable {
-    cursor: zoom-in;
-    transition: 0.3s;
-}
-
-.zoomable.active {
-    transform: scale(1.8);
-    position: relative;
-    z-index: 999;
-}
-</style>
-
-<div class="container-mobile">
-
-    <!-- CARD 1 -->
-    <div class="card">
-        <img class="zoomable" src="img/dd1.jpg" alt="Dinh dưỡng trước mổ">
-
-        <h4>VÌ SAO CẦN ĂN UỐNG ĐÚNG?</h4>
-        <p>• Giúp liền xương, phục hồi cơ</p>
-        <p>• Giảm nguy cơ nhiễm trùng, suy nhược</p>
-        <p>• Giúp đi lại sớm, tập phục hồi tốt</p>
-        <p>• Phòng táo bón do ít vận động và thuốc giảm đau</p>
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="card">
-        <img class="zoomable" src="img/dd2.jpg" alt="Nguyên tắc ăn uống">
-
-        <h4>NGUYÊN TẮC ĂN UỐNG</h4>
-        <p>• Ăn đủ bữa – không bỏ bữa</p>
-        <p>• Tăng đạm (thịt, cá, trứng, sữa)</p>
-        <p>• Ăn nhiều rau xanh, trái cây</p>
-        <p>• Uống 1,5–2 lít nước/ngày (nếu không chống chỉ định)</p>
-        <p>• Hạn chế đồ chiên, nhiều mỡ, rượu bia</p>
-
-        <div class="highlight">
-            <p><strong>1. 1–3 ngày trước mổ</strong></p>
-            <p>• 3 bữa chính + 1–2 bữa phụ</p>
-            <p>• Ăn dễ tiêu: cơm, cháo, mì</p>
-            <p>• Đạm: thịt nạc, cá, trứng</p>
-            <p>• Rau mềm, trái cây dễ tiêu</p>
-        </div>
-
-        <div class="highlight">
-            <p><strong>2. Trước phẫu thuật</strong></p>
-            <p>• Ngừng ăn uống đúng giờ được dặn</p>
-            <p>• Không tự ý ăn uống</p>
-        </div>
-
-        <!-- VIDEO -->
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/_3UAHufxk9M" allowfullscreen></iframe>
-        </div>
-
-        <!-- PROGRESS -->
-        <div class="progress-box">
-            <button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
-            <div id="doneStatus" class="done-text"></div>
-        </div>
-
-    </div>
-</div>
-
-<script>
-// Đánh dấu đã đọc
-function markDone() {
-    localStorage.setItem("nutrition_done", "true");
-    document.getElementById("doneStatus").innerHTML =
-        "📊 Đã đọc nội dung";
-}
-
-// Load trạng thái
-window.onload = function () {
-    if (localStorage.getItem("nutrition_done") === "true") {
-        document.getElementById("doneStatus").innerHTML =
-            "📊 Đã đọc nội dung";
+    /* Card y tế */
+    .card {
+        background: #ffffff;
+        border-radius: 20px;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        border: 1px solid #f1f5f9;
+        transition: transform 0.3s ease;
     }
 
-    // Zoom ảnh/video khi click
-    document.querySelectorAll(".zoomable").forEach(el => {
-        el.addEventListener("click", function () {
-            this.classList.toggle("active");
-        });
-    });
-};
+    /* Căn giữa và tối ưu ảnh */
+    .card-img-wrapper {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px;
+        display: inline-block; /* Căn giữa */
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Tiêu đề card */
+    .card h4 {
+        font-size: 24px;
+        color: var(--secondary-med);
+        margin-bottom: 15px;
+        border-left: 6px solid var(--primary-med);
+        padding-left: 15px;
+        font-weight: 700;
+    }
+
+    /* Nội dung văn bản */
+    .card p {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #334155;
+        margin: 10px 0;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    /* Highlight box */
+    .highlight {
+        background: #f0fdf4;
+        padding: 20px;
+        border-radius: 15px;
+        margin-top: 15px;
+        border-left: 4px solid var(--primary-med);
+    }
+
+    .highlight strong {
+        color: var(--secondary-med);
+        font-size: 19px;
+    }
+
+    /* VIDEO TO & CHUYÊN NGHIỆP */
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* Tỷ lệ vàng 16:9 */
+        margin: 25px 0;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        background: #000;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%; border: none;
+    }
+
+    /* NÚT HOÀN THÀNH */
+    .btn-done {
+        width: 100%;
+        background: linear-gradient(to right, #16a34a, #15803d);
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 18px;
+        border-radius: 15px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+    }
+
+    .btn-done:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(22, 163, 74, 0.4);
+    }
+
+    .done-text {
+        margin-top: 15px;
+        font-size: 18px;
+        color: #15803d;
+        font-weight: 700;
+        display: none; /* Ẩn mặc định */
+    }
+
+    /* Hiệu ứng Zoom ảnh */
+    .zoomable {
+        cursor: zoom-in;
+        transition: transform 0.3s ease;
+    }
+
+    .zoomable:active {
+        transform: scale(1.05);
+    }
+
+    /* Responsive cho Mobile */
+    @media (max-width: 768px) {
+        .pageTitle { font-size: 1.6rem; }
+        .card { padding: 15px; }
+        .card h4 { font-size: 20px; }
+        .card p { font-size: 16px; }
+    }
+</style>
+
+<section id="inner-headline">
+    <div class="container">
+        <h2 class="pageTitle">DINH DƯỠNG TRƯỚC PHẪU THUẬT</h2>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container-mobile">
+
+        <div class="card">
+            <div class="card-img-wrapper">
+                <img class="zoomable" src="img/dd1.jpg" alt="Dinh dưỡng trước mổ">
+            </div>
+
+            <h4>VÌ SAO CẦN ĂN UỐNG ĐÚNG?</h4>
+            <p>✅ Giúp liền xương, phục hồi cơ nhanh chóng</p>
+            <p>✅ Giảm nguy cơ nhiễm trùng, suy nhược cơ thể</p>
+            <p>✅ Giúp bệnh nhân đi lại sớm, tập phục hồi tốt</p>
+            <p>✅ Phòng táo bón do ít vận động và thuốc giảm đau</p>
+        </div>
+
+        <div class="card">
+            <div class="card-img-wrapper">
+                <img class="zoomable" src="img/dd2.jpg" alt="Nguyên tắc ăn uống">
+            </div>
+
+            <h4>NGUYÊN TẮC ĂN UỐNG</h4>
+            <p>📍 Ăn đủ bữa – Tuyệt đối không bỏ bữa</p>
+            <p>📍 Tăng cường đạm (Thịt nạc, cá, trứng, sữa)</p>
+            <p>📍 Bổ sung nhiều rau xanh và trái cây tươi</p>
+            <p>📍 Uống đủ 1.5–2 lít nước/ngày (nếu bác sĩ cho phép)</p>
+            <p>📍 Hạn chế đồ chiên rán, mỡ động vật, rượu bia</p>
+
+            <div class="highlight">
+                <p><strong>📅 1–3 ngày trước mổ</strong></p>
+                <p>• Duy trì 3 bữa chính + 1–2 bữa phụ mỗi ngày</p>
+                <p>• Ưu tiên thức ăn dễ tiêu: Cơm mềm, cháo, mì, phở</p>
+                <p>• Rau củ luộc mềm, trái cây chín dễ tiêu hóa</p>
+            </div>
+
+            <div class="highlight" style="background: #fff1f2; border-left-color: #e11d48;">
+                <p><strong style="color: #be123c;">⚠️ Trước phẫu thuật</strong></p>
+                <p>• Ngừng ăn và uống đúng khung giờ bác sĩ đã dặn</p>
+                <p>• Tuyệt đối không tự ý ăn uống thêm bất cứ thứ gì</p>
+            </div>
+
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/_3UAHufxk9M" allowfullscreen></iframe>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <button id="mainBtn" class="btn-done" onclick="markDone()">✔ XÁC NHẬN ĐÃ ĐỌC NỘI DUNG</button>
+                <div id="doneStatus" class="done-text">✨ Cảm ơn bạn! Bạn đã hoàn thành bài tìm hiểu này.</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<script>
+// Chức năng đánh dấu hoàn thành chuyên nghiệp
+function markDone() {
+    localStorage.setItem("nutrition_done", "true");
+    updateStatusDisplay();
+}
+
+function updateStatusDisplay() {
+    const isDone = localStorage.getItem("nutrition_done") === "true";
+    if (isDone) {
+        const btn = document.getElementById("mainBtn");
+        const status = document.getElementById("doneStatus");
+        if(btn) btn.style.display = "none";
+        if(status) status.style.display = "block";
+    }
+}
+
+// Khởi tạo khi trang load
+window.addEventListener('DOMContentLoaded', (event) => {
+    updateStatusDisplay();
+});
 </script>
+
+
+
+
+	
     
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery.js"></script>
