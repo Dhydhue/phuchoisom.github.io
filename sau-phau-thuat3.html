@@ -58,61 +58,118 @@
 </section>
 
 <style>
+/* HỆ THỐNG BIẾN CHUẨN Y TẾ - FONT CHỮ SIÊU TO */
+:root {
+    --primary-blue: #1d4ed8;
+    --secondary-blue: #2563eb;
+    --danger-red: #dc2626;
+    --success-green: #16a34a;
+    --text-dark: #0f172a;
+    --bg-light: #f8fafc;
+    /* Kích thước chữ tối ưu cho bệnh nhân */
+    --fs-base: 22px; 
+    --fs-title: 32px;
+    --fs-sub: 26px;
+    --fs-note: 24px;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     background: #f1f5f9;
     margin: 0;
+    line-height: 1.8;
+    color: var(--text-dark);
 }
 
 .container-mobile {
-    max-width: 900px;
+    max-width: 1000px;
     margin: auto;
-    padding: 15px;
+    padding: 20px;
 }
 
+/* Card thiết kế chuyên nghiệp */
 .card {
     background: #fff;
-    border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-radius: 30px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    border: 1px solid #e2e8f0;
 }
 
+/* Tiêu đề chính cực to */
 .card h3 {
-    font-size: 22px;
-    color: #1d4ed8;
-    margin-bottom: 12px;
+    font-size: var(--fs-title);
+    color: var(--primary-blue);
+    margin: 50px 0 30px 0;
+    font-weight: 900;
+    line-height: 1.3;
+    text-transform: uppercase;
+    border-left: 12px solid var(--primary-blue);
+    padding-left: 20px;
 }
 
-.card p {
-    font-size: 18px;
-    line-height: 1.7;
-    color: #334155;
-    margin: 6px 0;
-}
-
+/* Các khối bài tập */
 .block {
-    background: #f8fafc;
-    padding: 14px;
-    border-radius: 10px;
-    margin-bottom: 12px;
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    border: 2px solid #e2e8f0;
+    transition: transform 0.2s;
 }
 
+.block:hover {
+    border-color: var(--secondary-blue);
+    background: #f0f7ff;
+}
+
+.block strong {
+    font-size: var(--fs-sub);
+    color: var(--text-dark);
+    display: block;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+.block p {
+    font-size: var(--fs-base);
+    margin: 10px 0;
+}
+
+.block em {
+    font-size: 20px;
+    color: #475569;
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* Lưu ý quan trọng */
 .note {
-    background: #fee2e2;
-    padding: 12px;
-    border-radius: 10px;
-    color: #b91c1c;
-    font-weight: bold;
+    background: #fff1f2;
+    padding: 25px;
+    border-radius: 18px;
+    color: var(--danger-red);
+    font-weight: 800;
+    font-size: var(--fs-note);
+    border: 3px dashed var(--danger-red);
+    margin: 30px 0;
+    text-align: center;
 }
 
+/* Video Container */
 .video-container {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
-    margin-top: 15px;
-    border-radius: 12px;
+    margin: 40px 0 15px;
+    border-radius: 25px;
     overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    background: #000;
 }
 
 .video-container iframe {
@@ -121,131 +178,184 @@ body {
     height: 100%;
     border: none;
 }
+
+/* Nút bấm chuyên nghiệp */
+.btn-fs {
+    background: #64748b;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.btn-fs:hover { background: #475569; }
+
+.btn-done {
+    width: 100%;
+    padding: 25px;
+    font-size: 28px;
+    font-weight: 900;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+    color: white;
+    box-shadow: 0 10px 20px rgba(22, 163, 74, 0.3);
+    transition: all 0.3s;
+}
+
+.btn-done:active { transform: scale(0.98); }
+
+.done-text {
+    margin-top: 20px;
+    font-weight: 900;
+    color: var(--success-green);
+    font-size: 26px;
+    text-align: center;
+    padding: 20px;
+    background: #f0fdf4;
+    border-radius: 15px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    :root {
+        --fs-base: 20px;
+        --fs-title: 26px;
+        --fs-sub: 22px;
+    }
+    .card { padding: 25px 15px; }
+    .block { padding: 20px; }
+    .btn-done { font-size: 22px; padding: 20px; }
+}
 </style>
 
 <div class="container-mobile">
-<div class="card">
+    <div class="card">
 
-<h3>GIAI ĐOẠN NGÀY 1–2 SAU PHẪU THUẬT (TẠI GIƯỜNG)</h3>
+        <h3>GIAI ĐOẠN NGÀY 1–2 SAU PHẪU THUẬT (TẠI GIƯỜNG)</h3>
 
-<div class="block">
-<strong>CO DUỖI HAI CHÂN</strong>
-<p>- Trượt gót chân về phía mông → co gối<br>
-- Duỗi chân ra lại → duỗi gối<br>
-- Đổi chân</p>
-<p><em>👉 Làm chậm – đều – không nhấc lưng khỏi giường, 10–15 lần / chân, 3–4 lần mỗi ngày</em></p>
-</div>
+        <div class="block">
+            <strong>CO DUỖI HAI CHÂN</strong>
+            <p>• Trượt gót chân về phía mông → co gối</p>
+            <p>• Duỗi chân ra lại → duỗi gối</p>
+            <p>• Đổi chân thực hiện tương tự</p>
+            <em>👉 Làm chậm – đều – không nhấc lưng khỏi giường, 10–15 lần / chân, 3–4 lần mỗi ngày.</em>
+        </div>
 
-<div class="block">
-<strong>GỒNG CƠ ĐÙI – MÔNG</strong>
-<p>- Siết chặt cơ đùi → ép gối xuống giường<br>
-- Đồng thời siết cơ mông<br>
-- Giữ 5 giây → Thả lỏng</p>
-<p><em>👉 Lặp lại 10–15 lần</em></p>
-</div>
+        <div class="block">
+            <strong>GỒNG CƠ ĐÙI – MÔNG</strong>
+            <p>• Siết chặt cơ đùi → ép gối xuống giường</p>
+            <p>• Đồng thời siết mạnh cơ mông</p>
+            <p>• Giữ yên 5 giây → Thả lỏng</p>
+            <em>👉 Lặp lại động tác từ 10–15 lần.</em>
+        </div>
 
-<div class="block">
-<strong>GẬP CỔ CHÂN</strong>
-<p>Gập cổ chân lên xuống liên tục. 20 lần mỗi giờ khi nằm.</p>
-</div>
+        <div class="block">
+            <strong>GẬP CỔ CHÂN</strong>
+            <p>Gập cổ chân lên và xuống liên tục. Thực hiện 20 lần mỗi giờ trong suốt thời gian nằm trên giường.</p>
+        </div>
 
-<div class="block">
-<strong>TẬP KHUNG CHẬU</strong>
-<p>- Hít vào nhẹ → Siết cơ bụng → Ép lưng sát giường<br>
-- Giữ 5 giây, thả lỏng. Lặp lại 10 lần, 3-4 đợt/ ngày</p>
-</div>
+        <div class="block">
+            <strong>TẬP KHUNG CHẬU</strong>
+            <p>• Hít vào nhẹ → Siết cơ bụng → Ép vùng thắt lưng sát mặt giường</p>
+            <p>• Giữ trong 5 giây, sau đó thả lỏng.</p>
+            <em>👉 Lặp lại 10 lần, thực hiện 3-4 đợt mỗi ngày.</em>
+        </div>
 
-<div class="block">
-<strong>TẬP THỞ SÂU</strong>
-<p>- Hít sâu bằng mũi → giữ 3 giây → thở ra bằng miệng<br>
-- Sau 5 nhịp thở, ho nhẹ để làm sạch đờm. Tập mỗi giờ 5–10 lần.</p>
-</div>
+        <div class="block">
+            <strong>TẬP THỞ SÂU</strong>
+            <p>• Hít thật sâu bằng mũi → Giữ hơi trong 3 giây → Thổi ra từ từ bằng miệng</p>
+            <p>• Sau 5 nhịp thở, ho nhẹ để làm sạch phổi. Tập mỗi giờ từ 5–10 lần.</p>
+        </div>
 
-<div class="block">
-<strong>TẬP LĂN TRỞ & NGỒI DẬY</strong>
-<p>- Lăn nghiêng → Chống tay nâng thân → Hạ chân xuống giường → Từ từ ngồi dậy.</p>
-</div>
+        <div class="block">
+            <strong>TẬP LĂN TRỞ & NGỒI DẬY</strong>
+            <p>• Lăn nghiêng người → Dùng tay chống nâng thân mình lên → Hạ chân xuống cạnh giường → Từ từ ngồi dậy ổn định.</p>
+        </div>
 
-<div class="note">
-Lưu ý: không cúi, xoay thân mình, nâng hoặc nhặt vật.
-</div>
+        <div class="note">
+            ⚠️ LƯU Ý QUAN TRỌNG: Không cúi người, không xoay vặn thân mình, không tự ý nâng hoặc nhặt vật nặng.
+        </div>
 
-<hr>
+        <hr style="margin: 40px 0; border: 1px solid #e2e8f0;">
 
-	<!-- VIDEO -->
-<div class="video-container">
-<iframe id="videoFrame"
-src="https://www.youtube.com/embed/mJ0WiXTqZvc"
-allowfullscreen>
-</iframe>
-</div>
+        <div class="video-container">
+            <iframe id="v1" src="https://www.youtube.com/embed/mJ0WiXTqZvc" allowfullscreen></iframe>
+        </div>
+        <button class="btn-fs" onclick="fullScreen('v1')">📺 Xem toàn màn hình</button>
 
-<button onclick="openFullScreen()">
-Full Screen
-</button>
+        <hr style="margin: 40px 0; border: 1px solid #e2e8f0;">
 
-<hr>
+        <h3>GIAI ĐOẠN NGÀY 3–5 SAU PHẪU THUẬT</h3>
 
-<h3>GIAI ĐOẠN NGÀY 3–5 SAU PHẪU THUẬT</h3>
+        <div class="block">
+            <strong>TẬP ĐỨNG LÊN VÀ NGỒI XUỐNG (GIỮ LƯNG THẲNG)</strong>
+            <p>• Hai chân mở rộng bằng vai</p>
+            <p>• Nghiêng nhẹ người về trước (vẫn giữ lưng thẳng), từ từ đứng lên</p>
+            <p>• Khi ngồi xuống cũng thực hiện thật chậm rãi</p>
+        </div>
 
-<div class="block">
-<strong>TẬP ĐỨNG LÊN VÀ NGỒI XUỐNG (LƯNG THẲNG)</strong>
-<p>- Hai chân rộng bằng vai<br>
-- Nghiêng nhẹ về trước (lưng thẳng), đứng lên<br>
-- Ngồi xuống từ từ</p>
-</div>
+        <div class="block">
+            <strong>TẬP DI CHUYỂN VỚI KHUNG TRỢ GIÚP</strong>
+            <p>• Điều chỉnh khung ngang tầm cổ tay, luôn giữ lưng thẳng</p>
+            <p><strong>Cách đi:</strong> Đẩy khung lên trước → Bước chân yếu → Bước chân khỏe</p>
+            <em>👉 Có thể mang đai lưng hỗ trợ khi thực hiện di chuyển.</em>
+        </div>
 
-<div class="block">
-<strong>TẬP DI CHUYỂN VỚI KHUNG TRỢ GIÚP</strong>
-<p>- Khung ngang cổ tay, lưng thẳng<br>
-<strong>Cách đi:</strong> Đẩy khung → Chân yếu → Chân khỏe</p>
-<p>- Có thể mang đai lưng khi di chuyển</p>
-</div>
+        <div class="video-container">
+            <iframe id="v2" src="https://www.youtube.com/embed/jr1n6SSV_38" allowfullscreen></iframe>
+        </div>
+        <button class="btn-fs" onclick="fullScreen('v2')">📺 Xem toàn màn hình</button>
 
-<!-- VIDEO -->
-<div class="video-container">
-    <iframe 
-        id="videoFrame"
-        src="https://www.youtube.com/embed/jr1n6SSV_38"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-    </iframe>
-</div>
+        <hr style="margin: 40px 0; border: 1px solid #e2e8f0;">
 
-<button onclick="openFullScreen()">Full Screen</button>
+        <div class="progress-box">
+            <div id="btnContainer">
+                <button class="btn-done" onclick="markDone()">✔ XÁC NHẬN ĐÃ ĐỌC NỘI DUNG</button>
+            </div>
+            <div id="doneStatus" class="done-text" style="display:none;"></div>
+        </div>
 
-<hr>
-<!-- PROGRESS -->
-<div class="progress-box">
-    <button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
-    <div id="doneStatus" class="done-text"></div>
-</div>
-
-</div>
+    </div>
 </div>
 
 <script>
-// Đánh dấu hoàn thành
-function markDone() {
-    localStorage.setItem("fasting_done", "true");
-    document.getElementById("doneStatus").innerHTML =
-        "📊 Đã đọc nội dung";
+// Hàm phóng to video
+function fullScreen(id) {
+    var elem = document.getElementById(id);
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+    }
 }
 
-// Load trạng thái
-window.onload = function () {
-    if (localStorage.getItem("fasting_done") === "true") {
-        document.getElementById("doneStatus").innerHTML =
-            "📊 Đã đọc nội dung";
-    }
+// Đánh dấu hoàn thành
+function markDone() {
+    localStorage.setItem("exercise_post_op_done", "true");
+    showStatus();
+}
 
-    // Zoom ảnh khi click
-    document.querySelectorAll(".zoomable").forEach(img => {
-        img.addEventListener("click", function () {
-            this.classList.toggle("active");
-        });
-    });
+// Hiển thị trạng thái
+function showStatus() {
+    document.getElementById("btnContainer").style.display = "none";
+    document.getElementById("doneStatus").innerHTML = "📊 BẠN ĐÃ HOÀN THÀNH ĐỌC HƯỚNG DẪN";
+    document.getElementById("doneStatus").style.display = "block";
+}
+
+// Load trạng thái khi vào trang
+window.onload = function () {
+    if (localStorage.getItem("exercise_post_op_done") === "true") {
+        showStatus();
+    }
 };
 </script>
 
