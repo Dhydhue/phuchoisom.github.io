@@ -78,17 +78,35 @@ body {
     padding: 20px;
 }
 
-/* 1. HEADLINE ĐẸP & CHUYÊN NGHIỆP */
+/* 1. HEADLINE MÀU XANH NHẠT CHUYÊN NGHIỆP */
 .main-headline {
     text-align: center;
     padding: 60px 20px;
-    background: linear-gradient(135deg, #0f52ba 0%, #1e40af 100%);
-    color: white;
+    /* Gradient từ xanh nhạt sang xanh da trời dịu nhẹ */
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); 
+    
+    /* Đổi màu chữ sang xanh đậm để nổi bật trên nền nhạt */
+    color: #0c4a6e; 
+    
     border-radius: 0 0 50px 50px;
     margin-bottom: 40px;
-    box-shadow: var(--shadow);
+    
+    /* Đổi màu bóng đổ nhẹ hơn để hòa hợp với nền sáng */
+    box-shadow: 0 10px 30px rgba(15, 82, 186, 0.1); 
+    
+    /* Thêm viền dưới rất mờ để tạo độ sắc nét */
+    border-bottom: 1px solid #7dd3fc; 
 }
 
+.main-headline h1 {
+    font-size: var(--font-size-h1);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 900; /* Làm chữ đậm hơn để tăng uy tín */
+    text-shadow: none; /* Loại bỏ bóng chữ nếu có để tránh bị lem màu */
+}
+	
 .main-headline h1 {
     font-size: var(--font-size-h1);
     margin: 0;
@@ -223,13 +241,17 @@ body {
     font-size: 20px;
 }
 
-/* 7. FOOTER CHUYÊN NGHIỆP */
+/* 7. FOOTER CHUYÊN NGHIỆP - TÔNG XANH NHẠT */
 .footer-med {
-    background: #0f172a;
-    color: white;
+    /* Chuyển sang màu xanh nhạt dịu mắt */
+    background: #f0f9ff; 
+    /* Chuyển chữ sang màu tối để dễ đọc trên nền sáng */
+    color: #1e293b; 
     padding: 60px 20px;
     margin-top: 50px;
     border-radius: 50px 50px 0 0;
+    /* Thêm viền phía trên để phân cách rõ ràng */
+    border-top: 2px solid #e0f2fe;
 }
 
 .footer-content {
@@ -240,8 +262,25 @@ body {
     gap: 40px;
 }
 
-.footer-med h3 { color: #3b82f6; margin-bottom: 20px; }
+.footer-med h3 { 
+    /* Màu tiêu đề xanh dương đậm chuẩn y tế */
+    color: #0284c7; 
+    margin-bottom: 25px; 
+    font-size: 26px; /* Tăng kích cỡ tiêu đề footer */
+    font-weight: 800;
+    text-transform: uppercase;
+}
 
+.footer-med p {
+    font-size: 20px; /* Chữ to cực đại cho phần thông tin liên hệ */
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.footer-med strong {
+    color: #0369a1; /* Nhấn mạnh tên khoa/phòng bằng màu xanh đậm hơn */
+}
+	
 /* NÚT CUỘN LÊN */
 .scrollup {
     position: fixed;
@@ -300,7 +339,11 @@ body {
         
         <div class="highlight-box">
             <p><strong>Các bệnh thường gặp:</strong></p>
-            <p>• Thoát vị đĩa đệm | • Thoái hóa cột sống | • Hẹp ống sống | • Trượt đốt sống | • Chấn thương cột sống</p>
+            <p>• Thoát vị đĩa đệm </p>
+			<p>• Thoái hóa cột sống </p>
+			<p>• Hẹp ống sống</p>
+			<p>• Trượt đốt sống </p> 
+			<p>• Chấn thương cột sống</p>
         </div>
         
         <div class="highlight-box" style="border-left: 5px solid #10b981; background: #f0fdf4;">
@@ -347,7 +390,10 @@ body {
         <img src="img/h4.jpg" alt="ERAS" style="width:100%; border-radius: 20px; margin-bottom: 20px;">
         
         <div class="highlight-box" style="background: #f0fdf4;">
-            <p>✔ Giảm đau hiệu quả | ✔ Rút ngắn thời gian nằm viện | ✔ Giảm nguy cơ biến chứng | ✔ Sớm trở lại sinh hoạt bình thường</p>
+            <p>✔ Giảm đau hiệu quả </p> 
+			<p>✔ Rút ngắn thời gian nằm viện </p>
+			<p>✔ Giảm nguy cơ biến chứng </p>
+			<p>✔ Sớm trở lại sinh hoạt bình thường</p>
         </div>
     </section>
 
