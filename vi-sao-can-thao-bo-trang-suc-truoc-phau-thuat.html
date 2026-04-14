@@ -57,164 +57,257 @@
 	</section>
 	<section id="content">
 	<div class="container">
-<style>
-body {
-    font-family: Arial, sans-serif;
-    background: #f1f5f9;
-    margin: 0;
-}
 
-/* Container */
-.container-mobile {
-    padding: 15px;
-    max-width: 700px;
-    margin: auto;
-}
+	<style>
+    :root {
+        --primary-red: #ef4444; /* Màu đỏ cảnh báo an toàn */
+        --accent-blue: #1d4ed8;
+        --success-green: #16a34a;
+        --bg-body: #f8fafc;
+        --text-main: #1e293b;
+    }
 
-/* Card */
-.card {
-    background: #fff;
-    border-radius: 16px;
-    padding: 18px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
+    /* Headline Area */
+    .med-headline {
+        background: linear-gradient(135deg, #ef4444 0%, #991b1b 100%);
+        padding: 45px 20px;
+        text-align: center;
+        color: white;
+        border-radius: 0 0 35px 35px;
+        box-shadow: 0 10px 20px rgba(239, 68, 68, 0.2);
+        margin-bottom: 25px;
+    }
 
-/* Title */
-.card h3 {
-    font-size: 22px;
-    color: #0f172a;
-    border-left: 6px solid #ef4444;
-    padding-left: 10px;
-    margin-bottom: 10px;
-}
+    .med-headline h1 {
+        margin: 0;
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 800;
+    }
 
-/* Text */
-.card p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin: 6px 0;
-}
+    .med-headline p {
+        margin: 10px 0 0;
+        font-size: 16px;
+        opacity: 0.9;
+    }
 
-/* Strong */
-.card strong {
-    display: block;
-    margin-top: 12px;
-    font-size: 18px;
-    color: #1d4ed8;
-}
+    /* Container */
+    .container-mobile {
+        padding: 0 15px 40px;
+        max-width: 750px;
+        margin: auto;
+    }
 
-/* Highlight */
-.highlight {
-    background: #fef2f2;
-    padding: 12px;
-    border-radius: 10px;
-    margin-top: 10px;
-}
+    /* Card */
+    .card {
+        background: #ffffff;
+        border-radius: 24px;
+        padding: 25px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        border: 1px solid #f1f5f9;
+    }
 
-/* VIDEO FULL */
-.video-full {
-    position: relative;
-    width: 100vw;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-bottom: 70%;
-    margin-top: 20px;
-}
+    /* Typography */
+    .card h3 {
+        font-size: 19px;
+        color: #0f172a;
+        border-left: 6px solid var(--primary-red);
+        padding-left: 15px;
+        margin: 20px 0 15px;
+        line-height: 1.4;
+    }
 
-.video-full iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
+    .card p {
+        font-size: 17px;
+        line-height: 1.7;
+        color: #334155;
+        margin: 8px 0;
+        display: flex;
+        align-items: flex-start;
+    }
 
-/* Progress */
-.progress-box {
-    background: #f0fdf4;
-    padding: 12px;
-    border-radius: 12px;
-    text-align: center;
-    margin-top: 15px;
-}
+    .card p::before {
+        content: "•";
+        color: var(--primary-red);
+        font-weight: bold;
+        margin-right: 10px;
+    }
 
-.btn-done {
-    width: 100%;
-    background: #16a34a;
-    color: #fff;
-    font-size: 18px;
-    padding: 14px;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-}
+    .card strong {
+        display: block;
+        margin-top: 20px;
+        font-size: 18px;
+        color: var(--accent-blue);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
 
-.btn-done:hover {
-    background: #15803d;
-}
+    /* Highlight Box */
+    .highlight {
+        background: #fff1f2;
+        padding: 18px;
+        border-radius: 15px;
+        margin-top: 15px;
+        border: 1px dashed #fca5a5;
+    }
 
-.done-text {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #16a34a;
-    font-weight: bold;
-}
+    .highlight p::before {
+        content: "✓";
+        color: #dc2626;
+    }
+
+    /* VIDEO MÀN HÌNH TO (Tối ưu Mobile & Web) */
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* Tỷ lệ 16:9 */
+        margin: 25px 0;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        background: #000;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%; border: none;
+    }
+
+    /* CHỨC NĂNG HOÀN THÀNH CHUYÊN NGHIỆP */
+    .progress-box {
+        background: #f8fafc;
+        padding: 25px;
+        border-radius: 20px;
+        text-align: center;
+        margin-top: 30px;
+        border: 2px solid #e2e8f0;
+    }
+
+    .btn-done {
+        width: 100%;
+        max-width: 380px;
+        background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        padding: 16px;
+        border-radius: 14px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+    }
+
+    .btn-done:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(22, 163, 74, 0.3);
+    }
+
+    .btn-done:active { transform: scale(0.98); }
+
+    .done-container {
+        display: none; /* Ẩn mặc định */
+        animation: slideUp 0.4s ease-out;
+    }
+
+    .done-text {
+        font-size: 19px;
+        color: var(--success-green);
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    @keyframes slideUp {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px) {
+        .med-headline h1 { font-size: 19px; }
+        .card { padding: 18px; }
+        .card h3 { font-size: 17px; }
+        .card p { font-size: 16px; }
+    }
 </style>
+
+<div class="med-headline">
+    <h1>QUY ĐỊNH THÁO TRANG SỨC</h1>
+    <p>Vì sự an toàn tuyệt đối trong phẫu thuật</p>
+</div>
 
 <div class="container-mobile">
 
-<div class="card">
+    <div class="card">
+        <h3>VÌ SAO CẦN THÁO TRANG SỨC TRƯỚC PHẪU THUẬT?</h3>
+        <p>Trang sức kim loại có thể gây bỏng sâu vùng da tiếp xúc khi bác sĩ sử dụng dao mổ điện.</p>
+        <p>Kim loại là nơi tích tụ vi khuẩn tiềm ẩn, làm tăng nguy cơ nhiễm trùng vết mổ.</p>
+        <p>Cản trở việc theo dõi các chỉ số sinh tồn, đo huyết áp hoặc đặt đường truyền tĩnh mạch.</p>
+        <p>Tránh tình trạng trang sức siết chặt gây tổn thương da khi cơ thể bị sưng nề sau mổ.</p>
+        <p>Đảm bảo an toàn tài sản, tránh thất lạc trong quá trình di chuyển và phẫu thuật.</p>
 
-<h3>VÌ SAO CẦN THÁO TRANG SỨC TRƯỚC PHẪU THUẬT?</h3>
-<p>• Trang sức kim loại có thể gây bỏng da khi dùng dao điện</p>
-<p>• Là nơi tích tụ vi khuẩn → tăng nguy cơ nhiễm trùng</p>
-<p>• Cản trở theo dõi, đo huyết áp, đặt đường truyền</p>
-<p>• Có thể gây tổn thương da khi sưng sau mổ</p>
-<p>• Tránh thất lạc tài sản</p>
+        <strong>DANH MỤC CẦN THÁO BỎ:</strong>
+        <div class="highlight">
+            <p>Nhẫn, vòng tay, lắc chân</p>
+            <p>Dây chuyền, vòng cổ</p>
+            <p>Bông tai, khuyên mũi, khuyên rốn, khuyên lưỡi</p>
+            <p>Đồng hồ, thiết bị điện tử đeo tay</p>
+            <p>Kẹp tóc kim loại, răng giả tháo lắp</p>
+            <p>Kính áp tròng (Contact lenses)</p>
+        </div>
 
-<strong>NGƯỜI BỆNH CẦN THÁO GÌ?</strong>
-<div class="highlight">
-<p>• Nhẫn, vòng tay, lắc chân</p>
-<p>• Dây chuyền</p>
-<p>• Bông tai, khuyên mũi, khuyên rốn</p>
-<p>• Đồng hồ</p>
-<p>• Kẹp tóc kim loại</p>
-<p>• Kính áp tròng</p>
-</div>
+        <strong>HƯỚNG DẪN XỬ LÝ:</strong>
+        <p>Chủ động giao lại toàn bộ trang sức cho người nhà cất giữ trước khi vào khu phẫu thuật.</p>
+        <p>Trường hợp không có người nhà: Thực hiện ký gửi tài sản tại khoa theo đúng quy định bệnh viện.</p>
+        <p>Nếu gặp khó khăn khi tháo (nhẫn chật, khuyên kẹt...): Hãy báo ngay cho nhân viên y tế để được hỗ trợ kỹ thuật.</p>
 
-<strong>LƯU Ý</strong>
-<p>• Giao lại trang sức cho người nhà</p>
-<p>• Nếu không có người nhà → ký gửi theo quy định</p>
-<p>• Nếu không tháo được → báo nhân viên y tế</p>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/vBTYAiMi9Y4" allowfullscreen></iframe>
+        </div>
 
-<!-- VIDEO FULL -->
-<div class="video-full">
-    <iframe src="https://www.youtube.com/embed/vBTYAiMi9Y4" allowfullscreen></iframe>
-</div>
+        <div class="progress-box">
+            <div id="btnWrapper">
+                <button class="btn-done" onclick="markDone()">✔ XÁC NHẬN ĐÃ ĐỌC & THỰC HIỆN</button>
+            </div>
+            
+            <div id="statusContainer" class="done-container">
+                <div class="done-text">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    BẠN ĐÃ HOÀN THÀNH TÌM HIỂU
+                </div>
+                <p style="justify-content: center; font-size: 14px; color: #64748b; margin-top: 5px; border:none; display:flex;">Cảm ơn sự hợp tác của quý bệnh nhân!</p>
+            </div>
+        </div>
 
-<!-- PROGRESS -->
-<div class="progress-box">
-    <button class="btn-done" onclick="markDone()">✔ Tôi đã đọc nội dung này</button>
-    <div id="doneStatus" class="done-text"></div>
-</div>
-
-</div>
+    </div>
 </div>
 
 <script>
-// PROGRESS ONLY (đã xóa hoàn toàn chức năng nghe nội dung)
-
+// Chức năng đánh dấu hoàn thành chuyên nghiệp
 function markDone() {
     localStorage.setItem("jewelry_done", "true");
-    document.getElementById("doneStatus").innerText = "📊 Đã đọc nội dung";
+    updateUI();
 }
 
-window.onload = function() {
-    if(localStorage.getItem("jewelry_done") === "true") {
-        document.getElementById("doneStatus").innerText = "📊 Đã đọc nội dung";
+function updateUI() {
+    const isDone = localStorage.getItem("jewelry_done") === "true";
+    if(isDone) {
+        document.getElementById("btnWrapper").style.display = "none";
+        document.getElementById("statusContainer").style.display = "block";
     }
 }
-</script>
+
+// Kiểm tra trạng thái khi tải trang
+window.onload = function() {
+    updateUI();
+}
+</script>	
+		
   
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery.js"></script>
