@@ -48,80 +48,229 @@
         </div>
 	</header><!-- end header -->
 
-<div class="container-mobile">
+<style>
+:root {
+    --primary: #0284c7; /* Blue Sky */
+    --primary-dark: #0369a1;
+    --accent: #f59e0b; /* Orange Accent */
+    --bg-body: #f1f5f9;
+    --glass: rgba(255, 255, 255, 0.95);
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    <section class="card">
-        <div class="title-main">Giới thiệu Khoa</div>
-        <p>
-            Khoa Ngoại Chấn thương Chỉnh hình – Thần kinh Sọ não được thành lập theo Quyết định số 1744/QĐ-BVH ngày 01/11/2016.
-        </p>
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--bg-body);
+    color: #334155;
+    line-height: 1.6;
+    margin: 0;
+}
 
-        <div class="highlight">
-            <p>👥 <strong>Ban đầu:</strong> 15 cán bộ (04 bác sĩ, 10 điều dưỡng, 01 hộ lý)</p>
-            <p>📈 <strong>Hiện nay:</strong> 28 cán bộ (11 bác sĩ, 16 điều dưỡng, 01 hộ lý)</p>
+.container-mobile {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 16px;
+}
+
+/* Card Chung */
+.card-premium {
+    background: var(--glass);
+    border-radius: 24px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: var(--transition);
+}
+
+.card-premium:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+
+/* Tiêu đề */
+.title-gradient {
+    font-size: 22px;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title-gradient::before {
+    content: "";
+    width: 5px;
+    height: 25px;
+    background: var(--accent);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* Highlight Box */
+.info-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.stat-item {
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.stat-item span {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Danh sách kỹ thuật */
+.grid-tech {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+}
+
+.tech-tag {
+    background: #fff;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.tech-tag:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Team Section */
+.team-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.member-card {
+    text-align: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.member-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Hình tròn cho chuyên nghiệp */
+    object-fit: cover;
+    border: 4px solid #f0f9ff;
+    margin-bottom: 12px;
+}
+
+.member-role {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.member-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .team-layout { grid-template-columns: repeat(4, 1fr); }
+    .title-gradient { font-size: 28px; }
+}
+</style>
+	
+	<div class="container-mobile">
+
+    <div class="card-premium">
+        <div class="title-gradient">GIỚI THIỆU KHOA</div>
+        <p>Khoa Ngoại Chấn thương Chỉnh hình – Thần kinh Sọ não được thành lập từ năm 2016, là đơn vị mũi nhọn trong công tác điều trị ngoại khoa chuyên sâu.</p>
+        
+        <div class="info-stats">
+            <div class="stat-item">
+                <span>11</span> Bác sĩ
+            </div>
+            <div class="stat-item">
+                <span>17</span> Đ/D & Hộ lý
+            </div>
         </div>
+        <p style="font-size: 14px; color: #64748b;">📍 <i>Địa chỉ: Tòa nhà B - Bệnh viện...</i></p>
+    </div>
 
-        <p>
-            Sau hơn 8 năm phát triển, khoa không ngừng mở rộng và nâng cao chất lượng chuyên môn nhằm đáp ứng nhu cầu khám chữa bệnh ngày càng cao.
-        </p>
-    </section>
-
-    <section class="card">
-        <div class="title-sub">Chức năng, nhiệm vụ</div>
-        <div class="list-check">
-            <p>✔️ Khám bệnh, điều trị nội trú và ngoại trú</p>
-            <p>✔️ Cấp cứu, phẫu thuật</p>
-            <p>✔️ Chăm sóc toàn diện cho người bệnh</p>
-        </div>
-        <p>
-            Khoa tiếp nhận và điều trị các bệnh lý, chấn thương thuộc chuyên ngành chấn thương chỉnh hình và thần kinh sọ não...
-        </p>
-    </section>
-
-    <section class="card">
-        <div class="title-sub">Các kỹ thuật chuyên môn</div>
+    <div class="card-premium">
+        <div class="title-gradient">KỸ THUẬT CHUYÊN SÂU</div>
         <div class="grid-tech">
-            <div class="tech-item">🔧 Kết hợp xương thường quy</div>
-            <div class="tech-item">🦵 Nội soi & thay khớp gối</div>
-            <div class="tech-item">🦴 Thay khớp háng</div>
-            <div class="tech-item">✋ Tạo hình thẩm mỹ</div>
-            <div class="tech-item">🧍 Phẫu thuật cột sống</div>
-            <div class="tech-item">🧠 Phẫu thuật thần kinh</div>
+            <div class="tech-tag">🦴 Thay khớp háng</div>
+            <div class="tech-tag">🦵 Thay khớp gối</div>
+            <div class="tech-tag">🧠 Sọ não nạo máu tụ</div>
+            <div class="tech-tag">🧍 Thoát vị đĩa đệm</div>
+            <div class="tech-tag">🛠️ Kết hợp xương</div>
+            <div class="tech-tag">✨ Tạo hình thẩm mỹ</div>
         </div>
-    </section>
+    </div>
 
-    <section class="card">
-        <div class="title-main" style="border-left-color: #f59e0b;">Ban chủ nhiệm</div>
-        <div class="team-grid">
-            <div class="member">
+    <div class="card-premium">
+        <div class="title-gradient">BAN CHỦ NHIỆM KHOA</div>
+        <div class="team-layout">
+            
+            <div class="member-card">
                 <img src="img/khoa.jpg" alt="Trưởng khoa">
-                <h4>TRƯỞNG KHOA</h4>
-                <p>BSCKII. NGUYỄN ĐÌNH KHOA</p>
+                <div class="member-role">Trưởng khoa</div>
+                <div class="member-name">BSCKII. Nguyễn Đình Khoa</div>
             </div>
 
-            <div class="member">
+            <div class="member-card">
                 <img src="img/hanh.jpg" alt="Phó khoa">
-                <h4>PHÓ KHOA</h4>
-                <p>BSCKII. NGUYỄN ĐỨC HẠNH</p>
+                <div class="member-role">Phó khoa</div>
+                <div class="member-name">BSCKII. Nguyễn Đức Hạnh</div>
             </div>
 
-            <div class="member">
+            <div class="member-card">
                 <img src="img/tuong.jpeg" alt="Phó khoa">
-                <h4>PHÓ KHOA</h4>
-                <p>ThS.BS. VÕ BÁ TƯỜNG</p>
+                <div class="member-role">Phó khoa</div>
+                <div class="member-name">ThS.BS. Võ Bá Tường</div>
             </div>
 
-            <div class="member">
-                <img src="img/huyen.jpg" alt="Điều dưỡng trưởng">
-                <h4>ĐIỀU DƯỠNG TRƯỞNG</h4>
-                <p>CN. PHẠM THANH HUYỀN</p>
+            <div class="member-card">
+                <img src="img/huyen.jpg" alt="ĐD Trưởng">
+                <div class="member-role">ĐD Trưởng</div>
+                <div class="member-name">CN. Phạm Thanh Huyền</div>
             </div>
+
         </div>
-    </section>
+    </div>
 
 </div>
-
-<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+	
+	
+	
 
 </div>
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
