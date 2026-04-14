@@ -47,263 +47,326 @@
         </div>
 	</header><!-- end header -->
 	<section id="inner-headline">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
-				<h2 class="pageTitle">THEO DÕI VÀ KIỂM SOÁT ĐAU</h2>
-			</div>
-		</div>
-	</div>
-	</section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="pageTitle">THEO DÕI VÀ KIỂM SOÁT ĐAU</h2>
+            </div>
+        </div>
+    </div>
+</section>
 
 <style>
-/* Tổng thể */
-body {
-    font-family: Arial, sans-serif;
-    background: #f1f5f9;
+/* HỆ THỐNG BIẾN TỰ ĐỘNG TỐI ƯU */
+:root {
+    --primary-color: #1d4ed8;
+    --secondary-color: #2563eb;
+    --success-color: #16a34a;
+    --danger-color: #dc2626;
+    --bg-light: #f8fafc;
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    
+    /* Font chữ siêu to cho bệnh nhân */
+    --fs-base: 20px;
+    --fs-title: 32px;
+    --fs-sub: 26px;
 }
 
-/* Container */
+/* Tổng thể chuyên nghiệp */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
 .container-mobile {
     max-width: 900px;
     margin: auto;
-    padding: 15px;
+    padding: 20px;
 }
 
-/* Card */
+/* Card thiết kế hiện đại */
 .card {
     background: #fff;
-    border-radius: 16px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border-radius: 24px;
+    padding: 35px;
+    margin-bottom: 25px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid #e2e8f0;
 }
 
-/* Tiêu đề */
+/* Typography nâng cấp */
 .card h4 {
-    font-size: 22px;
-    font-weight: bold;
-    color: #1d4ed8;
-    margin-top: 20px;
+    font-size: var(--fs-sub);
+    font-weight: 800;
+    color: var(--primary-color);
+    margin: 40px 0 20px 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid #eff6ff;
+    padding-bottom: 10px;
 }
 
-/* Nội dung */
 .card p, .card li {
-    font-size: 18px;
-    line-height: 1.7;
-    color: #334155;
+    font-size: var(--fs-base);
+    margin-bottom: 12px;
 }
 
-/* Quote */
+/* Quote Box Nghệ thuật */
 .quote-box {
-    background: #fff5f8;
-    border-left: 6px solid #D81265;
-    padding: 15px;
-    border-radius: 10px;
+    background: linear-gradient(to right, #fff5f8, #ffffff);
+    border-left: 8px solid #D81265;
+    padding: 25px;
+    border-radius: 15px;
+    font-size: var(--fs-base);
+    font-weight: 600;
+    font-style: italic;
+    color: #9d174d;
+    margin-bottom: 30px;
+    box-shadow: 2px 4px 12px rgba(216, 18, 101, 0.1);
+}
+
+/* Pain Scale Card */
+.pain-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+    margin: 25px 0;
+    border: 2px solid #e2e8f0;
+}
+
+.pain-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    text-align: center;
+}
+
+.pain-sub {
     font-size: 18px;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Alert */
+.pain-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 15px;
+    background: #f8fafc;
+    font-size: var(--fs-base);
+    margin-bottom: 10px;
+    font-weight: 600;
+    transition: transform 0.2s;
+}
+
+.pain-item:hover { transform: scale(1.02); }
+
+.level {
+    font-weight: 800;
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.low { background: #dcfce7; color: #166534; }
+.mid { background: #fef9c3; color: #854d0e; }
+.high { background: #fee2e2; color: #991b1b; }
+
+/* Alert Box */
 .alert-box {
-    background: #fee2e2;
-    border-left: 6px solid #dc2626;
-    padding: 15px;
-    border-radius: 10px;
+    background: #fff1f2;
+    border: 2px solid #fecdd3;
+    border-left: 10px solid var(--danger-color);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
 }
 
-/* Video */
+.alert-box strong {
+    font-size: 22px;
+    color: var(--danger-color);
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Video & Fullscreen */
 .video-container {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
-    margin-top: 15px;
-    border-radius: 12px;
+    margin: 25px 0;
+    border-radius: 20px;
     overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
 }
 
 .video-container iframe {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
 }
 
-/* Button */
+.btn-fs {
+    background: #64748b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Nút hoàn thành lớn */
 .btn-done {
     width: 100%;
-    padding: 14px;
-    font-size: 18px;
-    border-radius: 10px;
-    margin-top: 10px;
+    padding: 22px;
+    font-size: 24px;
+    font-weight: 800;
+    border-radius: 18px;
+    margin-top: 30px;
     border: none;
     cursor: pointer;
-    background: #16a34a;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
     color: white;
+    box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.4);
+    transition: all 0.3s;
 }
 
-/* Done text */
+.btn-done:active { transform: scale(0.98); }
+
 .done-text {
-    margin-top: 10px;
-    font-weight: bold;
+    margin-top: 20px;
+    font-weight: 800;
     color: #16a34a;
+    text-align: center;
+    font-size: 22px;
+    padding: 15px;
+    background: #f0fdf4;
+    border-radius: 12px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    :root {
+        --fs-base: 18px;
+        --fs-title: 26px;
+        --fs-sub: 22px;
+    }
+    .card { padding: 20px; }
+    .pain-item { padding: 12px; flex-direction: column; gap: 8px; text-align: center;}
 }
 </style>
 
 <div class="container-mobile">
-
-<div class="card">
-
-    <!-- Quote -->
-    <div class="quote-box">
-        “ĐAU SAU PHẪU THUẬT LÀ BÌNH THƯỜNG, NHƯNG HOÀN TOÀN CÓ THỂ KIỂM SOÁT ĐƯỢC.<br>
-        HÃY BÁO CHO NHÂN VIÊN Y TẾ KHI ĐAU ĐỂ ĐƯỢC GIÚP ĐỠ KỊP THỜI.”
-    </div>
-
-    <h4>1. VÌ SAO CẦN KIỂM SOÁT ĐAU?</h4>
-    <ul>
-        <li>Giúp người bệnh dễ chịu và an tâm hơn</li>
-        <li>Hỗ trợ vận động sớm, phòng biến chứng</li>
-    </ul>
-
-   <style>
-.pain-card{
-    background:#ffffff;
-    border-radius:16px;
-    padding:20px;
-    box-shadow:0 6px 18px rgba(0,0,0,0.08);
-    margin-top:15px;
-    border-left:6px solid #2563eb;
-}
-
-.pain-title{
-    font-size:20px;
-    font-weight:700;
-    color:#0f172a;
-    margin-bottom:8px;
-}
-
-.pain-sub{
-    font-size:16px;
-    color:#475569;
-    margin-bottom:12px;
-}
-
-.pain-scale{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-
-.pain-item{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:10px 14px;
-    border-radius:12px;
-    background:#f8fafc;
-    font-size:16px;
-}
-
-.level{
-    font-weight:700;
-    padding:4px 10px;
-    border-radius:999px;
-    font-size:14px;
-}
-
-/* color coding */
-.low { background:#dcfce7; color:#166534; }
-.mid { background:#fef9c3; color:#854d0e; }
-.high{ background:#fee2e2; color:#991b1b; }
-</style>
-
-<div class="pain-card">
-
-    <div class="pain-title">THEO DÕI MỨC ĐỘ ĐAU</div>
-    <div class="pain-sub">Thang điểm đánh giá từ 0 đến 10</div>
-
-    <div class="pain-scale">
-
-        <div class="pain-item">
-            <span>0 – Không đau</span>
-            <span class="level low">Bình thường</span>
+    <div class="card">
+        <div class="quote-box">
+            “ĐAU SAU PHẪU THUẬT LÀ BÌNH THƯỜNG, NHƯNG HOÀN TOÀN CÓ THỂ KIỂM SOÁT ĐƯỢC.<br>
+            HÃY BÁO CHO NHÂN VIÊN Y TẾ KHI ĐAU ĐỂ ĐƯỢC GIÚP ĐỠ KỊP THỜI.”
         </div>
 
-        <div class="pain-item">
-            <span>1 – 3: Đau nhẹ</span>
-            <span class="level low">Theo dõi</span>
-        </div>
-
-        <div class="pain-item">
-            <span>4 – 6: Đau vừa</span>
-            <span class="level mid">Cần chú ý</span>
-        </div>
-
-        <div class="pain-item">
-            <span>7 – 10: Đau nhiều</span>
-            <span class="level high">Báo y tế</span>
-        </div>
-
-    </div>
-
-</div>
-
-    <img src="img/VAS.png" style="width:100%; border-radius:10px;">
-
-   <!-- VIDEO -->
-<div class="video-container">
-<iframe id="videoFrame"
-src="https://www.youtube.com/embed/ZxnMu2bPn94"
-allowfullscreen>
-</iframe>
-</div>
-
-<button onclick="openFullScreen()">
-Full Screen
-</button>
-
-<hr>
-
-    <div class="alert-box">
-        <strong>BÁO NGAY KHI:</strong>
+        <h4>1. VÌ SAO CẦN KIỂM SOÁT ĐAU?</h4>
         <ul>
-            <li>Đau tăng bất thường</li>
-            <li>Không giảm sau thuốc</li>
-            <li>Tê yếu chân</li>
+            <li>Giúp người bệnh dễ chịu và an tâm hơn</li>
+            <li>Hỗ trợ vận động sớm, phòng biến chứng</li>
         </ul>
+
+        <div class="pain-card">
+            <div class="pain-title">THEO DÕI MỨC ĐỘ ĐAU</div>
+            <div class="pain-sub">Thang điểm đánh giá từ 0 đến 10</div>
+
+            <div class="pain-scale">
+                <div class="pain-item">
+                    <span>0 – Không đau</span>
+                    <span class="level low">Bình thường</span>
+                </div>
+                <div class="pain-item">
+                    <span>1 – 3: Đau nhẹ</span>
+                    <span class="level low">Theo dõi</span>
+                </div>
+                <div class="pain-item">
+                    <span>4 – 6: Đau vừa</span>
+                    <span class="level mid">Cần chú ý</span>
+                </div>
+                <div class="pain-item">
+                    <span>7 – 10: Đau nhiều</span>
+                    <span class="level high">Báo y tế</span>
+                </div>
+            </div>
+        </div>
+
+        <p style="text-align:center; font-weight:bold; color:#64748b;">Minh họa thang đo VAS</p>
+        
+        <img src="img/VAS.png" alt="Thang đo VAS" style="width:100%; border-radius:15px; margin-bottom: 20px; border: 1px solid #e2e8f0;">
+
+        <div class="video-container">
+            <iframe id="videoFrame" src="https://www.youtube.com/embed/ZxnMu2bPn94" allowfullscreen></iframe>
+        </div>
+
+        <button class="btn-fs" onclick="openFullScreen()">
+            📺 Xem toàn màn hình
+        </button>
+
+        <div class="alert-box">
+            <strong>⚠️ BÁO NGAY KHI:</strong>
+            <ul>
+                <li>Đau tăng bất thường</li>
+                <li>Không giảm sau thuốc</li>
+                <li>Tê yếu chân</li>
+            </ul>
+        </div>
+
+        <h4>3. PHƯƠNG PHÁP KIỂM SOÁT ĐAU</h4>
+        <p>📍 <strong>Dùng thuốc:</strong> đúng chỉ định của bác sĩ.</p>
+        <p>📍 <strong>Tư thế:</strong> nằm đúng, thực hiện vận động nhẹ nhàng.</p>
+        <p>📍 <strong>Hỗ trợ:</strong> nghỉ ngơi điều độ, tập thở sâu để thư giãn.</p>
+
+        <h4>4. LƯU Ý QUAN TRỌNG</h4>
+        <p>✅ Không cố gắng chịu đau một mình.</p>
+        <p>✅ Tuân thủ tuyệt đối hướng dẫn của điều dưỡng.</p>
+
+        <button id="btnConfirm" class="btn-done" onclick="markDonePain()">
+            ✔ TÔI ĐÃ ĐỌC VÀ HIỂU NỘI DUNG
+        </button>
+
+        <div id="donePain" class="done-text" style="display:none;"></div>
     </div>
-
-    <h4>3. PHƯƠNG PHÁP KIỂM SOÁT ĐAU</h4>
-    <p><strong>Dùng thuốc:</strong> đúng chỉ định</p>
-    <p><strong>Tư thế:</strong> nằm đúng, vận động nhẹ</p>
-    <p><strong>Hỗ trợ:</strong> nghỉ ngơi, thở sâu</p>
-
-    <h4>4. LƯU Ý</h4>
-    <p>✔ Không cố chịu đau</p>
-    <p>✔ Tuân thủ hướng dẫn</p>
-
-    <!-- DONE -->
-    <button class="btn-done" onclick="markDonePain()">
-        ✔ Tôi đã đọc nội dung
-    </button>
-
-    <div id="donePain" class="done-text"></div>
-
-</div>
 </div>
 
 <script>
+function openFullScreen() {
+    var elem = document.getElementById("videoFrame");
+    if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+    } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+    } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+    }
+}
+
 function markDonePain() {
     localStorage.setItem("pain_done", "true");
-    document.getElementById("donePain").innerText = "📊 Bạn đã đọc nội dung này";
+    showDone();
+}
+
+function showDone() {
+    document.getElementById("donePain").innerText = "📊 Bạn đã hoàn thành đọc nội dung này";
+    document.getElementById("donePain").style.display = "block";
+    document.getElementById("btnConfirm").style.display = "none";
 }
 
 window.onload = function () {
     if (localStorage.getItem("pain_done") === "true") {
-        document.getElementById("donePain").innerText = "📊 Bạn đã đọc nội dung này";
+        showDone();
     }
 };
 </script>
-
 	
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="js/jquery.js"></script>
