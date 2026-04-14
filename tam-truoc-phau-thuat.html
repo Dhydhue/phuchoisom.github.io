@@ -55,171 +55,158 @@
 			</div>
 		</div>
 	</div>
-	</section>
-	<section id="content">
+</section>
+
+<section id="content">
 	<div class="container">
 <style>
     :root {
-        --primary-color: #0ea5e9; /* Màu xanh bầu trời y tế */
+        --primary-color: #0ea5e9; 
         --success-color: #16a34a;
         --bg-soft: #f8fafc;
         --text-main: #1e293b;
+        /* HỆ THỐNG FONT CHỮ CỰC ĐẠI */
+        --font-size-headline: 38px;
+        --font-size-h3: 30px;
+        --font-size-p: 24px;
+        --font-size-sub: 26px;
     }
 
     /* Headline Chuyên Nghiệp */
     .medical-headline {
         background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
-        padding: 50px 20px;
+        padding: 60px 20px;
         text-align: center;
         color: white;
-        border-radius: 0 0 40px 40px;
+        border-radius: 0 0 50px 50px;
         box-shadow: 0 10px 20px rgba(14, 165, 233, 0.2);
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
 
     .medical-headline h1 {
         margin: 0;
-        font-size: 28px;
+        font-size: var(--font-size-headline);
         text-transform: uppercase;
         letter-spacing: 1px;
-        font-weight: 800;
+        font-weight: 900;
+        line-height: 1.2;
     }
 
     .medical-headline p {
-        margin: 10px 0 0;
-        font-size: 18px;
-        opacity: 0.9;
+        margin: 15px 0 0;
+        font-size: 26px;
+        opacity: 1;
+        font-weight: 600;
     }
 
     /* Container */
     .container-mobile {
-        padding: 0 15px 40px;
-        max-width: 800px;
+        padding: 0 20px 50px;
+        max-width: 900px;
         margin: auto;
     }
 
     /* Card Layout */
     .card {
         background: #ffffff;
-        border-radius: 24px;
-        padding: 30px;
-        margin-bottom: 25px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        border-radius: 30px;
+        padding: 40px;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         border: 1px solid #f1f5f9;
     }
 
-    /* Typography */
+    /* Typography - CHỮ SIÊU TO */
     .card h3 {
-        font-size: 20px;
+        font-size: var(--font-size-h3);
         color: #0f172a;
-        border-left: 6px solid var(--primary-color);
-        padding-left: 15px;
-        margin: 25px 0 15px;
-        font-weight: 700;
+        border-left: 10px solid var(--primary-color);
+        padding-left: 20px;
+        margin: 45px 0 25px;
+        font-weight: 800;
+        line-height: 1.3;
     }
 
     .card p {
-        font-size: 17px;
+        font-size: var(--font-size-p);
         line-height: 1.8;
-        color: #334155;
-        margin: 10px 0;
+        color: #1e293b;
+        margin: 15px 0;
         display: flex;
         align-items: flex-start;
+        font-weight: 500;
     }
 
     .card p::before {
         content: "•";
         color: var(--primary-color);
         font-weight: bold;
-        margin-right: 10px;
+        margin-right: 15px;
+        font-size: 30px;
     }
 
     /* Highlight Box */
     .highlight {
         background: #f0f9ff;
-        padding: 20px;
-        border-radius: 15px;
-        margin: 15px 0;
-        border-right: 4px solid var(--primary-color);
-    }
-
-    .highlight p::before { display: none; } /* Bỏ dấu chấm trong highlight */
-
-    /* VIDEO MÀN HÌNH TO (Tỷ lệ vàng 16:9) */
-    .video-container {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%;
-        margin: 30px 0;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        background: #000;
-    }
-
-    .video-container iframe {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%; border: none;
-    }
-
-    /* CHỨC NĂNG HOÀN THÀNH ĐẸP */
-    .progress-box {
-        background: #f8fafc;
         padding: 30px;
         border-radius: 20px;
+        margin: 25px 0;
+        border-right: 8px solid var(--primary-color);
+    }
+
+    .highlight p { font-size: var(--font-size-sub); }
+    .highlight p::before { display: none; }
+
+    /* VIDEO MÀN HÌNH TO */
+    .video-container {
+        border-radius: 25px;
+        margin: 40px 0;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    /* CHỨC NĂNG HOÀN THÀNH TO RÕ */
+    .progress-box {
+        background: #f8fafc;
+        padding: 40px;
+        border-radius: 25px;
         text-align: center;
-        margin-top: 20px;
-        border: 2px dashed #cbd5e1;
+        margin-top: 40px;
+        border: 4px dashed #cbd5e1;
     }
 
     .btn-done {
         width: 100%;
-        max-width: 350px;
+        max-width: 500px;
         background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
         color: #fff;
-        font-size: 18px;
-        font-weight: 700;
-        padding: 18px;
-        border-radius: 15px;
+        font-size: 28px;
+        font-weight: 800;
+        padding: 25px;
+        border-radius: 20px;
         border: none;
         cursor: pointer;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
-    }
-
-    .btn-done:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(22, 163, 74, 0.4);
-    }
-
-    .btn-done:active { transform: scale(0.98); }
-
-    .done-status-wrapper {
-        display: none; /* Ẩn mặc định */
-        animation: fadeIn 0.5s ease;
+        box-shadow: 0 10px 20px rgba(22, 163, 74, 0.3);
     }
 
     .done-text {
-        font-size: 20px;
+        font-size: 28px;
         color: #16a34a;
-        font-weight: 800;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+        font-weight: 900;
+        gap: 15px;
     }
 
     /* Responsive */
-    @media (max-width: 600px) {
-        .medical-headline h1 { font-size: 22px; }
-        .card { padding: 20px; }
-        .card h3 { font-size: 18px; }
-        .card p { font-size: 16px; }
+    @media (max-width: 768px) {
+        :root {
+            --font-size-headline: 30px;
+            --font-size-h3: 26px;
+            --font-size-p: 21px;
+            --font-size-sub: 23px;
+        }
+        .medical-headline { padding: 50px 15px; }
+        .card { padding: 25px 20px; }
+        .btn-done { font-size: 24px; padding: 20px; }
     }
 </style>
 
@@ -229,7 +216,6 @@
 </div>
 
 <div class="container-mobile">
-
     <div class="card">
         <h3>VÌ SAO CẦN TẮM TRƯỚC PHẪU THUẬT?</h3>
         <p>Tắm và vệ sinh giúp phòng ngừa nhiễm khuẩn vết mổ tối đa.</p>
@@ -238,7 +224,7 @@
 
         <h3>THỜI GIAN THỰC HIỆN</h3>
         <div class="highlight">
-            <p style="font-weight: bold; color: var(--primary-color);">⏰ Khuyến cáo:</p>
+            <p style="font-weight: 800; color: var(--primary-color); margin-bottom: 10px;">⏰ Khuyến cáo:</p>
             <p>• Tắm <b> 1–2 lần </b> trong vòng 24 giờ trước phẫu thuật.</p>
             <p>• Thời điểm tốt nhất: Vào <b> tối trước ngày mổ </b> và <b> sáng sớm ngày mổ </b>.</p>
         </div>
@@ -252,53 +238,18 @@
 
         <h3>LƯU Ý QUAN TRỌNG</h3>
         <div class="highlight" style="background: #fff1f2; border-right-color: #f43f5e;">
-            <p>❌ <b>Không</b>  bôi kem, phấn, dầu mỡ hoặc mỹ phẩm lên vùng lưng và vùng mổ.</p>
-            <p>❌ <b>Không</b>  tự ý dùng dao lam cạo lông vùng mổ (tránh trầy xước gây nhiễm trùng).</p>
-            <p>✅ <b>Báo ngay</b>      cho nhân viên y tế nếu phát hiện da có vết trầy xước, mụn mủ hoặc dị ứng.</p>
+            <p style="color: #be123c;">❌ <b>Không</b> bôi kem, phấn, dầu mỡ hoặc mỹ phẩm lên vùng lưng và vùng mổ.</p>
+            <p style="color: #be123c;">❌ <b>Không</b> tự ý dùng dao lam cạo lông vùng mổ (tránh trầy xước gây nhiễm trùng).</p>
+            <p style="color: #15803d;">✅ <b>Báo ngay</b> cho nhân viên y tế nếu phát hiện da có vết trầy xước, mụn mủ hoặc dị ứng.</p>
         </div>
 
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/cKkxsrGOA6k" allowfullscreen></iframe>
+            <iframe width="100%" height="450" src="https://www.youtube.com/embed/cKkxsrGOA6k" allowfullscreen></iframe>
         </div>
 
         <div class="progress-box">
             <div id="actionWrapper">
-                <button class="btn-done" onclick="markDone()">✔ XÁC NHẬN ĐÃ ĐỌC NỘI DUNG</button>
-            </div>
-            
-            <div id="doneStatusWrapper" class="done-status-wrapper">
-                <div class="done-text">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    HOÀN THÀNH: ĐÃ ĐỌC NỘI DUNG
-                </div>
-                <p style="justify-content: center; font-size: 14px; color: #64748b; margin-top: 5px; border:none; display:flex;">Cảm ơn bạn đã chủ động phối hợp vệ sinh an toàn!</p>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<script>
-// Chức năng đánh dấu hoàn thành chuyên nghiệp
-function markDone() {
-    localStorage.setItem("bath_done", "true");
-    renderStatus();
-}
-
-function renderStatus() {
-    const isDone = localStorage.getItem("bath_done") === "true";
-    if(isDone) {
-        document.getElementById("actionWrapper").style.display = "none";
-        document.getElementById("doneStatusWrapper").style.display = "block";
-    }
-}
-
-// Kiểm tra khi tải trang
-window.onload = function() {
-    renderStatus();
-}
-</script>
-		
+                <button class="btn-done" onclick="markDone()">✔ XÁC NHẬN ĐÃ ĐỌC NỘI DUNG
 		
 
 <!-- Placed at the end of the document so the pages load faster -->
